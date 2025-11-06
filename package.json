@@ -29,8 +29,8 @@
   ],
   "scripts": {
     "clean": "rm -rf node_modules && rm -rf ./dist",
-    "prepare": "npm run compile-enchanted-css && cp enchanted.css ./dist/ && cp -r ./src/styles  ./dist && cp ./src/static/assets/*.svg ./dist/static/assets/ && cp ./src/static/assets/*.jpg ./dist/static/assets/",
-    "build": "tsc",
+    "build": "npm run compile-enchanted-css && tsc",
+    "dist-prepare": "cp ./package.json ./dist/package.json && cp ./README.md ./dist/README.md && cp ./LICENSE.txt ./dist/LICENSE.txt && cp ./enchanted.css ./dist/enchanted.css && cp -r ./src/styles ./dist && cp ./src/static/assets/*.svg ./dist/static/assets/ && cp ./src/static/assets/*.jpg ./dist/static/assets/ && rm -rf ./dist/_tests_ && rm -rf ./dist/stories",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "test-unit": "wdio run ./wdio.unit.conf.ts",
