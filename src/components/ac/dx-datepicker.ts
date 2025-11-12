@@ -462,7 +462,7 @@ export class DxDatePicker extends DxAcBaseElement {
                         color="currentColor"
                         ?useCurrentColor=${false}
                         color="none"
-                        size="1px"
+                        size="1"
                       ></icon-circle-solid>
                     </span>`
                   : nothing
