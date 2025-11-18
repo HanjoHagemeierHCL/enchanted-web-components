@@ -260,9 +260,10 @@ describe('DxDialog component testing', () => {
       document.body
     );
     let component = await $('dx-dialog').getElement();
-    let closeButton = await component.$('>>>[part="icon-close"]').getElement();
     
-    await closeButton.click(); // Focus the element
+    // Tab to focus the close button
+    await browser.keys(['Tab']);
+    await browser.pause(100);
     await browser.keys(['Enter']);
     await browser.pause(400);
     
@@ -277,9 +278,10 @@ describe('DxDialog component testing', () => {
       document.body
     );
     let component = await $('dx-dialog').getElement();
-    let closeButton = await component.$('>>>[part="icon-close"]').getElement();
     
-    await closeButton.click(); // Focus the element
+    // Tab to focus the close button
+    await browser.keys(['Tab']);
+    await browser.pause(100);
     await browser.keys([' ']);
     await browser.pause(400);
     
