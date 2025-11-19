@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Fixed the badge icon position for the rtl.
 
 ### Added
 - Added comprehensive ARIA attributes and labels for screen reader accessibility in `dx-preview` component
