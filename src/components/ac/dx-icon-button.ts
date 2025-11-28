@@ -63,7 +63,7 @@ export class DxIconButton extends DxAcBaseElement {
         outlined="false"
         data-testid="dx-icon-button"
         ?inverseColor=${this.inverseColor}
-        .imgurl="${this.imgurl}"
+        imgurl="${this.imgurl}"
         size="${this.size}"
         ?withPadding=${this.withPadding}
         exportparts=${ICON_BUTTON_EXPORT_PARTS}
