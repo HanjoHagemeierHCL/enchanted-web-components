@@ -24,7 +24,6 @@
 - Fixed the icon bug for sorting of `dx-data-grid`.
 - Fixed the style bug for filter button in `dx-toggle-button`.
 
-
 ### Changed
 - Changed `dx-dialog` accessibility implementation to use Lit reactive state for `role`, `aria-label`, `tabindex`, and content visibility management
 - Updated `dx-dialog` live region to be part of the template instead of dynamically created
