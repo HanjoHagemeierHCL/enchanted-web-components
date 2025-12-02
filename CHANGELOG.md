@@ -3,10 +3,12 @@
 ## Unreleased
 
 ### Added
+- Added new `placement` and `size` property for `dx-menu` component.
 
 ### Fixed
 
 ### Changed
+- Refactored menu placement logic using a switch statment for clarity and maintainability.
 
 ### Breaking changes
 
@@ -15,7 +17,6 @@
 ### Added
 - Added a new storybook component for `dx-popover`.
 - Added new property for disabling popover on hover in `dx-popover`.
-- Added new `placement` and `size` property for `dx-menu` component.
 - Prevent dropdown closing when dragging scrollbar inside `<dx-input-select>`.
 
 
@@ -24,8 +25,6 @@
 
 ### Changed
 - Changed `dx-dialog` live region styling from a CSS class selector to a `part` attribute with `::part()` selector, ensuring proper accessibility and visual hiding inside shadow DOM. This resolves issues with screen reader announcements and visible text flashes on dialog open.
-- Refactored menu placement logic using a switch statment for clarity and maintainability.
-
 
 ## 1.2.1
 
