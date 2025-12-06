@@ -21,6 +21,7 @@
 - Adjust `dx-snackbar` stylings
 
 ### Breaking changes
+- Remove `dx-search-center-layout` component
 
 ## 1.4.0
 
