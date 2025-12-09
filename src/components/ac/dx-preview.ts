@@ -131,11 +131,28 @@ export class DxPreview extends DxAcBaseElement {
   @state()
   isMediaReady = false;
 
+  @state()
+  isZoomedIn = false;
+
   private _activeRequestToken = 0;
 
   protected willUpdate(changedProperties: Map<string | symbol, unknown>) {
     if (this.open && (changedProperties.has('currentItemIndex') || changedProperties.has('items') || changedProperties.has('selectedRenditionId'))) {
       this._updateCurrentItemAndRendition();
+    }
+
+    // Update isZoomedIn state when zoom, items, or currentItemIndex changes
+    if (changedProperties.has('zoomPercentage') || changedProperties.has('items') || changedProperties.has('currentItemIndex')) {
+      const currentItem = this.items[this.currentItemIndex ?? 0];
+      const isImageType = currentItem?.type.split('/')[0] === ItemTypes.DAM_IMAGE;
+      this.isZoomedIn = isImageType && this.zoomPercentage > 100;
+    }
+
+    // Apply zoomed class to host element immediately
+    if (this.isZoomedIn) {
+      this.classList.add('zoomed');
+    } else {
+      this.classList.remove('zoomed');
     }
 
     // Update CSS custom properties
@@ -152,19 +169,42 @@ export class DxPreview extends DxAcBaseElement {
     requestAnimationFrame(() => {
       const wrapper = this.renderRoot?.querySelector('#preview-item-image-wrapper') as HTMLElement | null;
       const img = this.renderRoot?.querySelector('#preview-item-image') as HTMLImageElement | null;
+      const container = this.renderRoot?.querySelector('#preview-item-content-container') as HTMLElement | null;
 
       if (wrapper && img && img.naturalWidth && img.naturalHeight) {
         const scale = this.zoomPercentage / 100;
-        // Set wrapper to scaled dimensions to create layout space
+        // Set image dimensions directly to scaled size
         const scaledWidth = img.naturalWidth * scale;
         const scaledHeight = img.naturalHeight * scale;
+
+        // Set both image and wrapper to the same scaled dimensions
+        img.style.width = `${scaledWidth}px`;
+        img.style.height = `${scaledHeight}px`;
         wrapper.style.width = `${scaledWidth}px`;
         wrapper.style.height = `${scaledHeight}px`;
 
-        // Set image to natural dimensions and apply transform scale for visual zoom
-        img.style.width = `${img.naturalWidth}px`;
-        img.style.height = `${img.naturalHeight}px`;
-        img.style.transform = `scale(${scale})`;
+        // Clear transform as we're using direct dimensions
+        img.style.transform = '';
+        img.style.transformOrigin = '';
+
+        console.log('Zoom Debug:', {
+          zoomPercentage: this.zoomPercentage,
+          isZoomedIn: this.isZoomedIn,
+          hostHasZoomedClass: this.classList.contains('zoomed'),
+          scale,
+          naturalWidth: img.naturalWidth,
+          naturalHeight: img.naturalHeight,
+          scaledWidth,
+          scaledHeight,
+          wrapperWidth: wrapper.offsetWidth,
+          wrapperHeight: wrapper.offsetHeight,
+          wrapperComputedWidth: window.getComputedStyle(wrapper).width,
+          wrapperComputedHeight: window.getComputedStyle(wrapper).height,
+          containerWidth: container?.offsetWidth,
+          containerHeight: container?.offsetHeight,
+          containerOverflow: container ? window.getComputedStyle(container).overflow : 'N/A',
+          wrapperPosition: wrapper ? window.getComputedStyle(wrapper).position : 'N/A',
+        });
       }
     });
   }
@@ -692,14 +732,6 @@ export class DxPreview extends DxAcBaseElement {
     const currentItem = this.items[this.currentItemIndex ?? 0];
     const isImageType = currentItem?.type.split('/')[0] === ItemTypes.DAM_IMAGE;
     const currentItemRenditions = currentItem?.renditions;
-    const isZoomedIn = isImageType && this.zoomPercentage > 100;
-
-    // Update data-zoomed attribute on host element
-    if (isZoomedIn) {
-      this.setAttribute('data-zoomed', 'true');
-    } else {
-      this.removeAttribute('data-zoomed');
-    }
 
     if (!this.open) return nothing;
     const downloadLabel = this.getMessage('preview.tooltip.download.button');
@@ -710,7 +742,7 @@ export class DxPreview extends DxAcBaseElement {
     const percentageLabel = this.getMessage(this.zoomPercentage === 100 ? 'preview.tooltip.zoom.to.fit' : 'preview.tooltip.view.actual.size');
     const titleHeader = this.customHeaderTitle ?? this.items[this.currentItemIndex]?.title ?? this.getMessage('preview.header.title');
     return html`
-    <div part=${PREVIEW_PARTS.PREVIEW_BACKDROP} data-zoomed=${isZoomedIn ? 'true' : 'false'}
+    <div part=${PREVIEW_PARTS.PREVIEW_BACKDROP}
       ?open=${this.open} 
       tabindex="-1"
       role="presentation"
@@ -818,7 +850,7 @@ export class DxPreview extends DxAcBaseElement {
               </dx-tooltip>
             </div>
           ` : nothing }
-          <div part=${PREVIEW_PARTS.PREVIEW_ITEM_CONTENT_CONTAINER}>
+          <div id="preview-item-content-container" part=${PREVIEW_PARTS.PREVIEW_ITEM_CONTENT_CONTAINER}>
             ${this._renderPreviewItem()}
             ${
               this.isLoading || (this.currentDisplaySource && !this.isMediaReady && !this.hasError)
