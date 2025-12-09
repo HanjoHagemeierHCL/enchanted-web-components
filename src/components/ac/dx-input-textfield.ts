@@ -28,9 +28,6 @@ import { LOCALE_DIRECTIONS } from '../constants';
 import { DxInputFieldType } from '../../types/dx-input-select';
 import { INPUT_TEXTFIELD_PARTS } from '../../types/cssClassEnums';
 import { AutoCompleteTextfieldEnum } from '../../types/dx-input-textfield';
-
-// Icon imports
-import './dx-svg-icon';
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
 
 const debug = createDebug('enchanted-web-components:components:ac:dx-input-textfield.ts');
