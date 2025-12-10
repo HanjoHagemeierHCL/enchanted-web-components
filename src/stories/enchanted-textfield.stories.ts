@@ -127,7 +127,7 @@ const meta: Meta<EnchantedInputTextfieldProps> = {
       ?hassearchedbefore=${args.hassearchedbefore}
       autocomplete="${args.autocomplete}"
       aria-label="${args.ariaLabel}"
-    ></enchanted-input-textfield>
+    ></enchanted-textfield>
   `;},
 };
 
@@ -154,113 +154,113 @@ export const AllStates: Story = {
       <div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start;">
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">Default (Empty)</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Text Field"
             placeholder="Enter text"
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">With Value</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Text Field"
             .value=${'Sample text'}
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">With Placeholder</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Username"
             placeholder="Enter your username"
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">Password Type</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Password"
             type="password"
             placeholder="Enter password"
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">Email Type</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Email"
             type="email"
             placeholder="name@example.com"
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">Number Type</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Age"
             type="number"
             placeholder="Enter age"
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">With Clear Icon</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Search"
             .value=${'Search query'}
             .clearIconUrl=${html`<icon-close size="16" color="black"></icon-close>`}
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">With Action Icon</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Search"
             placeholder="Search..."
             .actionIconUrl=${html`<icon-search size="16" color="black"></icon-search>`}
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">With Both Icons</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Search Field"
             .value=${'Search term'}
             .clearIconUrl=${html`<icon-close size="16" color="black"></icon-close>`}
             .actionIconUrl=${html`<icon-search size="16" color="black"></icon-search>`}
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">Disabled (Empty)</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Text Field"
             placeholder="Disabled"
             ?disabled=${true}
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">Disabled (Filled)</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Text Field"
             .value=${'Disabled value'}
             ?disabled=${true}
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">Autocomplete Off</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Credit Card"
             placeholder="XXXX-XXXX-XXXX-XXXX"
             autocomplete="off"
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">With ARIA Label</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Search"
             placeholder="Type to search"
             aria-label="Search products in catalog"
             .actionIconUrl=${html`<icon-search size="16" color="black"></icon-search>`}
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
         <div style="width: 250px;">
           <div style="margin-bottom: 8px; font-weight: 500;">Long Placeholder</div>
-          <enchanted-input-textfield
+          <enchanted-textfield
             label="Description"
             placeholder="Enter a detailed description of your item"
-          ></enchanted-input-textfield>
+          ></enchanted-textfield>
         </div>
       </div>
     `;
