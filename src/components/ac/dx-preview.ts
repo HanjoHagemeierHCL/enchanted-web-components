@@ -617,9 +617,8 @@ export class DxPreview extends DxAcBaseElement {
     const itemType = currentItem.type.split('/')[0];
     if (itemType === ItemTypes.DAM_IMAGE) {
       requestAnimationFrame(() => {
-        // Calculate fit-to-view but start at 100%
-        this._calculateImagePercentage();
-        this.zoomPercentage = this._ZOOM_DEFAULT;
+        // Calculate and apply fit-to-screen zoom
+        this.zoomPercentage = this._calculateImagePercentage();
         this._updateImageDimensions();
       });
     } else if (itemType === ItemTypes.DAM_VIDEO) {
