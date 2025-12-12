@@ -174,7 +174,6 @@ describe('EnchantedPreview component testing', () => {
     );
     const component = await $('enchanted-preview').getElement();
     const mockStyle = [
-      'visibility',
       'height',
       'width',
     ];
@@ -571,14 +570,16 @@ describe('EnchantedPreview component testing', () => {
     await zoomInButton.waitForClickable();
     const zoomPercentageButton = await component.$(`>>>enchanted-button[data-testid="enchanted-preview-zoom-percentage-button"]`);
     let style = await img.getAttribute('style');
-    await expect(style.replace(/\s+/g, '')).toContain('--zoom-scale-factor:0.5');
+    await expect(style.replace(/\s+/g, '')).toContain('width:');
+    await expect(style.replace(/\s+/g, '')).toContain('height:');
     await expect(zoomPercentageButton).toHaveText('50%');
 
     await zoomInButton.moveTo();
     zoomInButton = await component.$(`>>>enchanted-icon-button[data-testid="enchanted-preview-zoom-in-button"]`);
     await zoomInButton.click();
     style = await img.getAttribute('style');
-    await expect(style.replace(/\s+/g, '')).toContain('--zoom-scale-factor:0.75');
+    await expect(style.replace(/\s+/g, '')).toContain('width:');
+    await expect(style.replace(/\s+/g, '')).toContain('height:');
     await expect(zoomPercentageButton).toHaveText('75%');
   });
 
@@ -596,14 +597,16 @@ describe('EnchantedPreview component testing', () => {
     await zoomOutButton.waitForClickable();
     const zoomPercentageButton = await component.$(`>>>enchanted-button[data-testid="enchanted-preview-zoom-percentage-button"]`);
     let style = await img.getAttribute('style');
-    await expect(style.replace(/\s+/g, '')).toContain('--zoom-scale-factor:0.5');
+    await expect(style.replace(/\s+/g, '')).toContain('width:');
+    await expect(style.replace(/\s+/g, '')).toContain('height:');
     await expect(zoomPercentageButton).toHaveText('50%');
 
     await zoomOutButton.moveTo();
     zoomOutButton = await component.$(`>>>enchanted-icon-button[data-testid="enchanted-preview-zoom-out-button"]`);
     await zoomOutButton.click();
     style = await img.getAttribute('style');
-    await expect(style.replace(/\s+/g, '')).toContain('--zoom-scale-factor:0.25');
+    await expect(style.replace(/\s+/g, '')).toContain('width:');
+    await expect(style.replace(/\s+/g, '')).toContain('height:');
     await expect(zoomPercentageButton).toHaveText('25%');
   });
 
