@@ -32,7 +32,7 @@ import { initDataGridLocalizedStrings, pressKeyAndWait } from '../../helpers';
 import { ENCHANTED_DATA_GRID_COLUMNS, LONG_PAUSE, SHORT_PAUSE } from '../../constants';
 
 describe('Data Grid Generic testing', () => {
-  const dxLocalization: Map<string, string> = initDataGridLocalizedStrings();
+  const localization: Map<string, string> = initDataGridLocalizedStrings();
 
   const columns: EnchantedDataGridColDef[] = ENCHANTED_DATA_GRID_COLUMNS;
 
@@ -475,7 +475,7 @@ describe('Data Grid Generic testing', () => {
             customTableHeaderPart=${DATA_GRID_PARTS.TABLE_COLUMN_AUTHORING}
             customTableCellPart=${DATA_GRID_PARTS.TABLE_COLUMN_AUTHORING}
             .data=${data}
-            .localization=${dxLocalization}
+            .localization=${localization}
           ></enchanted-data-grid-generic>
         </div>
       `,
@@ -650,7 +650,7 @@ describe('Data Grid Generic testing', () => {
             customTableHeaderPart=${DATA_GRID_PARTS.TABLE_COLUMN_AUTHORING}
             customTableCellPart=${DATA_GRID_PARTS.TABLE_COLUMN_AUTHORING}
             .data=${data}
-            .localization=${dxLocalization}
+            .localization=${localization}
           ></enchanted-data-grid-generic>
         </div>
       `,
@@ -693,7 +693,7 @@ describe('Data Grid Generic testing', () => {
             customTableHeaderPart=${DATA_GRID_PARTS.TABLE_COLUMN_AUTHORING}
             customTableCellPart=${DATA_GRID_PARTS.TABLE_COLUMN_AUTHORING}
             .data=${data}
-            .localization=${dxLocalization}
+            .localization=${localization}
           ></enchanted-data-grid-generic>
         </div>
       `,
@@ -793,7 +793,7 @@ describe('Data Grid Generic testing', () => {
             customTableHeaderPart=${DATA_GRID_PARTS.TABLE_COLUMN_AUTHORING}
             customTableCellPart=${DATA_GRID_PARTS.TABLE_COLUMN_AUTHORING}
             .data=${data}
-            .localization=${dxLocalization}
+            .localization=${localization}
           ></enchanted-data-grid-generic>
         </div>
       `,

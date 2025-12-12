@@ -46,7 +46,7 @@ export class EnchantedPanel extends EnchantedAcBaseElement {
 
   private _handleCloseClick() {
     this.hide();
-    this.dispatchEvent(new CustomEvent('dxPanelClose'));
+    this.dispatchEvent(new CustomEvent('enchantedPanelClose'));
   }
 
   render() {

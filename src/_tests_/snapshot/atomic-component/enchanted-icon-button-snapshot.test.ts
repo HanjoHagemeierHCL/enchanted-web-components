@@ -74,8 +74,8 @@ describe('EnchantedIconButton - Snapshot testing', () => {
     const link = appendEnchantedStylingLink();
 
     render(renderHtml(), document.body);
-    let dxIconButton = await $('>>>div[data-testid="enchanted-icon-button-layout"]');
-    await browser.checkElement(dxIconButton, 'enchanted-icon-button-snapshot-baseline-authoring');
+    let enchantedIconButton = await $('>>>div[data-testid="enchanted-icon-button-layout"]');
+    await browser.checkElement(enchantedIconButton, 'enchanted-icon-button-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });
@@ -84,8 +84,8 @@ describe('EnchantedIconButton - Snapshot testing', () => {
     const link = appendEnchantedStylingLink();
 
     render(renderInverseVariantHtml(), document.body);
-    let dxIconButton = await $('>>>div[data-testid="enchanted-icon-button-layout"]');
-    await browser.checkElement(dxIconButton, 'enchanted-icon-button-inverse-snapshot-baseline-authoring');
+    let enchantedIconButton = await $('>>>div[data-testid="enchanted-icon-button-layout"]');
+    await browser.checkElement(enchantedIconButton, 'enchanted-icon-button-inverse-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

@@ -46,8 +46,8 @@ describe('EnchantedHeaderLayout - Snapshot testing', () => {
 
     render(renderHtml(), document.body);
 
-    let dxHeaderLayout = await $('>>>div[data-testid="enchanted-header-layout"]');
-    await browser.checkElement(dxHeaderLayout, 'enchanted-header-layout-snapshot-baseline-authoring');
+    let enchantedHeaderLayout = await $('>>>div[data-testid="enchanted-header-layout"]');
+    await browser.checkElement(enchantedHeaderLayout, 'enchanted-header-layout-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

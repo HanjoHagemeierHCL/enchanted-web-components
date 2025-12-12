@@ -50,8 +50,8 @@ describe('EnchantedChip - Snapshot testing', () => {
     const link = appendEnchantedStylingLink();
 
     render(renderHtml(), document.body);
-    let dxSwitchLayout = await $('>>>div[data-testid="enchanted-chip-layout"]');
-    await browser.checkElement(dxSwitchLayout, 'enchanted-chip-snapshot-baseline-authoring');
+    let enchantedSwitchLayout = await $('>>>div[data-testid="enchanted-chip-layout"]');
+    await browser.checkElement(enchantedSwitchLayout, 'enchanted-chip-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

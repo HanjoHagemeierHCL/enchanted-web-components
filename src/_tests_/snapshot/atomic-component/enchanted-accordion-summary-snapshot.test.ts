@@ -27,10 +27,10 @@ import {
 } from "../utils";
 import { renderComponent } from "../../utils";
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
+const localization: Map<string, string> = new Map<string, string>();
 
-dxLocalization.set("accordion.summary.label.text", "Summary Label Text");
-dxLocalization.set("accordion.summary.secondary.text", "Summary Secondary Text");
+localization.set("accordion.summary.label.text", "Summary Label Text");
+localization.set("accordion.summary.secondary.text", "Summary Secondary Text");
 
 describe("EnchantedAccordion-Summary - Snapshot testing", () => {
   before(async () => {
@@ -53,7 +53,7 @@ describe("EnchantedAccordion-Summary - Snapshot testing", () => {
           <div style="flex: 1;">
             <label style="margin-bottom: 5px;">label and secondary text</label>
             <enchanted-accordion-summary
-              .localization=${dxLocalization}
+              .localization=${localization}
               label="snapshot label"
               secondaryText="snapshot secondary text"
             ></enchanted-accordion-summary>
@@ -77,7 +77,7 @@ describe("EnchantedAccordion-Summary - Snapshot testing", () => {
           <div style="flex: 1;">
             <label style="margin-bottom: 5px;">label and secondary text</label>
             <enchanted-accordion-summary
-              .localization=${dxLocalization}
+              .localization=${localization}
             ></enchanted-accordion-summary>
           </div>
         </div>

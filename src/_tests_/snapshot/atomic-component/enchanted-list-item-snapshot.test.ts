@@ -59,8 +59,8 @@ describe('EnchantedListItem - Snapshot testing', () => {
     const link = appendEnchantedStylingLink();
 
     render(renderHtml(), document.body);
-    let dxListItemLayout = await $('>>>div[data-testid="enchanted-list-item-layout"]');
-    await browser.checkElement(dxListItemLayout, 'enchanted-list-item-snapshot-baseline-authoring');
+    let enchantedListItemLayout = await $('>>>div[data-testid="enchanted-list-item-layout"]');
+    await browser.checkElement(enchantedListItemLayout, 'enchanted-list-item-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

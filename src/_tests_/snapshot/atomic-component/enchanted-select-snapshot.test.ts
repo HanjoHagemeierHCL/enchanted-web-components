@@ -28,23 +28,23 @@ import { appendEnchantedStylingLink, SNAPSHOT_WINDOW_HEIGHT, SNAPSHOT_WINDOW_WID
 import { EnchantedInputFieldType } from '../../../types/enchanted-select';
 import { initSessionStorage } from '../../utils';
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('input.select.placeholder.select.attribute', 'Select an attribute');
-dxLocalization.set('input.select.placeholder.select.content.source', 'Select a content source');
-dxLocalization.set('output.table.footer.show.rows', 'Show rows:');
-dxLocalization.set('output.table.footer.page', 'Page:');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('input.select.placeholder.select.attribute', 'Select an attribute');
+localization.set('input.select.placeholder.select.content.source', 'Select a content source');
+localization.set('output.table.footer.show.rows', 'Show rows:');
+localization.set('output.table.footer.page', 'Page:');
 
 function renderHtml() {
   return html`
     <div data-testid="enchanted-select-layout" style="padding: 5px;">
       <div style="display: flex; flex-direction: column; gap: 5px;">
         <label>With label</label>
-        <enchanted-select .localization=${dxLocalization} label="Test Label"></enchanted-select>
+        <enchanted-select .localization=${localization} label="Test Label"></enchanted-select>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 5px;">
         <label>With Options and Selected</label>
-        <enchanted-select .localization=${dxLocalization} label="Test Label" .options=${['Option 1', 'Option 2', 'Option 3']} selectedValue="Option 1"></enchanted-select>
+        <enchanted-select .localization=${localization} label="Test Label" .options=${['Option 1', 'Option 2', 'Option 3']} selectedValue="Option 1"></enchanted-select>
       </div>
     </div>
   `;
@@ -72,7 +72,7 @@ describe('EnchantedInputSelect - Snapshot testing', () => {
     render(
       html`
         <div data-testid="enchanted-select-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px; height: 250px;">
-          <enchanted-select .localization=${dxLocalization} field=${EnchantedInputFieldType.DOCUMENT_OBJECT_TYPE} .options=${SEARCH_COMMON_FIELDS} label="Select input">
+          <enchanted-select .localization=${localization} field=${EnchantedInputFieldType.DOCUMENT_OBJECT_TYPE} .options=${SEARCH_COMMON_FIELDS} label="Select input">
           </enchanted-select>
         </div>
       `,
@@ -100,7 +100,7 @@ describe('EnchantedInputSelect - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-select-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px; height: 250px;">
           <enchanted-select
-            .localization=${dxLocalization}
+            .localization=${localization}
             field=${EnchantedInputFieldType.DOCUMENT_OBJECT_TYPE}
             .options=${SEARCH_COMMON_FIELDS}
             label="Select input"

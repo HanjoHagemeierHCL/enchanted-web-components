@@ -25,18 +25,18 @@ import { OptionData } from '../../../types/enchanted-select';
 import '../../../components/atomic-component/enchanted-preview';
 import { KeyboardInputKeys } from '../../../utils/keyboardEventKeys';
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('preview.item.unsupported.title', 'Unable to preview');
-dxLocalization.set('preview.rendition.label', 'Rendition:');
-dxLocalization.set('preview.item.unsupported.description', 'Preview of collection item type is not currently supported.');
-dxLocalization.set('preview.rendition.metadata.unknown', 'unknown');
-dxLocalization.set('select', 'Select');
-dxLocalization.set('preview.tooltip.back.button', 'Go back to previous page');
-dxLocalization.set('preview.tooltip.download.button', 'Download asset');
-dxLocalization.set('preview.tooltip.previous.asset.button', 'Previous asset');
-dxLocalization.set('preview.tooltip.next.asset.button', 'Next asset');
-dxLocalization.set('preview.tooltip.zoom.out.button', 'Zoom out');
-dxLocalization.set('preview.tooltip.zoom.in.button', 'Zoom in');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('preview.item.unsupported.title', 'Unable to preview');
+localization.set('preview.rendition.label', 'Rendition:');
+localization.set('preview.item.unsupported.description', 'Preview of collection item type is not currently supported.');
+localization.set('preview.rendition.metadata.unknown', 'unknown');
+localization.set('select', 'Select');
+localization.set('preview.tooltip.back.button', 'Go back to previous page');
+localization.set('preview.tooltip.download.button', 'Download asset');
+localization.set('preview.tooltip.previous.asset.button', 'Previous asset');
+localization.set('preview.tooltip.next.asset.button', 'Next asset');
+localization.set('preview.tooltip.zoom.out.button', 'Zoom out');
+localization.set('preview.tooltip.zoom.in.button', 'Zoom in');
 
 // mock image for a 50% zoom to fit value (so we have a defined value)
 const base64PngCalibratedFor50Percent = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAABNJREFUaEPMZgAEMAABA+D/n05lAQCz8QGjLz3YGAAAAABJRU5ErkJggg==';
@@ -188,7 +188,7 @@ describe('EnchantedPreview component testing', () => {
   it('EnchantedPreview - should render unsupported message for other item types', async () => {
     render(
       html`
-        <enchanted-preview open .items=${[mockUnsupportedItem]} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${[mockUnsupportedItem]} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -202,10 +202,10 @@ describe('EnchantedPreview component testing', () => {
     await expect(avatar).toHaveAttribute('itemtype', mockUnsupportedItem.type);
 
     const title = await component.$(`>>>[part=${PREVIEW_PARTS.PREVIEW_ITEM_UNSUPPORTED_MESSAGE_TITLE}]`).getElement();
-    await expect(title).toHaveText(dxLocalization.get('preview.item.unsupported.title'));
+    await expect(title).toHaveText(localization.get('preview.item.unsupported.title'));
 
     const description = await component.$(`>>>[part=${PREVIEW_PARTS.PREVIEW_ITEM_UNSUPPORTED_MESSAGE_DESCRIPTION}]`).getElement();
-    const expectedDesc = dxLocalization.get('preview.item.unsupported.description');
+    const expectedDesc = localization.get('preview.item.unsupported.description');
     await expect(description).toHaveText(expectedDesc);
   });
 
@@ -323,7 +323,7 @@ describe('EnchantedPreview component testing', () => {
     const customSelectButtonTitle = 'Custom Select';
     render(
       html`
-        <enchanted-preview open .items=${[mockImageItem]} .localization=${dxLocalization} selectButtonTitle=${customSelectButtonTitle}></enchanted-preview>
+        <enchanted-preview open .items=${[mockImageItem]} .localization=${localization} selectButtonTitle=${customSelectButtonTitle}></enchanted-preview>
       `,
       document.body
     );
@@ -448,7 +448,7 @@ describe('EnchantedPreview component testing', () => {
   it('EnchantedPreview - should display rendition selector for image item with renditions', async  () => {
     render(
       html`
-        <enchanted-preview open .items=${[mockImageItem]} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${[mockImageItem]} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -459,7 +459,7 @@ describe('EnchantedPreview component testing', () => {
     await expect(renditionSelect).toBeDisplayed();
 
     const renditionLabel = await component.$(`>>>span[part=${PREVIEW_PARTS.PREVIEW_HEADER_RENDITION_LABEL}]`).getElement();
-    await expect(renditionLabel).toHaveText(dxLocalization.get('preview.rendition.label'));
+    await expect(renditionLabel).toHaveText(localization.get('preview.rendition.label'));
 
     const options = await renditionSelect.getProperty('options');
     const retrievedOptions = options as unknown as OptionData[];
@@ -723,7 +723,7 @@ describe('EnchantedPreview component testing', () => {
     fetchMock.mock(source, { status: 404 });
     render(
       html`
-        <enchanted-preview open .items=${[mockBrokenImageItem]} @preview-error=${previewError} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${[mockBrokenImageItem]} @preview-error=${previewError} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -741,7 +741,7 @@ describe('EnchantedPreview component testing', () => {
     fetchMock.mock(source, { status: 500 });
     render(
       html`
-        <enchanted-preview open .items=${[mockBrokenImageItem]} @preview-error=${previewError} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${[mockBrokenImageItem]} @preview-error=${previewError} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -759,7 +759,7 @@ describe('EnchantedPreview component testing', () => {
     fetchMock.mock(source, { headers: { 'Content-Type': ItemTypes.DAM_JPEG } });
     render(
       html`
-        <enchanted-preview open .items=${[mockBrokenImageItem]} @preview-error=${previewError} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${[mockBrokenImageItem]} @preview-error=${previewError} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -777,7 +777,7 @@ describe('EnchantedPreview component testing', () => {
     fetchMock.mock(source, { status: 404 });
     render(
       html`
-        <enchanted-preview open .items=${[mockBrokenVideoItem]} @preview-error=${previewError} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${[mockBrokenVideoItem]} @preview-error=${previewError} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -851,7 +851,7 @@ describe('EnchantedPreview component testing', () => {
     const mockItemNoDimension: PreviewItem = { ...mockImageItem, renditions: mockRenditionNoDimension };
     render(
       html`
-        <enchanted-preview open .items=${[mockItemNoDimension]} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${[mockItemNoDimension]} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -874,7 +874,7 @@ describe('EnchantedPreview component testing', () => {
 
     render(
       html`
-        <enchanted-preview open .items=${[mockImageItemEmptyRenditionType]} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${[mockImageItemEmptyRenditionType]} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -890,7 +890,7 @@ describe('EnchantedPreview component testing', () => {
   it('EnchantedPreview - should display tooltips when hover', async () => {
     render(
       html`
-        <enchanted-preview open .items=${[mockImageItem]} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${[mockImageItem]} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -901,37 +901,37 @@ describe('EnchantedPreview component testing', () => {
     await backButton.moveTo();
     const backTooltip = await component.$(`>>>enchanted-tooltip:has([data-testid="enchanted-preview-back-button"])`);
     await expect(backTooltip).toBeDisplayed();
-    await expect(await backTooltip.getAttribute('tooltiptext')).toEqual(dxLocalization.get('preview.tooltip.back.button'));
+    await expect(await backTooltip.getAttribute('tooltiptext')).toEqual(localization.get('preview.tooltip.back.button'));
 
     const downloadButton = await component.$(`>>>[data-testid="enchanted-preview-download-button"]`);
     await downloadButton.moveTo();
     const downloadTooltip = await component.$(`>>>enchanted-tooltip:has([data-testid="enchanted-preview-download-button"])`);
     await expect(downloadTooltip).toBeDisplayed();
-    await expect(await downloadTooltip.getAttribute('tooltiptext')).toEqual(dxLocalization.get('preview.tooltip.download.button'));
+    await expect(await downloadTooltip.getAttribute('tooltiptext')).toEqual(localization.get('preview.tooltip.download.button'));
 
     const previousButton = await component.$(`>>>[data-testid="enchanted-preview-previous-button"]`);
     await previousButton.moveTo();
     const previousTooltip = await component.$(`>>>enchanted-tooltip:has([data-testid="enchanted-preview-previous-button"])`);
     await expect(previousTooltip).toBeDisplayed();
-    await expect(await previousTooltip.getAttribute('tooltiptext')).toEqual(dxLocalization.get('preview.tooltip.previous.asset.button'));
+    await expect(await previousTooltip.getAttribute('tooltiptext')).toEqual(localization.get('preview.tooltip.previous.asset.button'));
 
     const nextButton = await component.$(`>>>[data-testid="enchanted-preview-next-button"]`);
     await nextButton.moveTo();
     const nextTooltip = await component.$(`>>>enchanted-tooltip:has([data-testid="enchanted-preview-next-button"])`);
     await expect(nextTooltip).toBeDisplayed();
-    await expect(await nextTooltip.getAttribute('tooltiptext')).toEqual(dxLocalization.get('preview.tooltip.next.asset.button'));
+    await expect(await nextTooltip.getAttribute('tooltiptext')).toEqual(localization.get('preview.tooltip.next.asset.button'));
 
     const zoomOutButton = await component.$(`>>>[data-testid="enchanted-preview-zoom-out-button"]`);
     await zoomOutButton.moveTo();
     const zoomOutTooltip = await component.$(`>>>enchanted-tooltip:has([data-testid="enchanted-preview-zoom-out-button"])`);
     await expect(zoomOutTooltip).toBeDisplayed();
-    await expect(await zoomOutTooltip.getAttribute('tooltiptext')).toEqual(dxLocalization.get('preview.tooltip.zoom.out.button'));
+    await expect(await zoomOutTooltip.getAttribute('tooltiptext')).toEqual(localization.get('preview.tooltip.zoom.out.button'));
 
     const zoomInButton = await component.$(`>>>[data-testid="enchanted-preview-zoom-in-button"]`);
     await zoomInButton.moveTo();
     const zoomInTooltip = await component.$(`>>>enchanted-tooltip:has([data-testid="enchanted-preview-zoom-in-button"])`);
     await expect(zoomInTooltip).toBeDisplayed();
-    await expect(await zoomInTooltip.getAttribute('tooltiptext')).toEqual(dxLocalization.get('preview.tooltip.zoom.in.button'));
+    await expect(await zoomInTooltip.getAttribute('tooltiptext')).toEqual(localization.get('preview.tooltip.zoom.in.button'));
   });
 
   it('EnchantedPreview - should bypass validation and render initially when skipSourceValidation is true', async () => {
@@ -1032,7 +1032,7 @@ describe('EnchantedPreview component testing', () => {
     const customTitle = 'Custom Preview Title';
     render(
       html`
-        <enchanted-preview open .items=${[mockImageItem]} customHeaderTitle=${customTitle} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${[mockImageItem]} customHeaderTitle=${customTitle} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -1052,16 +1052,16 @@ describe('EnchantedPreview component testing', () => {
     
     // Verify all buttons have aria-labels
     const backButton = await component.$('>>>[data-testid="enchanted-preview-back-button"]').getElement();
-    await expect(backButton).toHaveAttribute('ariaLabel', dxLocalization.get('preview.tooltip.back.button'));
+    await expect(backButton).toHaveAttribute('ariaLabel', localization.get('preview.tooltip.back.button'));
     
     const downloadButton = await component.$('>>>[data-testid="enchanted-preview-download-button"]').getElement();
-    await expect(downloadButton).toHaveAttribute('ariaLabel', dxLocalization.get('preview.tooltip.download.button'));
+    await expect(downloadButton).toHaveAttribute('ariaLabel', localization.get('preview.tooltip.download.button'));
     
     const zoomOutButton = await component.$('>>>[data-testid="enchanted-preview-zoom-out-button"]').getElement();
-    await expect(zoomOutButton).toHaveAttribute('ariaLabel', dxLocalization.get('preview.tooltip.zoom.out.button'));
+    await expect(zoomOutButton).toHaveAttribute('ariaLabel', localization.get('preview.tooltip.zoom.out.button'));
     
     const zoomInButton = await component.$('>>>[data-testid="enchanted-preview-zoom-in-button"]').getElement();
-    await expect(zoomInButton).toHaveAttribute('ariaLabel', dxLocalization.get('preview.tooltip.zoom.in.button'));
+    await expect(zoomInButton).toHaveAttribute('ariaLabel', localization.get('preview.tooltip.zoom.in.button'));
     
     // Verify image has alt text
     const img = await component.$(`>>>[part=${PREVIEW_PARTS.PREVIEW_ITEM_IMAGE}]`).getElement();
@@ -1078,24 +1078,24 @@ describe('EnchantedPreview component testing', () => {
   it('EnchantedPreview - navigation buttons should have proper aria-labels with multiple items', async () => {
     render(
       html`
-        <enchanted-preview open .items=${mockItems} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${mockItems} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
     const component = await $('enchanted-preview').getElement();
     
     const previousButton = await component.$('>>>[data-testid="enchanted-preview-previous-button"]').getElement();
-    await expect(previousButton).toHaveAttribute('ariaLabel', dxLocalization.get('preview.tooltip.previous.asset.button'));
+    await expect(previousButton).toHaveAttribute('ariaLabel', localization.get('preview.tooltip.previous.asset.button'));
     
     const nextButton = await component.$('>>>[data-testid="enchanted-preview-next-button"]').getElement();
     const ariaLabel = await nextButton.getAttribute('ariaLabel');
-    await expect(ariaLabel).toBe(dxLocalization.get('preview.tooltip.next.asset.button'));
+    await expect(ariaLabel).toBe(localization.get('preview.tooltip.next.asset.button'));
   });
 
   it('EnchantedPreview - all interactive buttons should be keyboard accessible with tabindex', async () => {
     render(
       html`
-        <enchanted-preview open .items=${mockItems} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${mockItems} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -1111,7 +1111,7 @@ describe('EnchantedPreview component testing', () => {
   it('EnchantedPreview - should have aria-hidden on visual elements to prevent duplicate announcements', async () => {
     render(
       html`
-        <enchanted-preview open .items=${[mockImageItem]} .localization=${dxLocalization}></enchanted-preview>
+        <enchanted-preview open .items=${[mockImageItem]} .localization=${localization}></enchanted-preview>
       `,
       document.body
     );
@@ -1145,13 +1145,13 @@ describe('EnchantedPreview component testing', () => {
       document.body
     );
 
-    const dxPreview = document.querySelector('enchanted-preview') as EnchantedPreview;
-    if (!dxPreview) {
+    const enchantedPreview = document.querySelector('enchanted-preview') as EnchantedPreview;
+    if (!enchantedPreview) {
       throw new Error('EnchantedPreview component not found');
     }
     
     // Wait for the component to be fully rendered
-    await dxPreview.updateComplete;
+    await enchantedPreview.updateComplete;
     
     // Wait a bit for the image to load and zoom controls to appear
     await browser.pause(500);

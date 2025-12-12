@@ -70,8 +70,8 @@ describe('EnchantedMenu - Snapshot testing', () => {
 
     render(renderHtml(), document.body);
 
-    let dxMenuLayout = await $('>>>div[data-testid="enchanted-menu-layout"]');
-    await browser.checkElement(dxMenuLayout, 'enchanted-menu-snapshot-baseline-authoring');
+    let enchantedMenuLayout = await $('>>>div[data-testid="enchanted-menu-layout"]');
+    await browser.checkElement(enchantedMenuLayout, 'enchanted-menu-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

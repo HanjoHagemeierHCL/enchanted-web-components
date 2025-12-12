@@ -229,9 +229,9 @@ describe('EnchantedAvatar - Snapshot testing', () => {
     const link = appendEnchantedStylingLink();
 
     render(renderAvatarVariant(), document.body);
-    let dxAvatar = await $('>>>div[data-testid="enchanted-avatar-layout"]');
+    let enchantedAvatar = await $('>>>div[data-testid="enchanted-avatar-layout"]');
 
-    await browser.checkElement(dxAvatar, 'enchanted-avatar-snapshot-baseline-authoring');
+    await browser.checkElement(enchantedAvatar, 'enchanted-avatar-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });
@@ -240,9 +240,9 @@ describe('EnchantedAvatar - Snapshot testing', () => {
     const link = appendEnchantedStylingLink();
 
     render(renderAvatarColor(), document.body);
-    let dxAvatar = await $('>>>div[data-testid="enchanted-avatar-layout"]');
+    let enchantedAvatar = await $('>>>div[data-testid="enchanted-avatar-layout"]');
 
-    await browser.checkElement(dxAvatar, 'enchanted-avatar-color-snapshot-baseline-authoring');
+    await browser.checkElement(enchantedAvatar, 'enchanted-avatar-color-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

@@ -42,8 +42,8 @@ describe('EnchantedAnchor - Snapshot testing', () => {
     const link = appendEnchantedStylingLink();
 
     render(renderHtml(), document.body);
-    let dxAnchor = await $('>>>div[data-testid="enchanted-link-layout"]');
-    await browser.checkElement(dxAnchor, 'enchanted-link-snapshot-baseline-authoring');
+    let enchantedAnchor = await $('>>>div[data-testid="enchanted-link-layout"]');
+    await browser.checkElement(enchantedAnchor, 'enchanted-link-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

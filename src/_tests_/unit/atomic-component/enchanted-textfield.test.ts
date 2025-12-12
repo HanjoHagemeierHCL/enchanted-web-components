@@ -27,8 +27,8 @@ import { EnchantedInputFieldType } from '../../../types/enchanted-select';
 // Icon imports
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/close';
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('input.textfield.placeholder.type.to.search', 'Type to search');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('input.textfield.placeholder.type.to.search', 'Type to search');
 
 describe('EnchantedInputTextfield component testing', () => {
   before(async () => {
@@ -83,7 +83,7 @@ describe('EnchantedInputTextfield component testing', () => {
     render(
       html`
         <enchanted-textfield
-          .localization=${dxLocalization}
+          .localization=${localization}
           field=${EnchantedInputFieldType.QUERY_STRING}
           label="test-label"
           placeholder="test-placeholder"
@@ -120,7 +120,7 @@ describe('EnchantedInputTextfield component testing', () => {
     render(
       html`
         <enchanted-textfield
-          .localization=${dxLocalization}
+          .localization=${localization}
           field=${EnchantedInputFieldType.QUERY_STRING}
           value="test-value"
           .clearIcon=${html`<icon-close size="16" color="currentColor"></icon-close>`}
@@ -146,7 +146,7 @@ describe('EnchantedInputTextfield component testing', () => {
     render(
       html`
         <enchanted-textfield
-          .localization=${dxLocalization}
+          .localization=${localization}
           field=${EnchantedInputFieldType.QUERY_STRING}
           value="test-value"
           .clearIcon=${html`<icon-close size="16" color="currentColor"></icon-close>`}

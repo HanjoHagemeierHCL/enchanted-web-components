@@ -73,10 +73,10 @@ describe('EnchantedBreadcrumbs component testing', () => {
     );
     let component = await $('enchanted-breadcrumbs').getElement();
     await expect(component).toBeDisplayed();
-    let dxBreadcrumbsIcon = await component.$('>>>enchanted-svg-icon[data-testid="breadcrumbs-item-icon"]').getElement();
-    await expect(dxBreadcrumbsIcon).toBeExisting();
-    let dxBreadcrumbsTitle = await component.$('>>>span[data-testid="breadcrumbs-title"]').getElement();
-    await expect(dxBreadcrumbsTitle).toBeExisting();
+    let enchantedBreadcrumbsIcon = await component.$('>>>enchanted-svg-icon[data-testid="breadcrumbs-item-icon"]').getElement();
+    await expect(enchantedBreadcrumbsIcon).toBeExisting();
+    let enchantedBreadcrumbsTitle = await component.$('>>>span[data-testid="breadcrumbs-title"]').getElement();
+    await expect(enchantedBreadcrumbsTitle).toBeExisting();
   });
 
   it('EnchantedBreadcrumbs - should trigger handleBreadcrumbClick when clicked', async () => {

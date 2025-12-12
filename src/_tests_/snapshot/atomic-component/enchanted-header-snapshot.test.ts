@@ -24,11 +24,11 @@ import '../../../components/atomic-component/enchanted-button';
 // Helper imports
 import { appendEnchantedStylingLink, SNAPSHOT_WINDOW_HEIGHT, SNAPSHOT_WINDOW_WIDTH } from '../utils';
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('header.authoring.search', 'Authoring search');
-dxLocalization.set('header.enduser.search.center.title', 'Search Center');
-dxLocalization.set('header.enduser.search.placeholder', 'Enter keyword...');
-dxLocalization.set('header.enduser.search', 'Search');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('header.authoring.search', 'Authoring search');
+localization.set('header.enduser.search.center.title', 'Search Center');
+localization.set('header.enduser.search.placeholder', 'Enter keyword...');
+localization.set('header.enduser.search', 'Search');
 
 describe('EnchantedHeader - Snapshot testing', () => {
   before(async () => {
@@ -44,49 +44,49 @@ describe('EnchantedHeader - Snapshot testing', () => {
           <div style="display: flex; flex-direction: column; gap: 5px;">
             <label>Default without attributes</label>
             <div slot="enchanted-header">
-              <enchanted-header .localization=${dxLocalization} />
+              <enchanted-header .localization=${localization} />
             </div>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 5px;">
             <label>with Title</label>
             <div slot="enchanted-header">
-              <enchanted-header .localization=${dxLocalization} title="Enchanted Header" />
+              <enchanted-header .localization=${localization} title="Enchanted Header" />
             </div>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 5px;">
             <label>with Title and isSideNavOpen</label>
             <div slot="enchanted-header">
-              <enchanted-header .localization=${dxLocalization} title="Enchanted Header" isSideNavOpen="true" />
+              <enchanted-header .localization=${localization} title="Enchanted Header" isSideNavOpen="true" />
             </div>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 5px;">
             <label>with variant header-authoring</label>
             <div slot="enchanted-header">
-              <enchanted-header .localization=${dxLocalization} variant="header-authoring" />
+              <enchanted-header .localization=${localization} variant="header-authoring" />
             </div>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 5px;">
             <label>with variant header-authoring and isSideNavOpen</label>
             <div slot="enchanted-header">
-              <enchanted-header .localization=${dxLocalization} variant="header-authoring" isSideNavOpen="true" />
+              <enchanted-header .localization=${localization} variant="header-authoring" isSideNavOpen="true" />
             </div>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 5px;">
             <label>with variant header-authoring, isSideNavOpen and showBackIcon</label>
             <div slot="enchanted-header">
-              <enchanted-header .localization=${dxLocalization} variant="header-authoring" isSideNavOpen="true" showBackIcon="true" />
+              <enchanted-header .localization=${localization} variant="header-authoring" isSideNavOpen="true" showBackIcon="true" />
             </div>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 5px;">
             <label>with variant header-authoring, isSideNavOpen, showBackIcon and disabled</label>
             <div slot="enchanted-header">
-              <enchanted-header .localization=${dxLocalization} disabled variant="header-authoring" isSideNavOpen="true" showBackIcon="true" />
+              <enchanted-header .localization=${localization} disabled variant="header-authoring" isSideNavOpen="true" showBackIcon="true" />
             </div>
           </div>
         </div>
@@ -94,9 +94,9 @@ describe('EnchantedHeader - Snapshot testing', () => {
       document.body,
     );
 
-    let dxHeaderLayout = await $('>>>div[data-testid="enchanted-header-layout"]');
+    let enchantedHeaderLayout = await $('>>>div[data-testid="enchanted-header-layout"]');
 
-    await browser.checkElement(dxHeaderLayout, 'enchanted-header-snapshot-baseline-authoring');
+    await browser.checkElement(enchantedHeaderLayout, 'enchanted-header-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

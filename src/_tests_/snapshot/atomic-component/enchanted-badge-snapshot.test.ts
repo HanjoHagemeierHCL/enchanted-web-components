@@ -49,11 +49,11 @@ describe('EnchantedBadge - Snapshot testing', () => {
     const link = appendEnchantedStylingLink();
 
     render(renderHtml(), document.body);
-    let dxBadge = await $('>>>div[data-testid="enchanted-badge-layout"]');
+    let enchantedBadge = await $('>>>div[data-testid="enchanted-badge-layout"]');
     document.getElementsByTagName('enchanted-badge')[0].setAttribute('style', 'position: relative; left: 20px;');
     document.getElementsByTagName('enchanted-badge')[1].setAttribute('style', 'position: relative; left: 20px;');
 
-    await browser.checkElement(dxBadge, 'enchanted-badge-snapshot-baseline-authoring');
+    await browser.checkElement(enchantedBadge, 'enchanted-badge-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

@@ -162,10 +162,10 @@ describe('EnchantedToggleButton component testing', () => {
     );
     let component = await $('enchanted-toggle-button').getElement();
     await expect(component).toBeDisplayed();
-    let dxButtonElement = await component.$$('>>>enchanted-icon-button[data-testid="enchanted-toggle-single-button"]').getElements();
-    await expect(dxButtonElement.length).toBe(1);
+    let enchantedButtonElement = await component.$$('>>>enchanted-icon-button[data-testid="enchanted-toggle-single-button"]').getElements();
+    await expect(enchantedButtonElement.length).toBe(1);
     
-    const attributes = await dxButtonElement[0].getAttribute('part');
+    const attributes = await enchantedButtonElement[0].getAttribute('part');
     await expect(attributes).toContain(`${TOGGLE_BUTTON_PARTS.TOGGLE_OFF_SINGLE_BUTTON}`);
   });
 
@@ -183,10 +183,10 @@ describe('EnchantedToggleButton component testing', () => {
     );
     let component = await $('enchanted-toggle-button').getElement();
     await expect(component).toBeDisplayed();
-    let dxButtonElement = component.$('>>>enchanted-icon-button[data-testid="enchanted-toggle-single-button"]');
-    await expect(dxButtonElement).toBeDisplayed();
+    let enchantedButtonElement = component.$('>>>enchanted-icon-button[data-testid="enchanted-toggle-single-button"]');
+    await expect(enchantedButtonElement).toBeDisplayed();
 
-    const attributes = await dxButtonElement.getAttribute('part');
+    const attributes = await enchantedButtonElement.getAttribute('part');
     await expect(attributes).toContain(`${TOGGLE_BUTTON_PARTS.TOGGLE_ON_SINGLE_BUTTON}`);
   });
 
@@ -205,7 +205,7 @@ describe('EnchantedToggleButton component testing', () => {
     );
     let component = await $('enchanted-toggle-button').getElement();
     await expect(component).toBeDisplayed();
-    let dxBadgeElement = await component.$('>>>enchanted-badge[data-testid="enchanted-badge"]').getElement();
-    await expect(await dxBadgeElement.getHTML()).toContain('enchanted-badge');
+    let enchantedBadgeElement = await component.$('>>>enchanted-badge[data-testid="enchanted-badge"]').getElement();
+    await expect(await enchantedBadgeElement.getHTML()).toContain('enchanted-badge');
   });
 });

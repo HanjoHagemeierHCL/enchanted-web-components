@@ -22,8 +22,8 @@ import '../../../components/atomic-component/enchanted-dialog';
 // Helper imports
 import { appendEnchantedStylingLink, SNAPSHOT_WINDOW_HEIGHT, SNAPSHOT_WINDOW_WIDTH } from '../utils';
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('generic.label', 'Label');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('generic.label', 'Label');
 
 describe('EnchantedDialog - Snapshot testing', () => {
   before(async () => {
@@ -45,7 +45,7 @@ describe('EnchantedDialog - Snapshot testing', () => {
     render(
       html`
         <div>
-          <enchanted-dialog open .localization=${dxLocalization}></enchanted-dialog>
+          <enchanted-dialog open .localization=${localization}></enchanted-dialog>
         </div>
       `,
       document.body,
@@ -64,7 +64,7 @@ describe('EnchantedDialog - Snapshot testing', () => {
     render(
       html`
         <div>
-          <enchanted-dialog title="Test title" open .localization=${dxLocalization}></enchanted-dialog>
+          <enchanted-dialog title="Test title" open .localization=${localization}></enchanted-dialog>
         </div>
       `,
       document.body,
@@ -83,7 +83,7 @@ describe('EnchantedDialog - Snapshot testing', () => {
     render(
       html`
         <div>
-          <enchanted-dialog title="Test title" open .localization=${dxLocalization}>
+          <enchanted-dialog title="Test title" open .localization=${localization}>
             <div slot="content">
               <label>Dialog Content</label>
             </div>
@@ -106,7 +106,7 @@ describe('EnchantedDialog - Snapshot testing', () => {
     render(
       html`
         <div>
-          <enchanted-dialog open overrideTitle .localization=${dxLocalization}>
+          <enchanted-dialog open overrideTitle .localization=${localization}>
             <div slot="title">
               <label style="color: #0066B0; margin: 5px;">Override Title</label>
             </div>
@@ -129,7 +129,7 @@ describe('EnchantedDialog - Snapshot testing', () => {
     render(
       html`
         <div>
-          <enchanted-dialog open .localization=${dxLocalization}>
+          <enchanted-dialog open .localization=${localization}>
             <div slot="footer">
               <enchanted-authoring-dialog-footer />
             </div>
@@ -152,7 +152,7 @@ describe('EnchantedDialog - Snapshot testing', () => {
     render(
       html`
         <div>
-          <enchanted-dialog open size="md" .localization=${dxLocalization}></enchanted-dialog>
+          <enchanted-dialog open size="md" .localization=${localization}></enchanted-dialog>
         </div>
       `,
       document.body,
@@ -171,7 +171,7 @@ describe('EnchantedDialog - Snapshot testing', () => {
     render(
       html`
         <div>
-          <enchanted-dialog open size="lg" .localization=${dxLocalization}></enchanted-dialog>
+          <enchanted-dialog open size="lg" .localization=${localization}></enchanted-dialog>
         </div>
       `,
       document.body,
@@ -190,7 +190,7 @@ describe('EnchantedDialog - Snapshot testing', () => {
     render(
       html`
         <div>
-          <enchanted-dialog open size="sm" .localization=${dxLocalization}></enchanted-dialog>
+          <enchanted-dialog open size="sm" .localization=${localization}></enchanted-dialog>
         </div>
       `,
       document.body,

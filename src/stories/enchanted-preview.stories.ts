@@ -162,7 +162,7 @@ export default meta;
 
 type Story = StoryObj<EnchantedPreviewProps>;
 
-export const DxPreviewStory: Story = {
+export const EnchantedPreviewStory: Story = {
   name: 'Default',
   render: (args) => {
     return html`

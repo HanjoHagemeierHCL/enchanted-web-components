@@ -22,11 +22,11 @@ import '../../../components/atomic-component/enchanted-header';
 // Helper imports
 import { initSessionStorage } from '../../utils';
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('header.authoring.search', 'Authoring search');
-dxLocalization.set('header.enduser.search.center.title', 'Search Center');
-dxLocalization.set('header.enduser.search.placeholder', 'Enter keyword...');
-dxLocalization.set('header.enduser.search', 'Search');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('header.authoring.search', 'Authoring search');
+localization.set('header.enduser.search.center.title', 'Search Center');
+localization.set('header.enduser.search.placeholder', 'Enter keyword...');
+localization.set('header.enduser.search', 'Search');
 
 describe('EnchantedHeader component testing', () => {
   before(async () => {
@@ -61,7 +61,7 @@ describe('EnchantedHeader component testing', () => {
   it('EnchantedHeader - should render component and validate attribute back button', async () => {
     render(
       html`
-        <enchanted-header .localization=${dxLocalization} variant="header-authoring" showBackIcon=true />
+        <enchanted-header .localization=${localization} variant="header-authoring" showBackIcon=true />
       `,
       document.body
     );
@@ -74,7 +74,7 @@ describe('EnchantedHeader component testing', () => {
   it('EnchantedHeader - should render component and validate attribute filter button', async () => {
     render(
       html`
-        <enchanted-header .localization=${dxLocalization} variant="header-authoring-modal" showBackIcon=true />
+        <enchanted-header .localization=${localization} variant="header-authoring-modal" showBackIcon=true />
       `,
       document.body
     );
@@ -87,7 +87,7 @@ describe('EnchantedHeader component testing', () => {
   it('EnchantedHeader - should render component and validate attribute showBackIcon', async () => {
     render(
       html`
-        <enchanted-header .localization=${dxLocalization} variant="header-endUser" ?showBackIcon=${true} />
+        <enchanted-header .localization=${localization} variant="header-endUser" ?showBackIcon=${true} />
       `,
       document.body
     );
@@ -100,7 +100,7 @@ describe('EnchantedHeader component testing', () => {
   it('EnchantedHeader - should render component and validate attributes - authoring', async () => {
     render(
       html`
-        <enchanted-header .localization=${dxLocalization} headerTitle="Search Center" variant="header-authoring" ?showBackIcon=${true} ?isSideNavOpen=${false} ?disabled=${false} />
+        <enchanted-header .localization=${localization} headerTitle="Search Center" variant="header-authoring" ?showBackIcon=${true} ?isSideNavOpen=${false} ?disabled=${false} />
       `,
       document.body
     );
@@ -117,7 +117,7 @@ describe('EnchantedHeader component testing', () => {
   it('EnchantedHeader - should render component and validate attributes - endUser', async () => {
     render(
       html`
-        <enchanted-header .localization=${dxLocalization} headerTitle="Search Center" variant="header-endUser" ?showBackIcon=${true} ?isSideNavOpen=${false} ?disabled=${false} />
+        <enchanted-header .localization=${localization} headerTitle="Search Center" variant="header-endUser" ?showBackIcon=${true} ?isSideNavOpen=${false} ?disabled=${false} />
       `,
       document.body
     );
@@ -134,7 +134,7 @@ describe('EnchantedHeader component testing', () => {
   it('EnchantedHeader - should render component and validate attributes - authoring', async () => {
     render(
       html`
-        <enchanted-header .localization=${dxLocalization} headerTitle="Search Center" variant="header-authoring-modal" ?showBackIcon=${true} ?isSideNavOpen=${false} ?disabled=${false} />
+        <enchanted-header .localization=${localization} headerTitle="Search Center" variant="header-authoring-modal" ?showBackIcon=${true} ?isSideNavOpen=${false} ?disabled=${false} />
       `,
       document.body
     );

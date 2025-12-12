@@ -24,12 +24,12 @@ import '../../../components/atomic-component/enchanted-table-pagination';
 import { initSessionStorage } from '../../utils';
 import { EnchantedInputFieldType } from '../../../types/enchanted-select';
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('input.select.placeholder.select.attribute', 'Select an attribute');
-dxLocalization.set('input.select.placeholder.select.content.source', 'Select a content source');
-dxLocalization.set('output.table.footer.show.rows', 'Show rows:');
-dxLocalization.set('output.table.footer.page', 'Page:');
-dxLocalization.set('output.table.footer.current.pages', '{current_page_start}-{current_page_end} von {total_count}');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('input.select.placeholder.select.attribute', 'Select an attribute');
+localization.set('input.select.placeholder.select.content.source', 'Select a content source');
+localization.set('output.table.footer.show.rows', 'Show rows:');
+localization.set('output.table.footer.page', 'Page:');
+localization.set('output.table.footer.current.pages', '{current_page_start}-{current_page_end} von {total_count}');
 
 describe('EnchantedTablePagination component testing', () => {
   before(async () => {
@@ -71,7 +71,7 @@ describe('EnchantedTablePagination component testing', () => {
     render(
       html`
         <enchanted-table-pagination
-          .localization=${dxLocalization}
+          .localization=${localization}
           ?hasPreviousPage=${false}
           ?hasNextPage=${true}
           ?disabled=${false}
@@ -96,7 +96,7 @@ describe('EnchantedTablePagination component testing', () => {
     render(
       html`
         <enchanted-table-pagination
-          .localization=${dxLocalization}
+          .localization=${localization}
           ?hasPreviousPage=${false}
           ?hasNextPage=${true}
           ?disabled=${false}
@@ -114,7 +114,7 @@ describe('EnchantedTablePagination component testing', () => {
       expect(await inputElement.getAttribute('label')).toEqual(null);
 
       const labelElement = await inputElement.shadow$('label[data-testid="enchanted-select-label"]').getElement();
-      expect(await labelElement.getText()).toEqual(dxLocalization.get('output.table.footer.show.rows'));
+      expect(await labelElement.getText()).toEqual(localization.get('output.table.footer.show.rows'));
 
       const buttonElement = await inputElement.$('>>>enchanted-button[data-testid="enchanted-select-button"]').getElement();
       expect(await buttonElement.getAttribute('buttontext')).toEqual('10');
@@ -143,7 +143,7 @@ describe('EnchantedTablePagination component testing', () => {
     render(
       html`
         <enchanted-table-pagination
-          .localization=${dxLocalization}
+          .localization=${localization}
           ?hasPreviousPage=${false}
           ?hasNextPage=${true}
           ?disabled=${false}
@@ -163,7 +163,7 @@ describe('EnchantedTablePagination component testing', () => {
       expect(await inputElement.getAttribute('label')).toEqual(null);
 
       const labelElement = await inputElement.shadow$('label[data-testid="enchanted-select-label"]').getElement();
-      expect(await labelElement.getText()).toEqual(dxLocalization.get('output.table.footer.page'));
+      expect(await labelElement.getText()).toEqual(localization.get('output.table.footer.page'));
 
       const buttonElement = await inputElement.$('>>>enchanted-button[data-testid="enchanted-select-button"]').getElement();
       expect(await buttonElement.getAttribute('buttontext')).toEqual('1');

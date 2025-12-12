@@ -28,10 +28,10 @@ import {
 } from "../utils";
 import { renderComponent } from "../../utils";
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
+const localization: Map<string, string> = new Map<string, string>();
 
-dxLocalization.set("accordion.header.text", "Accordion Header");
-dxLocalization.set("accordion.secondary.text", "Accordion Secondary Text");
+localization.set("accordion.header.text", "Accordion Header");
+localization.set("accordion.secondary.text", "Accordion Secondary Text");
 
 describe("EnchantedAccordion - Snapshot testing", () => {
   before(async () => {
@@ -54,7 +54,7 @@ describe("EnchantedAccordion - Snapshot testing", () => {
           <div style="flex: 1;">
             <label style="margin-bottom: 5px;">All properties</label>
             <enchanted-accordion
-              .localization=${dxLocalization}
+              .localization=${localization}
               showCheckbox
               showSecondaryText
               type="outlined"
@@ -88,7 +88,7 @@ describe("EnchantedAccordion - Snapshot testing", () => {
           <div style="flex: 1;">
             <label style="margin-bottom: 5px;">Disabled</label>
             <enchanted-accordion
-              .localization=${dxLocalization}
+              .localization=${localization}
               showCheckbox
               showSecondaryText
               type="outlined"
@@ -116,7 +116,7 @@ describe("EnchantedAccordion - Snapshot testing", () => {
           <div style="flex: 1;">
             <label style="margin-bottom: 5px;">No Outline</label>
             <enchanted-accordion
-              .localization=${dxLocalization}
+              .localization=${localization}
               showCheckbox
               showSecondaryText
               type="no-outline"
@@ -143,7 +143,7 @@ describe("EnchantedAccordion - Snapshot testing", () => {
           <div style="flex: 1;">
             <label style="margin-bottom: 5px;">Localization</label>
             <enchanted-accordion
-              .localization=${dxLocalization}
+              .localization=${localization}
               showCheckbox
               showSecondaryText
             ></enchanted-accordion>

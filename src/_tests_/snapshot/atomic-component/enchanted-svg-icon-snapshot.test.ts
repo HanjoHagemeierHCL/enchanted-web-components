@@ -55,8 +55,8 @@ describe('EnchantedSvgIcon - Snapshot testing', () => {
     const link = appendEnchantedStylingLink();
 
     render(renderHtml(), document.body);
-    let dxSvgIcon = await $('>>>div[data-testid="enchanted-svg-icon-layout"]');
-    await browser.checkElement(dxSvgIcon, 'enchanted-svg-icon-snapshot-baseline-authoring');
+    let enchantedSvgIcon = await $('>>>div[data-testid="enchanted-svg-icon-layout"]');
+    await browser.checkElement(enchantedSvgIcon, 'enchanted-svg-icon-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

@@ -69,9 +69,9 @@ describe('EnchantedToggleButton - Snapshot testing', () => {
 
     render(renderHtml(), document.body);
 
-    let dxToggleButton = await $('>>>div[data-testid="enchanted-toggle-button-layout"]');
+    let enchantedToggleButton = await $('>>>div[data-testid="enchanted-toggle-button-layout"]');
 
-    await browser.checkElement(dxToggleButton, 'enchanted-toggle-button-snapshot-baseline-authoring');
+    await browser.checkElement(enchantedToggleButton, 'enchanted-toggle-button-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

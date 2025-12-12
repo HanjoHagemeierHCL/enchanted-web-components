@@ -142,9 +142,9 @@ describe('EnchantedIconButton component testing', () => {
     // Wait for the component to be fully rendered
     await iconButton.updateComplete;
     
-    const dxButton = iconButton.shadowRoot?.querySelector('enchanted-button');
-    if (dxButton) {
-      await (dxButton as unknown as EnchantedIconButton).updateComplete;
+    const enchantedButton = iconButton.shadowRoot?.querySelector('enchanted-button');
+    if (enchantedButton) {
+      await (enchantedButton as unknown as EnchantedIconButton).updateComplete;
     }
     
     // Call _focusButton to set focus
@@ -156,8 +156,8 @@ describe('EnchantedIconButton component testing', () => {
     // Check what element is actually focused - navigate through shadow DOMs
     const focusedElementInfo = await browser.execute(
       `const iconBtn = document.querySelector('enchanted-icon-button');
-       const dxBtn = iconBtn?.shadowRoot?.querySelector('enchanted-button');
-       const activeInEnchantedBtn = dxBtn?.shadowRoot?.activeElement;
+       const enchantedBtn = iconBtn?.shadowRoot?.querySelector('enchanted-button');
+       const activeInEnchantedBtn = enchantedBtn?.shadowRoot?.activeElement;
        return activeInEnchantedBtn?.getAttribute('data-testid');`
     ) as string;
     

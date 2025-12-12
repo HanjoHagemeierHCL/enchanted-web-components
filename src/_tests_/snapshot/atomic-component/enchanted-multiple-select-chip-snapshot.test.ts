@@ -27,22 +27,22 @@ import '../../../components/atomic-component/enchanted-list-item';
 import { appendEnchantedStylingLink, SNAPSHOT_WINDOW_HEIGHT, SNAPSHOT_WINDOW_WIDTH } from '../utils';
 import { initSessionStorage } from '../../utils';
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('multi.select.placeholder', 'Pagination');
-dxLocalization.set('input.select.placeholder.select.attribute', 'Select an attribute');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('multi.select.placeholder', 'Pagination');
+localization.set('input.select.placeholder.select.attribute', 'Select an attribute');
 
 function renderHtml() {
   return html`
     <div data-testid="enchanted-multiple-select-chip-layout" style="padding: 5px;">
       <div style="display: flex; flex-direction: column; gap: 5px;">
         <label>With label</label>
-        <enchanted-multiple-select-chip .localization=${dxLocalization} label="Test Label"></enchanted-multiple-select-chip>
+        <enchanted-multiple-select-chip .localization=${localization} label="Test Label"></enchanted-multiple-select-chip>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 5px;">
         <label>With Options and Selected</label>
         <enchanted-multiple-select-chip
-          .localization=${dxLocalization}
+          .localization=${localization}
           label="Test Label"
           .options=${['Option 1', 'Option 2', 'Option 3']}
           .selectedValues=${['Option 1']}
@@ -81,7 +81,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             emptyOptions
             .selectedValues=${['Custom Value']}
@@ -101,7 +101,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             emptyOptions
             .selectedValues=${['Custom Value']}
@@ -121,7 +121,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             hiddenLabel
@@ -141,7 +141,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             hiddenLabel
@@ -161,7 +161,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             error
@@ -181,7 +181,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             error
@@ -202,7 +202,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             .selectedValues=${['Option 1']}
@@ -223,7 +223,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             .selectedValues=${['Option 1']}
@@ -244,7 +244,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             .selectedValues=${['Option 1']}
@@ -265,7 +265,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             .selectedValues=${['Option 1']}
@@ -286,7 +286,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             .selectedValues=${['Option 1']}
@@ -307,7 +307,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             .selectedValues=${['Option 1']}
@@ -328,7 +328,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             .selectedValues=${['Option 1', 'Option 2']}
@@ -349,7 +349,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             .selectedValues=${['Option 1', 'Option 2']}
@@ -370,7 +370,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${[{ id: '1', name: 'Option One' }, { id: '2', name: 'Option Two' }, { id: '3', name: 'Option Three' }]}
             .selectedValues=${['1']}
@@ -390,7 +390,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${[{ id: '1', name: 'Option One' }, { id: '2', name: 'Option Two' }, { id: '3', name: 'Option Three' }]}
             .selectedValues=${['1']}
@@ -409,7 +409,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             placeholder="Custom Placeholder Text"
@@ -429,7 +429,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             placeholder="Custom Placeholder Text"
@@ -448,7 +448,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             emptyOptions
             .toggleDropDown=${true}
@@ -467,7 +467,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             emptyOptions
             .toggleDropDown=${true}
@@ -486,7 +486,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Apple', 'Banana', 'Orange', 'Pineapple']}
             .selectedValues=${['Apple', 'Banana']}
@@ -508,7 +508,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Apple', 'Banana', 'Orange', 'Pineapple']}
             .selectedValues=${['Apple', 'Banana']}
@@ -529,7 +529,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             .selectedValues=${[]}
@@ -549,7 +549,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3']}
             .selectedValues=${[]}
@@ -568,7 +568,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6', 'Option 7', 'Option 8']}
             .selectedValues=${['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5']}
@@ -588,7 +588,7 @@ describe('EnchantedMultiSelectChip - Snapshot testing', () => {
       html`
         <div data-testid="enchanted-multiple-select-chip-layout" style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
           <enchanted-multiple-select-chip
-            .localization=${dxLocalization}
+            .localization=${localization}
             label="Test Label"
             .options=${['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6', 'Option 7', 'Option 8']}
             .selectedValues=${['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5']}

@@ -64,8 +64,8 @@ describe('EnchantedSwitch - Snapshot testing', () => {
     const link = appendEnchantedStylingLink();
 
     render(renderHtml(), document.body);
-    let dxSwitchLayout = await $('>>>div[data-testid="enchanted-switch-layout"]');
-    await browser.checkElement(dxSwitchLayout, 'enchanted-switch-snapshot-baseline-authoring');
+    let enchantedSwitchLayout = await $('>>>div[data-testid="enchanted-switch-layout"]');
+    await browser.checkElement(enchantedSwitchLayout, 'enchanted-switch-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

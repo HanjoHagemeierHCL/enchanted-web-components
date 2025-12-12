@@ -22,24 +22,24 @@ import '../../../components/atomic-component/enchanted-table-pagination';
 // Helper imports
 import { appendEnchantedStylingLink, SNAPSHOT_WINDOW_HEIGHT, SNAPSHOT_WINDOW_WIDTH } from '../utils';
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('input.select.placeholder.select.attribute', 'Select an attribute');
-dxLocalization.set('input.select.placeholder.select.content.source', 'Select a content source');
-dxLocalization.set('output.table.footer.show.rows', 'Show rows:');
-dxLocalization.set('output.table.footer.page', 'Page:');
-dxLocalization.set('output.table.footer.current.pages', '{current_page_start}-{current_page_end} von {total_count}');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('input.select.placeholder.select.attribute', 'Select an attribute');
+localization.set('input.select.placeholder.select.content.source', 'Select a content source');
+localization.set('output.table.footer.show.rows', 'Show rows:');
+localization.set('output.table.footer.page', 'Page:');
+localization.set('output.table.footer.current.pages', '{current_page_start}-{current_page_end} von {total_count}');
 
 function renderHtml() {
   return html`
     <div data-testid="enchanted-table-pagination-layout" style="margin: 20px; width: 700px;">
       <div style="display: flex; flex-direction: column; gap: 5px;">
         <label>Disabled Previous button</label>
-        <enchanted-table-pagination .localization=${dxLocalization} currentPage=${1} totalCount=${64} rowSize=${10}></enchanted-table-pagination>
+        <enchanted-table-pagination .localization=${localization} currentPage=${1} totalCount=${64} rowSize=${10}></enchanted-table-pagination>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 5px;">
         <label>Disabled next button</label>
-        <enchanted-table-pagination .localization=${dxLocalization} currentPage=${7} totalCount=${64} rowSize=${10}></enchanted-table-pagination>
+        <enchanted-table-pagination .localization=${localization} currentPage=${7} totalCount=${64} rowSize=${10}></enchanted-table-pagination>
       </div>
     </div>
   `;
@@ -65,8 +65,8 @@ describe('EnchantedTablePagination - Snapshot testing', () => {
 
     render(renderHtml(), document.body);
 
-    const dxTablePagination = await $('>>>div[data-testid="enchanted-table-pagination-layout"]');
-    await browser.checkElement(dxTablePagination, 'enchanted-table-pagination-snapshot-baseline-authoring');
+    const enchantedTablePagination = await $('>>>div[data-testid="enchanted-table-pagination-layout"]');
+    await browser.checkElement(enchantedTablePagination, 'enchanted-table-pagination-snapshot-baseline-authoring');
 
     document.head.removeChild(link);
   });

@@ -54,8 +54,8 @@ describe('EnchantedSnackbar snapshot testing', () => {
       document.body,
     );
 
-    const dxSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
-    await browser.checkElement(dxSnackbar, 'enchanted-snackbar-snapshot-success-baseline-with-simple-message-and-icon-authoring');
+    const enchantedSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
+    await browser.checkElement(enchantedSnackbar, 'enchanted-snackbar-snapshot-success-baseline-with-simple-message-and-icon-authoring');
  
     document.head.removeChild(link);
   });
@@ -75,8 +75,8 @@ describe('EnchantedSnackbar snapshot testing', () => {
       document.body,
     );
 
-    const dxSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
-    await browser.checkElement(dxSnackbar, 'enchanted-snackbar-snapshot-info-baseline-with-simple-message-and-icon-authoring');
+    const enchantedSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
+    await browser.checkElement(enchantedSnackbar, 'enchanted-snackbar-snapshot-info-baseline-with-simple-message-and-icon-authoring');
 
     document.head.removeChild(link);
   });
@@ -96,8 +96,8 @@ describe('EnchantedSnackbar snapshot testing', () => {
       document.body,
     );
 
-    const dxSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
-    await browser.checkElement(dxSnackbar, 'enchanted-snackbar-snapshot-warning-baseline-with-simple-message-and-icon-authoring');
+    const enchantedSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
+    await browser.checkElement(enchantedSnackbar, 'enchanted-snackbar-snapshot-warning-baseline-with-simple-message-and-icon-authoring');
 
     document.head.removeChild(link);
   });
@@ -117,8 +117,8 @@ describe('EnchantedSnackbar snapshot testing', () => {
       document.body,
     );
 
-    const dxSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
-    await browser.checkElement(dxSnackbar, 'enchanted-snackbar-snapshot-error-baseline-with-simple-message-and-icon-authoring');
+    const enchantedSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
+    await browser.checkElement(enchantedSnackbar, 'enchanted-snackbar-snapshot-error-baseline-with-simple-message-and-icon-authoring');
 
     document.head.removeChild(link);
   });
@@ -138,8 +138,8 @@ describe('EnchantedSnackbar snapshot testing', () => {
       document.body,
     );
 
-    const dxSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
-    await browser.checkElement(dxSnackbar, 'enchanted-snackbar-snapshot-baseline-with-multiline-message-and-icon-authoring');
+    const enchantedSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
+    await browser.checkElement(enchantedSnackbar, 'enchanted-snackbar-snapshot-baseline-with-multiline-message-and-icon-authoring');
 
     document.head.removeChild(link);
   });
@@ -159,8 +159,8 @@ describe('EnchantedSnackbar snapshot testing', () => {
       document.body,
     );
 
-    const dxSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
-    await browser.checkElement(dxSnackbar, 'enchanted-snackbar-snapshot-baseline-with-html-message-and-icon-authoring');
+    const enchantedSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
+    await browser.checkElement(enchantedSnackbar, 'enchanted-snackbar-snapshot-baseline-with-html-message-and-icon-authoring');
 
     document.head.removeChild(link);
   });
@@ -180,8 +180,8 @@ describe('EnchantedSnackbar snapshot testing', () => {
       document.body,
     );
 
-    const dxSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
-    await browser.checkElement(dxSnackbar, 'enchanted-snackbar-snapshot-baseline-with-special-chars-message-and-icon-authoring');
+    const enchantedSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
+    await browser.checkElement(enchantedSnackbar, 'enchanted-snackbar-snapshot-baseline-with-special-chars-message-and-icon-authoring');
 
     document.head.removeChild(link);
   });
@@ -212,8 +212,8 @@ describe('EnchantedSnackbar snapshot testing', () => {
       document.body,
     );
 
-    const dxSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
-    await browser.checkElement(dxSnackbar, 'enchanted-snackbar-snapshot-baseline-with-button-focused');
+    const enchantedSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
+    await browser.checkElement(enchantedSnackbar, 'enchanted-snackbar-snapshot-baseline-with-button-focused');
 
     document.head.removeChild(link);
   });
@@ -238,10 +238,10 @@ describe('EnchantedSnackbar snapshot testing', () => {
       document.body,
     );
 
-    const dxSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
-    const dxIconButton = await dxSnackbar.$('>>>enchanted-icon-button');
-    await dxIconButton.click();
-    await browser.checkElement(dxSnackbar, 'enchanted-snackbar-snapshot-baseline-with-icon-button-focused');
+    const enchantedSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
+    const enchantedIconButton = await enchantedSnackbar.$('>>>enchanted-icon-button');
+    await enchantedIconButton.click();
+    await browser.checkElement(enchantedSnackbar, 'enchanted-snackbar-snapshot-baseline-with-icon-button-focused');
 
     document.head.removeChild(link);
   });
@@ -271,8 +271,8 @@ describe('EnchantedSnackbar snapshot testing', () => {
       document.body,
     );
 
-    const dxSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
-    await browser.checkElement(dxSnackbar, 'enchanted-snackbar-snapshot-baseline-with-button-and-icon-button-authoring');
+    const enchantedSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
+    await browser.checkElement(enchantedSnackbar, 'enchanted-snackbar-snapshot-baseline-with-button-and-icon-button-authoring');
 
     document.head.removeChild(link);
   });
@@ -292,8 +292,8 @@ describe('EnchantedSnackbar snapshot testing', () => {
       document.body,
     );
 
-    const dxSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
-    await browser.checkElement(dxSnackbar, 'enchanted-snackbar-snapshot-loading-indicator-baseline-authoring');
+    const enchantedSnackbar = await $('>>>div[data-testid="enchanted-snackbar-layout"]');
+    await browser.checkElement(enchantedSnackbar, 'enchanted-snackbar-snapshot-loading-indicator-baseline-authoring');
  
     document.head.removeChild(link);
   });

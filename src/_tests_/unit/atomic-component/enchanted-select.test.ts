@@ -28,11 +28,11 @@ import { DEFAULT_DOCUMENT_OBJECT_TYPE, SEARCH_COMMON_FIELDS } from '../../consta
 import { initSessionStorage } from '../../utils';
 import { EnchantedInputFieldType } from '../../../types/enchanted-select';
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('input.select.placeholder.select.attribute', 'Select an attribute');
-dxLocalization.set('input.select.placeholder.select.content.source', 'Select a content source');
-dxLocalization.set('output.table.footer.show.rows', 'Show rows:');
-dxLocalization.set('output.table.footer.page', 'Page:');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('input.select.placeholder.select.attribute', 'Select an attribute');
+localization.set('input.select.placeholder.select.content.source', 'Select a content source');
+localization.set('output.table.footer.show.rows', 'Show rows:');
+localization.set('output.table.footer.page', 'Page:');
 
 describe('EnchantedInputSelect component testing', () => {
   before(async () => {
@@ -88,7 +88,7 @@ describe('EnchantedInputSelect component testing', () => {
     render(
       html`
         <enchanted-select 
-          .localization=${dxLocalization}
+          .localization=${localization}
           label="Test Label" 
           .options=${['Option 1', 'Option 2', 'Option 3']} 
           selectedValue="Option 1"
@@ -109,7 +109,7 @@ describe('EnchantedInputSelect component testing', () => {
     render(
       html`
         <enchanted-select
-          .localization=${dxLocalization}
+          .localization=${localization}
           field=${EnchantedInputFieldType.DOCUMENT_OBJECT_TYPE}
           .options=${SEARCH_COMMON_FIELDS}
           label="Select input"
@@ -130,7 +130,7 @@ describe('EnchantedInputSelect component testing', () => {
     render(
       html`
         <enchanted-select
-          .localization=${dxLocalization}
+          .localization=${localization}
           field=${EnchantedInputFieldType.DOCUMENT_OBJECT_TYPE}
           .options=${SEARCH_COMMON_FIELDS}
           label="Select input"
@@ -163,7 +163,7 @@ describe('EnchantedInputSelect component testing', () => {
     render(
       html`
         <enchanted-select
-          .localization=${dxLocalization}
+          .localization=${localization}
           field=${EnchantedInputFieldType.DOCUMENT_OBJECT_TYPE}
           .options=${SEARCH_COMMON_FIELDS}
           label="Select input"
@@ -194,7 +194,7 @@ describe('EnchantedInputSelect component testing', () => {
     render(
       html`
         <enchanted-select
-          .localization=${dxLocalization}
+          .localization=${localization}
           field=${EnchantedInputFieldType.DOCUMENT_OBJECT_TYPE}
           .options=${SEARCH_COMMON_FIELDS}
           label="Select input"
@@ -221,7 +221,7 @@ describe('EnchantedInputSelect component testing', () => {
     render(
       html`
         <enchanted-select
-          .localization=${dxLocalization}
+          .localization=${localization}
           field=${EnchantedInputFieldType.DOCUMENT_OBJECT_TYPE}
           selectedvalue=${DEFAULT_DOCUMENT_OBJECT_TYPE}
           .options=${SEARCH_COMMON_FIELDS}

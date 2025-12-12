@@ -28,9 +28,9 @@ import { initSessionStorage } from '../../utils';
 import { EnchantedMultiSelectInputFieldType, MultiSelectChangeDetail } from '../../../types/enchanted-multiple-select-chip';
 
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('multi.select.placeholder', 'Pagination');
-dxLocalization.set('input.select.placeholder.select.attribute', 'Select an attribute');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('multi.select.placeholder', 'Pagination');
+localization.set('input.select.placeholder.select.attribute', 'Select an attribute');
 
 describe('EnchantedMultiSelectChip component testing', () => {
   before(async () => {
@@ -89,7 +89,7 @@ describe('EnchantedMultiSelectChip component testing', () => {
     render(
       html`
         <enchanted-multiple-select-chip
-          .localization=${dxLocalization}
+          .localization=${localization}
           label="Test Label" 
           .options=${[
             { id: '1', name: 'Option 1', value: 'Option 1' },
@@ -114,7 +114,7 @@ describe('EnchantedMultiSelectChip component testing', () => {
     render(
       html`
         <enchanted-multiple-select-chip
-          .localization=${dxLocalization}
+          .localization=${localization}
           field=${EnchantedMultiSelectInputFieldType.DOCUMENT_OBJECT_TYPE}
           .options=${[
             { id: 'title', name: 'Title', value: 'title' },
@@ -139,7 +139,7 @@ describe('EnchantedMultiSelectChip component testing', () => {
     render(
       html`
       <enchanted-multiple-select-chip
-        .localization=${dxLocalization}
+        .localization=${localization}
         label="Test Label"
         .options=${[
           { id: '1', name: 'Option 1', value: 'Option 1' },
@@ -176,7 +176,7 @@ describe('EnchantedMultiSelectChip component testing', () => {
     render(
       html`
       <enchanted-multiple-select-chip
-        .localization=${dxLocalization}
+        .localization=${localization}
         label="Test Label"
         .options=${[
           { id: '1', name: 'Option 1', value: 'Option 1' },
@@ -202,7 +202,7 @@ describe('EnchantedMultiSelectChip component testing', () => {
     render(
       html`
       <enchanted-multiple-select-chip
-        .localization=${dxLocalization}
+        .localization=${localization}
         label="Test Label"
         .options=${[
           { id: '1', name: 'Option 1', value: 'Option 1' },
@@ -230,7 +230,7 @@ describe('EnchantedMultiSelectChip component testing', () => {
     render(
       html`
       <enchanted-multiple-select-chip
-        .localization=${dxLocalization}
+        .localization=${localization}
         label="Test Label"
         .options=${[
           { id: '1', name: 'Option 1', value: 'Option 1' },
@@ -276,7 +276,7 @@ describe('EnchantedMultiSelectChip component testing', () => {
     render(
       html`
       <enchanted-multiple-select-chip
-        .localization=${dxLocalization}
+        .localization=${localization}
         label="Test Label"
         .options=${[
           { id: '1', name: 'Option 1', value: 'Option 1' },
@@ -312,7 +312,7 @@ describe('EnchantedMultiSelectChip component testing', () => {
     render(
       html`
       <enchanted-multiple-select-chip
-        .localization=${dxLocalization}
+        .localization=${localization}
         label="Test Label"
         .options=${options}
         .selectedValues=${[
@@ -351,7 +351,7 @@ describe('EnchantedMultiSelectChip component testing', () => {
     render(
       html`
       <enchanted-multiple-select-chip
-        .localization=${dxLocalization}
+        .localization=${localization}
         label="Test Label"
         .options=${[
           { id: '1', name: 'Option 1', value: 'Option 1' },
@@ -386,7 +386,7 @@ describe('EnchantedMultiSelectChip component testing', () => {
     render(
       html`
       <enchanted-multiple-select-chip
-        .localization=${dxLocalization}
+        .localization=${localization}
         label="Test Label"
         field="test"
         .options=${[

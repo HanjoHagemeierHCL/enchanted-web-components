@@ -54,8 +54,8 @@ describe('EnchantedPanel snapshot testing', () => {
       document.body
     );
 
-    const dxPanelLayout = await $('>>>div[data-testid="enchanted-panel-layout"]');
-    await browser.checkElement(dxPanelLayout, 'enchanted-panel-snapshot-left-baseline-with-title-and-content-authoring');
+    const enchantedPanelLayout = await $('>>>div[data-testid="enchanted-panel-layout"]');
+    await browser.checkElement(enchantedPanelLayout, 'enchanted-panel-snapshot-left-baseline-with-title-and-content-authoring');
 
     document.head.removeChild(link);
   });
@@ -80,8 +80,8 @@ describe('EnchantedPanel snapshot testing', () => {
       document.body
     );
 
-    const dxPanelLayout = await $('>>>div[data-testid="enchanted-panel-layout"]');
-    await browser.checkElement(dxPanelLayout, 'enchanted-panel-snapshot-right-baseline-with-title-and-content-authoring');
+    const enchantedPanelLayout = await $('>>>div[data-testid="enchanted-panel-layout"]');
+    await browser.checkElement(enchantedPanelLayout, 'enchanted-panel-snapshot-right-baseline-with-title-and-content-authoring');
 
     document.head.removeChild(link);
   });
@@ -103,8 +103,8 @@ describe('EnchantedPanel snapshot testing', () => {
       document.body
     );
 
-    const dxPanelLayout = await $('>>>div[data-testid="enchanted-panel-layout"]');
-    await browser.checkElement(dxPanelLayout, 'enchanted-panel-snapshot-left-baseline-with-title-only-authoring');
+    const enchantedPanelLayout = await $('>>>div[data-testid="enchanted-panel-layout"]');
+    await browser.checkElement(enchantedPanelLayout, 'enchanted-panel-snapshot-left-baseline-with-title-only-authoring');
 
     document.head.removeChild(link);
   });
@@ -126,8 +126,8 @@ describe('EnchantedPanel snapshot testing', () => {
       document.body
     );
 
-    const dxPanelLayout = await $('>>>div[data-testid="enchanted-panel-layout"]');
-    await browser.checkElement(dxPanelLayout, 'enchanted-panel-snapshot-right-baseline-with-title-only-authoring');
+    const enchantedPanelLayout = await $('>>>div[data-testid="enchanted-panel-layout"]');
+    await browser.checkElement(enchantedPanelLayout, 'enchanted-panel-snapshot-right-baseline-with-title-only-authoring');
 
     document.head.removeChild(link);
   });

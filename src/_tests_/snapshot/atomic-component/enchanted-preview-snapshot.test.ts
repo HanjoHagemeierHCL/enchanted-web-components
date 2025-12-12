@@ -22,11 +22,11 @@ import { appendEnchantedStylingLink, SNAPSHOT_WINDOW_HEIGHT, SNAPSHOT_WINDOW_WID
 import { ItemTypes } from '../../../types/enchanted-preview';
 import { initSessionStorage } from '../../utils';
 
-const dxLocalization: Map<string, string> = new Map<string, string>();
-dxLocalization.set('preview.item.unsupported.title', 'Unable to preview');
-dxLocalization.set('preview.rendition.label', 'Rendition:');
-dxLocalization.set('preview.item.unsupported.description', 'Preview of {itemType} item type is not currently supported.');
-dxLocalization.set('select', 'Select');
+const localization: Map<string, string> = new Map<string, string>();
+localization.set('preview.item.unsupported.title', 'Unable to preview');
+localization.set('preview.rendition.label', 'Rendition:');
+localization.set('preview.item.unsupported.description', 'Preview of {itemType} item type is not currently supported.');
+localization.set('select', 'Select');
 
 const base64PngCalibratedFor50Percent = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAABNJREFUaEPMZgAEMAABA+D/n05lAQCz8QGjLz3YGAAAAABJRU5ErkJggg==';
 const mockImageRenditions: AssetRendition[] = [
@@ -80,64 +80,64 @@ describe('EnchantedPreview - Snapshot testing', () => {
     render(
       html`
         <div data-testid="enchanted-preview-layout" style=${`width: ${SNAPSHOT_WINDOW_WIDTH}px; height: 1600px;`}>
-          <enchanted-preview open .items=${[mockImageItem]} .localization=${dxLocalization}></enchanted-preview>
+          <enchanted-preview open .items=${[mockImageItem]} .localization=${localization}></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-image-item-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-image-item-authoring-1');
   });
 
   it('EnchantedPreview - should capture with Video item - Authoring', async () => {
     render(
       html`
         <div data-testid="enchanted-preview-layout" style=${`width: ${SNAPSHOT_WINDOW_WIDTH}px; height: 1600px;`}>
-          <enchanted-preview open .items=${[mockVideoItem]} .localization=${dxLocalization}></enchanted-preview>
+          <enchanted-preview open .items=${[mockVideoItem]} .localization=${localization}></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-video-item-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-video-item-authoring-1');
   });
 
   it('EnchantedPreview - should capture with Unsupported item - Authoring', async () => {
     render(
       html`
         <div data-testid="enchanted-preview-layout" style=${`width: ${SNAPSHOT_WINDOW_WIDTH}px; height: 1600px;`}>
-          <enchanted-preview open .items=${[mockUnsupportedItem]} .localization=${dxLocalization}></enchanted-preview>
+          <enchanted-preview open .items=${[mockUnsupportedItem]} .localization=${localization}></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-unsupported-item-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-unsupported-item-authoring-1');
   });
 
   it('EnchantedPreview - should capture with custom component - Authoring', async () => {
     render(
       html`
         <div data-testid="enchanted-preview-layout" style=${`width: ${SNAPSHOT_WINDOW_WIDTH}px; height: 1600px;`}>
-          <enchanted-preview open .component=${mockCustomComponent} .localization=${dxLocalization}></enchanted-preview>
+          <enchanted-preview open .component=${mockCustomComponent} .localization=${localization}></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-custom-component-item-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-custom-component-item-authoring-1');
   });
 
   it('EnchantedPreview - should capture with custom header title - Authoring', async () => {
@@ -147,7 +147,7 @@ describe('EnchantedPreview - Snapshot testing', () => {
           <enchanted-preview 
             open 
             .items=${[mockImageItem]} 
-            .localization=${dxLocalization}
+            .localization=${localization}
             customHeaderTitle="My Custom Title Snapshot"
           ></enchanted-preview>
         </div>
@@ -155,10 +155,10 @@ describe('EnchantedPreview - Snapshot testing', () => {
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-with-custom-header-title-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-with-custom-header-title-authoring-1');
   });
 
   it('EnchantedPreview - should capture empty items - Authoring', async () => {
@@ -168,36 +168,36 @@ describe('EnchantedPreview - Snapshot testing', () => {
           <enchanted-preview 
             open 
             .items=${[]} 
-            .localization=${dxLocalization}
+            .localization=${localization}
           ></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-with-empty-items-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-with-empty-items-authoring-1');
   });
 
   it('EnchantedPreview - should capture Image with multiple renditions (show select dropdown) - Authoring', async () => {
     render(
       html`
         <div data-testid="enchanted-preview-layout" style=${`width: ${SNAPSHOT_WINDOW_WIDTH}px; height: 1600px;`}>
-          <enchanted-preview open .items=${[mockImageItem]} .localization=${dxLocalization}></enchanted-preview>
+          <enchanted-preview open .items=${[mockImageItem]} .localization=${localization}></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
-    const renditionSelect = await dxPreviewLayout.$('>>>enchanted-select[data-testid="enchanted-preview-rendition-select"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const renditionSelect = await enchantedPreviewLayout.$('>>>enchanted-select[data-testid="enchanted-preview-rendition-select"]');
     const renditionSelectButton = await renditionSelect.$('>>>enchanted-button[data-testid="enchanted-select-button"]');
     await renditionSelectButton.click();
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-image-renditions-select-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-image-renditions-select-authoring-1');
   });
 
   it('EnchantedPreview - should capture with custom rendition label - Authoring', async () => {
@@ -207,7 +207,7 @@ describe('EnchantedPreview - Snapshot testing', () => {
           <enchanted-preview 
             open 
             .items=${[mockImageItem]} 
-            .localization=${dxLocalization}
+            .localization=${localization}
             renditionLabel="My Custom Rendition Label"
           ></enchanted-preview>
         </div>
@@ -215,10 +215,10 @@ describe('EnchantedPreview - Snapshot testing', () => {
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-custom-rendition-label-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-custom-rendition-label-authoring-1');
   });
 
   it('EnchantedPreview - should capture with custom select button title - Authoring', async () => {
@@ -228,7 +228,7 @@ describe('EnchantedPreview - Snapshot testing', () => {
           <enchanted-preview 
             open 
             .items=${[mockImageItem]} 
-            .localization=${dxLocalization}
+            .localization=${localization}
             selectButtonTitle="My Custom Select Button Title"
           ></enchanted-preview>
         </div>
@@ -236,10 +236,10 @@ describe('EnchantedPreview - Snapshot testing', () => {
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-custom-select-button-title-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-custom-select-button-title-authoring-1');
   });
 
   it('EnchantedPreview - should capture with both previous and next buttons enabled - Authoring', async () => {
@@ -249,21 +249,21 @@ describe('EnchantedPreview - Snapshot testing', () => {
           <enchanted-preview 
             open 
             .items=${mockItems} 
-            .localization=${dxLocalization}
+            .localization=${localization}
           ></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
-    const dxPreviewNextButton = await dxPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-next-button"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewNextButton = await enchantedPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-next-button"]');
     
-    await dxPreviewNextButton.moveTo();
-    await dxPreviewNextButton.click();
+    await enchantedPreviewNextButton.moveTo();
+    await enchantedPreviewNextButton.click();
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-previous-next-buttons-enabled-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-previous-next-buttons-enabled-authoring-1');
   });
 
   it('EnchantedPreview - should capture with next button disabled - Authoring', async () => {
@@ -273,20 +273,20 @@ describe('EnchantedPreview - Snapshot testing', () => {
           <enchanted-preview 
             open 
             .items=${[mockImageItem, mockImageItem2]} 
-            .localization=${dxLocalization}
+            .localization=${localization}
           ></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
-    const dxPreviewNextButton = await dxPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-next-button"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewNextButton = await enchantedPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-next-button"]');
 
-    await dxPreviewNextButton.click();
+    await enchantedPreviewNextButton.click();
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-next-button-disabled-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-next-button-disabled-authoring-1');
   });
   
   it('EnchantedPreview - should capture zoom in - Authoring', async () => {
@@ -296,20 +296,20 @@ describe('EnchantedPreview - Snapshot testing', () => {
           <enchanted-preview 
             open 
             .items=${[mockImageItem]} 
-            .localization=${dxLocalization}
+            .localization=${localization}
           ></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
-    const dxPreviewZoomInButton = await dxPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-zoom-in-button"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewZoomInButton = await enchantedPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-zoom-in-button"]');
 
-    await dxPreviewZoomInButton.click();
+    await enchantedPreviewZoomInButton.click();
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-zoom-in-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-zoom-in-authoring-1');
   });
 
   it('EnchantedPreview - should capture zoom out - Authoring', async () => {
@@ -319,20 +319,20 @@ describe('EnchantedPreview - Snapshot testing', () => {
           <enchanted-preview 
             open 
             .items=${[mockImageItem]} 
-            .localization=${dxLocalization}
+            .localization=${localization}
           ></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
-    const dxPreviewZoomOutButton = await dxPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-zoom-out-button"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewZoomOutButton = await enchantedPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-zoom-out-button"]');
 
-    await dxPreviewZoomOutButton.click();
+    await enchantedPreviewZoomOutButton.click();
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-zoom-out-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-zoom-out-authoring-1');
   });
 
   it('EnchantedPreview - should capture disabled zoom in button - Authoring', async () => {
@@ -342,27 +342,27 @@ describe('EnchantedPreview - Snapshot testing', () => {
           <enchanted-preview 
             open 
             .items=${[mockImageItem]} 
-            .localization=${dxLocalization}
+            .localization=${localization}
           ></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
-    const dxPreviewZoomInButton = await dxPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-zoom-in-button"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewZoomInButton = await enchantedPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-zoom-in-button"]');
 
-    await dxPreviewZoomInButton.moveTo();
-    await dxPreviewZoomInButton.click();
-    await dxPreviewZoomInButton.click();
-    await dxPreviewZoomInButton.click();
-    await dxPreviewZoomInButton.click();
-    await dxPreviewZoomInButton.click();
-    await dxPreviewZoomInButton.click();
-    await dxPreviewLayout.moveTo();
+    await enchantedPreviewZoomInButton.moveTo();
+    await enchantedPreviewZoomInButton.click();
+    await enchantedPreviewZoomInButton.click();
+    await enchantedPreviewZoomInButton.click();
+    await enchantedPreviewZoomInButton.click();
+    await enchantedPreviewZoomInButton.click();
+    await enchantedPreviewZoomInButton.click();
+    await enchantedPreviewLayout.moveTo();
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-zoom-in-disabled-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-zoom-in-disabled-authoring-1');
   });
 
   it('EnchantedPreview - should capture zoom out disabled - Authoring', async () => {
@@ -372,22 +372,22 @@ describe('EnchantedPreview - Snapshot testing', () => {
           <enchanted-preview 
             open 
             .items=${[mockImageItem]} 
-            .localization=${dxLocalization}
+            .localization=${localization}
           ></enchanted-preview>
         </div>
       `,
       document.body
     );
 
-    const dxPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
-    const dxPreviewZoomOutButton = await dxPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-zoom-out-button"]');
+    const enchantedPreviewLayout = await $('>>>div[data-testid="enchanted-preview-layout"]');
+    const enchantedPreviewZoomOutButton = await enchantedPreviewLayout.$('>>>enchanted-icon-button[data-testid="enchanted-preview-zoom-out-button"]');
 
-    await dxPreviewZoomOutButton.click();
-    await dxPreviewZoomOutButton.click();
-    await dxPreviewZoomOutButton.click();
-    await dxPreviewZoomOutButton.click();
+    await enchantedPreviewZoomOutButton.click();
+    await enchantedPreviewZoomOutButton.click();
+    await enchantedPreviewZoomOutButton.click();
+    await enchantedPreviewZoomOutButton.click();
     // This timeout is needed, that all CSS effects (like transitions) are completely done before the snapshot will taken.
     await browser.pause(2000);
-    await browser.checkElement(dxPreviewLayout, 'enchanted-preview-open-zoom-out-disabled-authoring-1');
+    await browser.checkElement(enchantedPreviewLayout, 'enchanted-preview-open-zoom-out-disabled-authoring-1');
   });
 });

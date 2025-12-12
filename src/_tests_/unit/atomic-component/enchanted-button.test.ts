@@ -209,15 +209,15 @@ describe('EnchantedButton component testing', () => {
       `,
       document.body
     );
-    let dxButton = await document.querySelector('enchanted-button') as EnchantedButton;
+    let enchantedButton = await document.querySelector('enchanted-button') as EnchantedButton;
     // Call the _focusButton method
-    dxButton._focusButton();
+    enchantedButton._focusButton();
 
     // Wait for the focus to be applied
     await browser.pause(100); // Small delay to ensure focus is set
 
     // Verify that the button is focused
     const activeElement = document.querySelector('enchanted-button')?.shadowRoot?.activeElement?.getAttribute('data-testid');
-    await expect(activeElement).toBe(dxButton.getAttribute('data-testid'));
+    await expect(activeElement).toBe(enchantedButton.getAttribute('data-testid'));
   });
 });
