@@ -212,7 +212,7 @@ export class EnchantedItemTypeAvatar extends EnchantedAcBaseElement {
 
    render() {
      return html`
-        <enchanted-avatar
+        <${COMPONENT_PREFIX}enchanted-avatar
           data-testId="enchanted-item-type-avatar"
           variant=${this.imageUrl && this.itemType === ICON_ITEM_TYPE.IMAGE ? AVATAR_VARIANT.AVATAR_IMG : AVATAR_VARIANT.AVATAR_ICON_TEMPLATE}
           type=${AVATAR_TYPE.AVATAR_ROUNDED}

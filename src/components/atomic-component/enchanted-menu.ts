@@ -170,13 +170,13 @@ export class EnchantedMenu extends EnchantedAcBaseElement {
         >
           <div data-testid="menu-backdrop" aria-hidden="true" part=${MENU_PARTS.BACKDROP} @click=${debounce(this.toggleMenuOpen, 300)}></div>
           <div part=${MENU_PARTS.PAPER_ROOT} id="menu${this.componentId}" style="visibility: hidden;">
-            <enchanted-list
+            <${COMPONENT_PREFIX}enchanted-list
               role="menu"
               exportparts="${Object.values(LIST_PARTS).join(',')}"
               @menuItemClick=${this.handleMenuItemClick}
             >
               <slot name="menu-items"></slot>
-            </enchanted-list>
+            </${COMPONENT_PREFIX}enchanted-list>
           </div>
         </div>
       `;

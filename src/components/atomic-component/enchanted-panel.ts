@@ -66,7 +66,7 @@ export class EnchantedPanel extends EnchantedAcBaseElement {
           <div>
             <slot name="center-title-content"></slot>
           </div>
-          <enchanted-button
+          <${COMPONENT_PREFIX}enchanted-button
             part=${PANEL_PARTS.PANEL_CLOSE_BUTTON}
             exportparts="${Object.values(BUTTON_PARTS).join(",")}"
             buttontext=""
@@ -75,7 +75,7 @@ export class EnchantedPanel extends EnchantedAcBaseElement {
             @click=${this._handleCloseClick}
             variant=${BUTTON_VARIANT.BUTTON_TEXT_VAR}
           >
-          </enchanted-button>
+          </${COMPONENT_PREFIX}enchanted-button>
         </div>
         <div part=${PANEL_PARTS.PANEL_CONTENT} tabindex="-1">
           <slot name="content"></slot>

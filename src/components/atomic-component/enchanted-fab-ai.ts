@@ -45,7 +45,7 @@ export class EnchantedFabAi extends EnchantedAcBaseElement {
 
   render() {
     return html`
-      <enchanted-fab
+      <${COMPONENT_PREFIX}enchanted-fab
         exportparts="${FAB_PARTS.FAB}, ${FAB_PARTS.FAB_RTL}, ${FAB_PARTS.ICON}, ${FAB_PARTS.LABEL}"
         ?extended=${this.extended}
         ?disabled=${this.disabled}
@@ -54,7 +54,7 @@ export class EnchantedFabAi extends EnchantedAcBaseElement {
         ?badge=${this.badge}
       >
         <slot name="badge" slot="badge"></slot>
-      </enchanted-fab>
+      </${COMPONENT_PREFIX}enchanted-fab>
     `;
   }
 }

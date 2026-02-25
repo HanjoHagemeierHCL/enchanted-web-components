@@ -453,11 +453,11 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
     return html`
       <div part=${PREVIEW_PARTS.PREVIEW_ITEM_CONTENT}>
         <div part=${PREVIEW_PARTS.PREVIEW_ITEM_UNSUPPORTED_CONTAINER}>
-          <enchanted-item-type-avatar
+          <${COMPONENT_PREFIX}enchanted-item-type-avatar
             itemtype=${itemTypeIconMapping[itemType as keyof typeof itemTypeIconMapping] ?? itemType}
             exportparts=${ITEM_TYPE_AVATAR_EXPORT_PARTS}
           >
-          </enchanted-item-type-avatar>
+          </${COMPONENT_PREFIX}enchanted-item-type-avatar>
           <div part=${PREVIEW_PARTS.PREVIEW_ITEM_UNSUPPORTED_MESSAGE_CONTAINER}>
             <p part=${PREVIEW_PARTS.PREVIEW_ITEM_UNSUPPORTED_MESSAGE_TITLE}>
               ${this.getMessage('preview.item.unsupported.title')}
@@ -750,8 +750,8 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
       <div part=${PREVIEW_PARTS.PREVIEW_CONTAINER} role="dialog" aria-modal="true" tabindex="-1" aria-label=${titleHeader} aria-modal="true">
         <div part=${PREVIEW_PARTS.PREVIEW_HEADER} data-testid="enchanted-preview-header">
           <div part=${PREVIEW_PARTS.PREVIEW_HEADER_START_ACTIONS}>
-            <enchanted-tooltip tooltiptext=${this.getMessage('preview.tooltip.back.button')} exportparts=${TOOLTIP_EXPORT_PARTS}>
-              <enchanted-icon-button
+            <${COMPONENT_PREFIX}enchanted-tooltip tooltiptext=${this.getMessage('preview.tooltip.back.button')} exportparts=${TOOLTIP_EXPORT_PARTS}>
+              <${COMPONENT_PREFIX}enchanted-icon-button
                 slot="target"
                 .icon=${ this.isLtr
                   ? html`<icon-arrow-left></icon-arrow-left>`
@@ -764,8 +764,8 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
                 ariaLabel=${this.getMessage('preview.tooltip.back.button')}
                 aria-hidden="true"
               >
-              </enchanted-icon-button>
-            </enchanted-tooltip>
+              </${COMPONENT_PREFIX}enchanted-icon-button>
+            </${COMPONENT_PREFIX}enchanted-tooltip>
             <span part=${PREVIEW_PARTS.PREVIEW_HEADER_TITLE}>
               ${titleHeader}
             </span>
@@ -774,7 +774,7 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
               <span part=${PREVIEW_PARTS.PREVIEW_HEADER_RENDITION_LABEL} id="enchanted-preview-rendition-select-label" aria-hidden="true">
                 ${this.renditionLabel}
               </span>
-              <enchanted-select
+              <${COMPONENT_PREFIX}enchanted-select
                 aria-labelledby="enchanted-preview-rendition-select-label"
                 hiddenLabel
                 .options=${this.items[this.currentItemIndex ?? 0]?.renditions?.map((rendition) => {
@@ -791,13 +791,13 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
                 part=${PREVIEW_PARTS.PREVIEW_HEADER_RENDITION_INPUT_SELECT}
                 aria-hidden="true"
               >
-              </enchanted-select>
+              </${COMPONENT_PREFIX}enchanted-select>
             </div>` : nothing}
           <div part=${PREVIEW_PARTS.PREVIEW_HEADER_END_ACTIONS}>
             ${ this.items.length > 0 ?
               html`
-                <enchanted-tooltip tooltiptext=${downloadLabel} exportparts=${TOOLTIP_EXPORT_PARTS}>
-                  <enchanted-icon-button
+                <${COMPONENT_PREFIX}enchanted-tooltip tooltiptext=${downloadLabel} exportparts=${TOOLTIP_EXPORT_PARTS}>
+                  <${COMPONENT_PREFIX}enchanted-icon-button
                     slot="target"
                     .icon=${html`<icon-download color="currentColor"></icon-download>`}
                     exportparts="${ICON_BUTTON_EXPORT_PARTS}"
@@ -807,9 +807,9 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
                     ariaLabel=${downloadLabel}
                     aria-hidden="true"
                   >
-                  </enchanted-icon-button>
-                </enchanted-tooltip>
-                <enchanted-button
+                  </${COMPONENT_PREFIX}enchanted-icon-button>
+                </${COMPONENT_PREFIX}enchanted-tooltip>
+                <${COMPONENT_PREFIX}enchanted-button
                   part=${PREVIEW_PARTS.PREVIEW_HEADER_SELECT_BUTTON}
                   buttontext=${this.selectButtonTitle}
                   exportparts="${Object.values(BUTTON_PARTS).join(',')}"
@@ -818,7 +818,7 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
                   data-testid="enchanted-preview-select-button"
                   aria-hidden="true"
                   >
-                </enchanted-button>
+                </${COMPONENT_PREFIX}enchanted-button>
              ` : nothing }
           </div>
         </div>
@@ -826,12 +826,12 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
         <div part=${PREVIEW_PARTS.PREVIEW_ITEM_CONTAINER}>
           ${this.items.length > 0 ? html`
             <div part=${PREVIEW_PARTS.PREVIEW_ITEM_PREVIOUS_BUTTON_CONTAINER}>
-              <enchanted-tooltip 
+              <${COMPONENT_PREFIX}enchanted-tooltip 
                 tooltiptext=${previousLabel}
                 exportparts=${TOOLTIP_EXPORT_PARTS}
                 placement=${this.isLtr ? TOOLTIP_PLACEMENT.TOOLTIP_BOTTOM_START : TOOLTIP_PLACEMENT.TOOLTIP_BOTTOM_END}
               >
-                <enchanted-icon-button
+                <${COMPONENT_PREFIX}enchanted-icon-button
                   slot="target"
                   part=${PREVIEW_PARTS.PREVIEW_ITEM_PREVIOUS_BUTTON}
                   .icon=${ this.isLtr
@@ -846,8 +846,8 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
                   inversecolor
                   ariaLabel=${previousLabel}
                 >
-                </enchanted-icon-button>
-              </enchanted-tooltip>
+                </${COMPONENT_PREFIX}enchanted-icon-button>
+              </${COMPONENT_PREFIX}enchanted-tooltip>
             </div>
           ` : nothing }
           <div id="preview-item-content-container" part=${PREVIEW_PARTS.PREVIEW_ITEM_CONTENT_CONTAINER}>
@@ -856,7 +856,7 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
               this.isLoading || (this.currentDisplaySource && !this.isMediaReady && !this.hasError)
                 ? html`
                 <div part=${PREVIEW_PARTS.PREVIEW_ITEM_SPINNER_CONTAINER}>
-                  <enchanted-circular-progress></enchanted-circular-progress>
+                  <${COMPONENT_PREFIX}enchanted-circular-progress></${COMPONENT_PREFIX}enchanted-circular-progress>
                 </div>
                 `
                 : nothing
@@ -864,12 +864,12 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
           </div>
           ${this.items.length > 0 ? html`
             <div part=${PREVIEW_PARTS.PREVIEW_ITEM_NEXT_BUTTON_CONTAINER}>
-              <enchanted-tooltip 
+              <${COMPONENT_PREFIX}enchanted-tooltip 
                 tooltiptext=${nextLabel}
                 exportparts=${TOOLTIP_EXPORT_PARTS}
                 placement=${this.isLtr ? TOOLTIP_PLACEMENT.TOOLTIP_BOTTOM_END : TOOLTIP_PLACEMENT.TOOLTIP_BOTTOM_START}
               >
-                <enchanted-icon-button
+                <${COMPONENT_PREFIX}enchanted-icon-button
                   slot="target"
                   part=${PREVIEW_PARTS.PREVIEW_ITEM_NEXT_BUTTON}
                   .icon=${ this.isLtr
@@ -884,8 +884,8 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
                   inversecolor
                   ariaLabel=${nextLabel}
                 >
-                </enchanted-icon-button>
-              </enchanted-tooltip>
+                </${COMPONENT_PREFIX}enchanted-icon-button>
+              </${COMPONENT_PREFIX}enchanted-tooltip>
             </div>
           ` : nothing }
         </div>
@@ -893,12 +893,12 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
           ? html`
               <div part=${PREVIEW_PARTS.PREVIEW_ZOOM_CONTAINER}>
                 <div part=${PREVIEW_PARTS.PREVIEW_ZOOM_CONTROLS}>
-                  <enchanted-tooltip 
+                  <${COMPONENT_PREFIX}enchanted-tooltip 
                     tooltiptext=${zoomOutLabel}
                     exportparts=${TOOLTIP_EXPORT_PARTS}
                     placement=${TOOLTIP_PLACEMENT.TOOLTIP_TOP}
                   >
-                    <enchanted-icon-button
+                    <${COMPONENT_PREFIX}enchanted-icon-button
                       slot="target"
                       .icon=${html`<icon-zoom-out></icon-zoom-out>`}
                       exportparts="${PREVIEW_ZOOM_BUTTONS_EXPORT_PARTS}"
@@ -909,14 +909,14 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
                       inversecolor
                       ariaLabel=${zoomOutLabel}
                     >
-                    </enchanted-icon-button>
-                  </enchanted-tooltip>
-                  <enchanted-tooltip 
+                    </${COMPONENT_PREFIX}enchanted-icon-button>
+                  </${COMPONENT_PREFIX}enchanted-tooltip>
+                  <${COMPONENT_PREFIX}enchanted-tooltip 
                     tooltiptext=${percentageLabel}
                     exportparts=${TOOLTIP_EXPORT_PARTS}
                     placement=${TOOLTIP_PLACEMENT.TOOLTIP_TOP}
                   >
-                    <enchanted-button
+                    <${COMPONENT_PREFIX}enchanted-button
                       slot="target"
                       buttontext=${`${this.zoomPercentage}%`}
                       exportparts="${PREVIEW_ZOOM_PERCENT_BUTTON_EXPORT_PARTS}"
@@ -925,14 +925,14 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
                       inversecolor
                       ariaLabel=${percentageLabel}
                     >
-                    </enchanted-button>
-                  </enchanted-tooltip>
-                  <enchanted-tooltip 
+                    </${COMPONENT_PREFIX}enchanted-button>
+                  </${COMPONENT_PREFIX}enchanted-tooltip>
+                  <${COMPONENT_PREFIX}enchanted-tooltip 
                     tooltiptext=${zoomInLabel}
                     exportparts=${TOOLTIP_EXPORT_PARTS}
                     placement=${TOOLTIP_PLACEMENT.TOOLTIP_TOP}
                   >
-                    <enchanted-icon-button
+                    <${COMPONENT_PREFIX}enchanted-icon-button
                       slot="target"
                       .icon=${html`<icon-zoom-in></icon-zoom-in>`}
                       exportparts="${PREVIEW_ZOOM_BUTTONS_EXPORT_PARTS}"
@@ -943,8 +943,8 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
                       inversecolor
                       ariaLabel=${zoomInLabel}
                     >
-                    </enchanted-icon-button>
-                  </enchanted-tooltip>
+                    </${COMPONENT_PREFIX}enchanted-icon-button>
+                  </${COMPONENT_PREFIX}enchanted-tooltip>
                 </div>
               </div>
             `

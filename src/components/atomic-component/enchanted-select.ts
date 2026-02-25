@@ -152,7 +152,7 @@ export class EnchantedInputSelect extends EnchantedAcBaseElement {
   
   private getSelectedOption(option: string | OptionData) {
     return html`
-      <enchanted-list-item
+      <${COMPONENT_PREFIX}enchanted-list-item
         @pointerdown=${this.handleListItemClick}
         exportparts="${Object.values(LIST_ITEM_PARTS).join(',')}" 
         tabindex=0
@@ -163,7 +163,7 @@ export class EnchantedInputSelect extends EnchantedAcBaseElement {
         aria-selected="${(typeof option === 'string' ? this.selectedValue === option : this.selectedId === (option as OptionData)?.id) ? 'true' : 'false'}"
         id="${typeof option === 'string' ? uuid() : (option as OptionData).id || option}">
         ${typeof option === 'string' ? option : (option as OptionData).name || option}
-      </enchanted-list-item>
+      </${COMPONENT_PREFIX}enchanted-list-item>
     `;
   }
 
@@ -329,7 +329,7 @@ export class EnchantedInputSelect extends EnchantedAcBaseElement {
             </label>
           ` : nothing}
         </div>
-        <enchanted-button 
+        <${COMPONENT_PREFIX}enchanted-button 
           buttontext=${buttonText}
           @click=${debounce(this.handleButtonClick, 300)}
           exportparts="${Object.values(BUTTON_PARTS).join(',')}"
@@ -343,12 +343,12 @@ export class EnchantedInputSelect extends EnchantedAcBaseElement {
           ariaExpanded="${this.toggleDropDown ? 'true' : 'false'}"
           ariaLabel="${this.ariaLabel}"
         >
-        </enchanted-button>
+        </${COMPONENT_PREFIX}enchanted-button>
         ${!this.disabled && this.toggleDropDown ? html `
-          <enchanted-list exportparts=${LIST_PARTS.UNORDERED_LIST} tabindex=0 data-testid="enchanted-select-list" id="list-${this.field}" role="listbox"
+          <${COMPONENT_PREFIX}enchanted-list exportparts=${LIST_PARTS.UNORDERED_LIST} tabindex=0 data-testid="enchanted-select-list" id="list-${this.field}" role="listbox"
             @mousedown=${() => { this.ignoreNextFocusOut = true; }}>
             ${options.map((option: string | OptionData) => {return this.getSelectedOption(option);})}
-          </enchanted-list>
+          </${COMPONENT_PREFIX}enchanted-list>
         ` : nothing}
       </div>
     `;

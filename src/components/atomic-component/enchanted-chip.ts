@@ -47,7 +47,8 @@ export class EnchantedChip extends EnchantedAcBaseElement {
     return html`
       <div part=${this.disabled ? `${CHIP_PARTS.CHIP_DIV} ${CHIP_PARTS.CHIP_DIV_DISABLED}` : CHIP_PARTS.CHIP_DIV} tabindex=${this.disabled ? '-1' : '0'}>
         ${this.showAvatar
-          ? html`<enchanted-avatar .variant=${AVATAR_VARIANT.AVATAR_ICON} .type=${AVATAR_TYPE.AVATAR_ROUNDED} .iconUrl=${this.icon} ?disabled=${this.disabled}></enchanted-avatar>`
+          ? html`<${COMPONENT_PREFIX}enchanted-avatar .variant=${AVATAR_VARIANT.AVATAR_ICON} .type=${AVATAR_TYPE.AVATAR_ROUNDED} .iconUrl=${this.icon} ?disabled=${this.disabled}>
+            </${COMPONENT_PREFIX}enchanted-avatar>`
           : nothing}
         <span part=${CHIP_PARTS.CHIP_NAME}>${this.name}</span>
         ${this.showChipCount

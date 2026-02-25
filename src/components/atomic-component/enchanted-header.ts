@@ -65,34 +65,34 @@ export class EnchantedHeader extends EnchantedAcBaseElement {
     switch (variant) {
       case HEADER_VARIANT.HEADER_AUTHORING:
         return html`
-          <enchanted-textfield label=""
+          <${COMPONENT_PREFIX}enchanted-textfield label=""
             ?disabled="${this.disabled}"
             exportparts=${HEADER_PARTS.INPUT} 
             placeholder="${this.getMessage('header.enduser.search.placeholder')}"
           >
-          </enchanted-textfield>
+          </${COMPONENT_PREFIX}enchanted-textfield>
           <div part=${HEADER_PARTS.HEADER_SPACING_END}>
-            <enchanted-button
+            <${COMPONENT_PREFIX}enchanted-button
               ?disabled="${this.disabled}"
               buttontext=''
               ?outlined="${false}"
               data-testid="enchanted-filter-button"
               .icon="${html`<icon-filter size="16" color="currentColor"></icon-filter>`}"
             >
-            </enchanted-button>
-            <enchanted-badge part=${EnchantedBadgeParts.BADGE_DOT}/>
+            </${COMPONENT_PREFIX}enchanted-button>
+            <${COMPONENT_PREFIX}enchanted-badge part=${EnchantedBadgeParts.BADGE_DOT}/>
           </div>`;
       case HEADER_VARIANT.HEADER_AUTHORING_MODAL_CLOSE:
         return html`
           <div part=${HEADER_PARTS.HEADER_SPACING_END}>
-            <enchanted-button
+            <${COMPONENT_PREFIX}enchanted-button
               ?disabled="${this.disabled}"
               .icon="${html`<icon-search size="16" color="currentColor"></icon-search>`}"
               buttontext="${this.getMessage('header.enduser.search')}"
               exportparts="${Object.values(BUTTON_PARTS).join(',')}"
               ?outlined="${true}"
             >
-            </enchanted-button>
+            </${COMPONENT_PREFIX}enchanted-button>
           </div>`;
       case HEADER_VARIANT.HEADER_ENDUSER:
         return html`
@@ -108,14 +108,14 @@ export class EnchantedHeader extends EnchantedAcBaseElement {
           <div part=${this.isSideNavOpen ? HEADER_PARTS.HEADER_SPACING_START_HAMBURGER : HEADER_PARTS.HEADER_SPACING_START} >
             ${this.showBackIcon
               ? html`
-              <enchanted-button
+              <${COMPONENT_PREFIX}enchanted-button
               ?disabled="${this.disabled}"
               buttontext=''
               ?outlined="${false}"
               data-testid="enchanted-back-button"
               .icon="${html`<icon-chevron-left size="16" color="rgba(0, 0, 0, 0.60)"></icon-chevron-left>`}"
             >
-            </enchanted-button>`
+            </${COMPONENT_PREFIX}enchanted-button>`
               : nothing
             }
           </div>

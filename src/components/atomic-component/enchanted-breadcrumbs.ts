@@ -65,7 +65,7 @@ export class EnchantedBreadcrumbs extends EnchantedAcBaseElement {
                   index < this.paths.length-1 ? 
                     html`
                       <li part="${BREADCRUMBS_PART.BREADCRUMBS_ITEM_LIST}" key="breadcrumb-${index}">
-                        <enchanted-breadcrumbs-item
+                        <${COMPONENT_PREFIX}enchanted-breadcrumbs-item
                           @click="${(event: Event) => {
                             if (this.handleBreadcrumbClick && !path.disabled) this.handleBreadcrumbClick(event, path);
                           }}"
@@ -74,17 +74,17 @@ export class EnchantedBreadcrumbs extends EnchantedAcBaseElement {
                           exportparts="${this.exportParts}"
                           data-testid="breadcrumbs-item"
                         >
-                        </enchanted-breadcrumbs-item>
+                        </${COMPONENT_PREFIX}enchanted-breadcrumbs-item>
                       </li>
                         <li part="${BREADCRUMBS_PART.BREADCRUMBS_SEPARATOR}" aria-hidden="true">
-                          <enchanted-svg-icon .icon=${ this.isLtr
+                          <${COMPONENT_PREFIX}enchanted-svg-icon .icon=${ this.isLtr
                             ? html`<icon-chevron-right size="16"></icon-chevron-right>`
                             : html`<icon-chevron-left size="16"></icon-chevron-left>`
-                          } ?useCurrentColor=${true}></enchanted-svg-icon>
+                          } ?useCurrentColor=${true}></${COMPONENT_PREFIX}enchanted-svg-icon>
                         </li>` :
                     html`
                       <li part="${BREADCRUMBS_PART.BREADCRUMBS_ITEM_LIST}" key="breadcrumb-${index}">
-                        <enchanted-breadcrumbs-item
+                        <${COMPONENT_PREFIX}enchanted-breadcrumbs-item
                           .path="${path}"
                           key="breadcrumb-${index}"
                           exportparts="${this.exportParts}"

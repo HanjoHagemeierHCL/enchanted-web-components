@@ -68,7 +68,7 @@ export class EnchantedIconButton extends EnchantedAcBaseElement {
 
   render() {
     return html`
-      <enchanted-button
+      <${COMPONENT_PREFIX}enchanted-button
         outlined="false"
         data-testid="enchanted-icon-button"
         ?inverseColor=${this.inverseColor}
@@ -84,7 +84,7 @@ export class EnchantedIconButton extends EnchantedAcBaseElement {
         @click=${this._handleClick}
         @keydown=${this._handleKeyDown} // Add keyboard event listener
         >
-        </enchanted-button>
+        </${COMPONENT_PREFIX}enchanted-button>
       `;
   }
 

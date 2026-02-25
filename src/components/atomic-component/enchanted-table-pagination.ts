@@ -191,7 +191,7 @@ export class EnchantedTablePagination extends EnchantedAcBaseElement {
       return html`
         <div part=${TABLE_PAGINATION_PARTS.CONTAINER}>
           <div part=${TABLE_PAGINATION_PARTS.ROWS_SECTION}>
-            <enchanted-select
+            <${COMPONENT_PREFIX}enchanted-select
               .localization=${this.localization}
               exportparts="${PAGINATION_SELECT_EXPORT_PARTS}"
               field=${EnchantedInputFieldType.PAGINATION_ROWS}
@@ -205,13 +205,13 @@ export class EnchantedTablePagination extends EnchantedAcBaseElement {
                   { '{rows_per_page}': this.rowSizeState.toString() }
                 ])
               }
-            ></enchanted-select>
+            ></${COMPONENT_PREFIX}enchanted-select>
             <span part=${TABLE_PAGINATION_PARTS.ROWS_DESCRIPTION}>
               ${this.rowMessage}
             </span>
           </div>
           <div part=${TABLE_PAGINATION_PARTS.PAGES_SECTION}>
-            <enchanted-button
+            <${COMPONENT_PREFIX}enchanted-button
               part=${TABLE_PAGINATION_PARTS.PAGES_NAV_BUTTON}
               exportparts="${Object.values(BUTTON_PARTS).join(',')}"
               buttontext=''
@@ -233,8 +233,8 @@ export class EnchantedTablePagination extends EnchantedAcBaseElement {
               variant=${BUTTON_VARIANT.BUTTON_TEXT_VAR}
               ariaLabel=${this.getMessage('output.pagination.first.page.aria.label')}
             >
-            </enchanted-button>
-            <enchanted-button
+            </${COMPONENT_PREFIX}enchanted-button>
+            <${COMPONENT_PREFIX}enchanted-button
               part=${TABLE_PAGINATION_PARTS.PAGES_NAV_BUTTON}
               exportparts="${Object.values(BUTTON_PARTS).join(',')}"
               buttontext=''
@@ -256,8 +256,8 @@ export class EnchantedTablePagination extends EnchantedAcBaseElement {
               variant=${BUTTON_VARIANT.BUTTON_TEXT_VAR}
               ariaLabel=${this.getMessage('output.pagination.previous.page.aria.label')}
             >
-            </enchanted-button>
-            <enchanted-select
+            </${COMPONENT_PREFIX}enchanted-button>
+            <${COMPONENT_PREFIX}enchanted-select
               .localization=${this.localization}
               exportparts="${PAGINATION_SELECT_EXPORT_PARTS}"
               field=${EnchantedInputFieldType.PAGINATION_PAGE}
@@ -271,11 +271,11 @@ export class EnchantedTablePagination extends EnchantedAcBaseElement {
                 { '{current_page}': this.currentPageState.toString() },
                 { '{total_pages}': this.pagesCount.toString() }
               ])}
-            ></enchanted-select>
+            ></${COMPONENT_PREFIX}enchanted-select>
             <span part=${TABLE_PAGINATION_PARTS.PAGES_DESCRIPTION}>
               &nbsp; ${this.renderSlash()} ${this.pagesCount} &nbsp;
             </span>
-            <enchanted-button
+            <${COMPONENT_PREFIX}enchanted-button
               part=${TABLE_PAGINATION_PARTS.PAGES_NAV_BUTTON}
               exportparts="${Object.values(BUTTON_PARTS).join(',')}"
               buttontext=''
@@ -297,8 +297,8 @@ export class EnchantedTablePagination extends EnchantedAcBaseElement {
               variant=${BUTTON_VARIANT.BUTTON_TEXT_VAR}
               ariaLabel=${this.getMessage('output.pagination.next.page.aria.label')}
             >
-            </enchanted-button>
-            <enchanted-button
+            </${COMPONENT_PREFIX}enchanted-button>
+            <${COMPONENT_PREFIX}enchanted-button
               part=${TABLE_PAGINATION_PARTS.PAGES_NAV_BUTTON}
               exportparts="${Object.values(BUTTON_PARTS).join(',')}"
               buttontext=''
@@ -320,7 +320,7 @@ export class EnchantedTablePagination extends EnchantedAcBaseElement {
               variant=${BUTTON_VARIANT.BUTTON_TEXT_VAR}
               ariaLabel=${this.getMessage('output.pagination.last.page.aria.label')}
             >
-            </enchanted-button>
+            </${COMPONENT_PREFIX}enchanted-button>
           </div>
         </div>
       `;

@@ -368,7 +368,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
   private getSelectedOption(option: string | OptionData) {
     const id = typeof option === 'string' ? option : option.id || option.name;
     return html`
-    <enchanted-list-item
+    <${COMPONENT_PREFIX}enchanted-list-item
       @pointerdown=${this.handleListItemClick}
       @keydown=${(e: KeyboardEvent) => {
         if (e.key === KeyboardInputKeys.ENTER || e.key === KeyboardInputKeys.SPACE) {
@@ -402,7 +402,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
           ${this.getOptionName(option)}
         </div>
       </div>
-    </enchanted-list-item>
+    </${COMPONENT_PREFIX}enchanted-list-item>
   `;
   }
 
@@ -411,7 +411,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
     ${this.selectedValues.map((value) => {
       const { id, name  = '' } = value;
       return html`
-        <enchanted-chip
+        <${COMPONENT_PREFIX}enchanted-chip
           name="${name}"
           ?clearIcon=${this.clearIcon}
           data-testid="enchanted-multiple-select-chip"
@@ -440,7 +440,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
                 </span>
               `
           : nothing}
-        </enchanted-chip>
+        </${COMPONENT_PREFIX}enchanted-chip>
       `;
     })}
   `;
@@ -554,7 +554,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
         <div part="${INPUT_MULTI_SELECT_PARTS.CLEAR_AND_ICON_CONTAINER}">
           ${this.selectedValues.length > 0
         ? html`
-              <enchanted-icon-button
+              <${COMPONENT_PREFIX}enchanted-icon-button
                 part="${this.getPartClearAllIcon()}"
                 .icon="${html`<icon-close-filled size="16" color="rgba(0, 0, 0, 0.60)"></icon-close-filled>`}"
                 title="${INPUT_MULTI_SELECT_PARTS.CLEAR}"
@@ -585,10 +585,10 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
                 }}
                 exportparts="${Object.values(ICON_BUTTON_EXPORT_PARTS).join(',')}"
               >
-              </enchanted-icon-button>
+              </${COMPONENT_PREFIX}enchanted-icon-button>
             `
         : nothing}
-          <enchanted-button
+          <${COMPONENT_PREFIX}enchanted-button
             @click=${(event: Event) => {
               // Close other open enchanted-multiple-select-chip dropdowns when this one is clicked.
               document.querySelectorAll(`${COMPONENT_PREFIX}enchanted-multiple-select-chip`).forEach((el) => {
@@ -620,12 +620,12 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
             ?disabled="${this.disabled}"
             aria-label=${this.getMessage('authoring.multi.select.toggle.dropdown')}
             role="button"
-          ></enchanted-button>
+          ></${COMPONENT_PREFIX}enchanted-button>
         </div>
       </div>
       ${this.toggleDropDown
         ? html`
-            <enchanted-list
+            <${COMPONENT_PREFIX}enchanted-list
               exportparts="${LIST_PARTS.UNORDERED_LIST}"
               style=${this.customWidth ? `width: ${this.customWidth}px;` : nothing}
               id="enchanted-multi-select-list"
@@ -642,7 +642,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
                 return this.getSelectedOption(option);
               })
               : html`
-                <enchanted-list-item
+                <${COMPONENT_PREFIX}enchanted-list-item
                   part="${INPUT_MULTI_SELECT_PARTS.NO_LIST_ITEM}"
                   data-testid="enchanted-multi-select-listitem-no-options"
                   role="option"
@@ -651,9 +651,9 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
                   <div part="${INPUT_MULTI_SELECT_PARTS.LIST_ITEM_NO_CONTENT}">
                     No options
                   </div>
-                </enchanted-list-item>
+                </${COMPONENT_PREFIX}enchanted-list-item>
               `}
-            </enchanted-list>
+            </${COMPONENT_PREFIX}enchanted-list>
           `
         : nothing}
         ${this.showHelperText ? html`<div part="${INPUT_MULTI_SELECT_PARTS.HELPER_TEXT}" aria-label="${this.helperText}">${this.helperText}</div>` : nothing}

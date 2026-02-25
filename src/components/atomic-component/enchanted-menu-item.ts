@@ -69,7 +69,7 @@ export class EnchantedMenuItem extends EnchantedAcBaseElement {
   
   render() {
     return html`
-      <enchanted-list-item
+      <${COMPONENT_PREFIX}enchanted-list-item
         role="menuitem"
         cascading="0"
         exportparts="${Object.values(LIST_ITEM_PARTS).join(',')}"
@@ -80,7 +80,7 @@ export class EnchantedMenuItem extends EnchantedAcBaseElement {
         <div @mouseenter=${(evt: MouseEvent) => {return this.handleMenuItemTooltip(evt);}} part=${MENU_ITEM_PARTS.TEXT_ROOT}>
           <span part=${MENU_ITEM_PARTS.TEXT}>${this.text}</span>
         </div>
-      </enchanted-list-item>
+      </${COMPONENT_PREFIX}enchanted-list-item>
     `;
   }
 }

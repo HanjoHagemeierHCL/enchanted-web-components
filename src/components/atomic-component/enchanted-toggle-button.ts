@@ -142,14 +142,14 @@ export class EnchantedToggleButton extends EnchantedAcBaseElement {
         ${this.singleButton === true ? html`
           ${this.showBadge === true
           ? html`
-            <enchanted-badge 
+            <${COMPONENT_PREFIX}enchanted-badge 
               data-testid="enchanted-badge" 
               part='${isLTR()
                 ? TOGGLE_BUTTON_PARTS.TOGGLE_BUTTON_BADGE
                 :`${TOGGLE_BUTTON_PARTS.TOGGLE_BUTTON_BADGE} ${TOGGLE_BUTTON_PARTS.TOGGLE_BUTTON_BADGE_RTL}`}'
-            ></enchanted-badge>`
+            ></${COMPONENT_PREFIX}enchanted-badge>`
           : ''}
-          <enchanted-icon-button
+          <${COMPONENT_PREFIX}enchanted-icon-button
             title=${this.singleButtonTitle}
             aria-label=${this.singleButtonAria}
             role='button'
@@ -162,7 +162,7 @@ export class EnchantedToggleButton extends EnchantedAcBaseElement {
             data-testid="enchanted-toggle-single-button"
             exportparts="${ICON_BUTTON_EXPORT_PARTS}"
           >
-          </enchanted-icon-button>
+          </${COMPONENT_PREFIX}enchanted-icon-button>
         `
         : html`
           <button

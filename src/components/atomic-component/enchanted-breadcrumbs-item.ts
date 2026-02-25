@@ -66,7 +66,7 @@ export class EnchantedBreadcrumbsItem extends EnchantedAcBaseElement {
   renderIcon() {
     // Check if icon is provided, then render it
     if (this.path?.icon) {
-      return html`<enchanted-svg-icon .icon=${this.path.icon} part=${BREADCRUMBS_PART.BREADCRUMBS_ICON} color="#00000099" data-testid="breadcrumbs-item-icon"/>`;
+      return html`<${COMPONENT_PREFIX}enchanted-svg-icon .icon=${this.path.icon} part=${BREADCRUMBS_PART.BREADCRUMBS_ICON} color="#00000099" data-testid="breadcrumbs-item-icon"/>`;
     }
 
     // If iconName is provided, render the corresponding icon
