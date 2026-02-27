@@ -30,6 +30,7 @@ import { SampleDataRow } from '../../types';
 import { sampleData as sampleSearchResultResponse } from '../fixture/sampleData';
 import { initDataGridLocalizedStrings, pressKeyAndWait } from '../../helpers';
 import { ENCHANTED_DATA_GRID_COLUMNS, LONG_PAUSE, SHORT_PAUSE } from '../../constants';
+import { EnchantedDataGridGeneric } from '../../../components/atomic-component/enchanted-data-grid-generic';
 
 describe('Data Grid Generic testing', () => {
   const localization: Map<string, string> = initDataGridLocalizedStrings();
@@ -288,14 +289,14 @@ describe('Data Grid Generic testing', () => {
       document.body
     );
     
-    const grid = document.querySelector('enchanted-data-grid-generic');
+    const grid = document.querySelector('enchanted-data-grid-generic') as EnchantedDataGridGeneric;
     const rowPart = grid?.getRowPart(0);
     await expect(rowPart).toBeDefined();
     await expect(rowPart).toBe(DATA_GRID_PARTS.TABLE_ROW_BODY_CONTAINER);
   });
 
   it('EnchantedDataGridGeneric - should return correct sort button class based on direction', async () => {
-    const grid = document.createElement('enchanted-data-grid-generic');
+    const grid = document.createElement('enchanted-data-grid-generic') as EnchantedDataGridGeneric;
 
     grid.data.sortDirection = SortOrder.DESC;
     grid.data.sortAttribute = '_source.title';
@@ -484,7 +485,7 @@ describe('Data Grid Generic testing', () => {
 
     // Need to pause to allow rendering to complete
     await browser.pause(LONG_PAUSE);
-    const element = document.querySelector('enchanted-data-grid-generic');
+    const element = document.querySelector('enchanted-data-grid-generic') as EnchantedDataGridGeneric;
 
     if (element) {
       const mouseoverHeaderSpy = spyOn(element, 'handleHeaderOnMouseOver');
@@ -659,7 +660,7 @@ describe('Data Grid Generic testing', () => {
     await browser.execute("document.documentElement.setAttribute('dir', 'rtl')");
     // Need to pause to allow rendering to complete
     await browser.pause(SHORT_PAUSE);
-    const element = document.querySelector('enchanted-data-grid-generic');
+    const element = document.querySelector('enchanted-data-grid-generic') as EnchantedDataGridGeneric;
     if (element) {
       const tableRow = element.shadowRoot ?
       await element.shadowRoot.querySelector(`#table-row-0`) as HTMLElement:
@@ -704,7 +705,7 @@ describe('Data Grid Generic testing', () => {
     // Need to pause to allow rendering to complete
     await browser.pause(SHORT_PAUSE);
 
-    const element = await document.querySelector('enchanted-data-grid-generic');
+    const element = await document.querySelector('enchanted-data-grid-generic') as EnchantedDataGridGeneric;
 
     if (element) {
       const sortButton = element.shadowRoot ?
@@ -802,7 +803,7 @@ describe('Data Grid Generic testing', () => {
 
     // Need to pause to allow rendering to complete
     await browser.pause(SHORT_PAUSE);
-    const element = document.querySelector('enchanted-data-grid-generic');
+    const element = document.querySelector('enchanted-data-grid-generic') as EnchantedDataGridGeneric;
 
     if (!element) {
       throw new Error('EnchantedDataGridGeneric element not found');
@@ -824,7 +825,7 @@ describe('Data Grid Generic testing', () => {
       document.body
     );
 
-    const grid = document.querySelector('enchanted-data-grid-generic');
+    const grid = document.querySelector('enchanted-data-grid-generic') as EnchantedDataGridGeneric;
 
     await waitFor(() => {
       expect(grid).not.toBeNull();
