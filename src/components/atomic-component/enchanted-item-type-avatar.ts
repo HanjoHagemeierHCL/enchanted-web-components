@@ -14,7 +14,7 @@
  * ======================================================================== */
 // External imports
 import { TemplateResult } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { property } from 'lit/decorators.js';
 
 // Component imports
@@ -79,8 +79,7 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/user-profile-
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/video';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/XLS';
 import { COMPONENT_PREFIX } from '../constants';
-
-const ENCHANTED_AVATAR_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-avatar`);
+import { ENCHANTED_AVATAR_TAG } from '../tags';
 
 export class EnchantedItemTypeAvatar extends EnchantedAcBaseElement {
  

@@ -15,7 +15,7 @@
 // External imports
 import { property, state } from 'lit/decorators.js';
 import { nothing } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { debounce } from 'lodash';
 
 // Component imports
@@ -37,9 +37,7 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--left
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--right';
 
 import { COMPONENT_PREFIX, LOCALE_DIRECTIONS } from '../constants';
-
-const ENCHANTED_SELECT_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-select`);
-const ENCHANTED_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-button`);
+import { ENCHANTED_BUTTON_TAG, ENCHANTED_SELECT_TAG } from '../tags';
 
 export class EnchantedTablePagination extends EnchantedAcBaseElement {
   @property({ type: Boolean })

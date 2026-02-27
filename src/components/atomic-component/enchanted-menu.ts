@@ -14,7 +14,7 @@
  * ======================================================================== */
 // External imports
 import { nothing } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { property, state } from 'lit/decorators.js';
 import { localized } from '@lit/localize';
 import { debounce } from 'lodash';
@@ -29,9 +29,7 @@ import { BUTTON_PARTS, LIST_PARTS, MENU_PARTS } from '../../types/cssClassEnums'
 import { isLTR } from '../localization';
 import { EnchantedMenuPlacement, EnchantedMenuSize } from '../../types/enchanted-menu';
 import { COMPONENT_PREFIX } from '../constants';
-
-const ENCHANTED_LIST_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-list`);
-const ENCHANTED_MENU_ITEM_SELECTOR = `${COMPONENT_PREFIX}enchanted-menu-item`;
+import { ENCHANTED_LIST_TAG, ENCHANTED_MENU_ITEM_SELECTOR } from '../tags';
 
 @localized()
 export class EnchantedMenu extends EnchantedAcBaseElement {

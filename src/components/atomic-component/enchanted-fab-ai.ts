@@ -13,14 +13,13 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 import { TemplateResult } from "lit";
-import { html, unsafeStatic } from "lit/static-html.js";
+import { html } from "lit/static-html.js";
 import { property } from "lit/decorators.js";
 import { EnchantedAcBaseElement } from "./enchanted-ac-base-element";
 import { FAB_PARTS } from "../../types/cssClassEnums";
 import "./enchanted-fab";
 import { COMPONENT_PREFIX } from "../constants";
-
-const ENCHANTED_FAB_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-fab`);
+import { ENCHANTED_FAB_TAG } from "../tags";
 
 /**
  * AI-themed floating action button component using composition.

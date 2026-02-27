@@ -15,7 +15,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 import { LitElement, nothing } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { state, property } from 'lit/decorators.js';
 import { consume } from '@lit/context';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
@@ -53,14 +53,10 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/overflow-menu
 
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
 import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_CIRCULAR_PROGRESS_TAG, ENCHANTED_ICON_BUTTON_TAG, ENCHANTED_ITEM_TYPE_AVATAR_TAG, ENCHANTED_MENU_ITEM_TAG, ENCHANTED_MENU_TAG, ENCHANTED_TOOLTIP_TAG } from '../tags';
 
 const debug = createDebug('enchanted-web-components:components:ac:enchanted-data-grid.ts');
-const ENCHANTED_CIRCULAR_PROGRESS_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-circular-progress`);
-const ENCHANTED_ICON_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-icon-button`);
-const ENCHANTED_ITEM_TYPE_AVATAR_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-item-type-avatar`);
-const ENCHANTED_MENU_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-menu`);
-const ENCHANTED_MENU_ITEM_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-menu-item`);
-const ENCHANTED_TOOLTIP_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-tooltip`);
+
 const ENCHANTED_LIST_ITEM_SELECTOR = `${COMPONENT_PREFIX}enchanted-list-item`;
 
 export class EnchantedDataGrid extends EnchantedAcBaseElement {

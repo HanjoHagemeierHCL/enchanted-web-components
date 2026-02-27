@@ -13,7 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 // External imports
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { property } from 'lit/decorators.js';
 
 // Component imports
@@ -26,8 +26,7 @@ import { BUTTON_PARTS, BUTTON_VARIANT, PANEL_PARTS, PANEL_POSITION } from '../..
 // Icon imports
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/close';
 import { COMPONENT_PREFIX } from '../constants';
-
-const ENCHANTED_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-button`);
+import { ENCHANTED_BUTTON_TAG } from '../tags';
 
 export class EnchantedPanel extends EnchantedAcBaseElement {
 

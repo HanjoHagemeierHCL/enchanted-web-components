@@ -15,7 +15,7 @@
 // External imports
 import { property } from 'lit/decorators.js';
 import { TemplateResult } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 
 // Component imports
 import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
@@ -27,8 +27,8 @@ import { ICON_BUTTON_EXPORT_PARTS } from '../exportParts';
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
 import { COMPONENT_PREFIX } from '../constants';
 import { EnchantedButton } from './enchanted-button';
+import { ENCHANTED_BUTTON_TAG } from '../tags';
 
-const ENCHANTED_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-button`);
 const ENCHANTED_BUTTON_SELECTOR = `${COMPONENT_PREFIX}enchanted-button`;
 
 export class EnchantedIconButton extends EnchantedAcBaseElement {

@@ -14,7 +14,7 @@
  * ======================================================================== */
 // External imports
 import { nothing } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { property } from 'lit/decorators.js';
 import { localized } from '@lit/localize';
 
@@ -32,10 +32,7 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--left
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/filter';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/search';
 import { COMPONENT_PREFIX } from '../constants';
-
-const ENCHANTED_TEXTFIELD_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-textfield`);
-const ENCHANTED_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-button`);
-const ENCHANTED_BADGE_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-badge`);
+import { ENCHANTED_BADGE_TAG, ENCHANTED_BUTTON_TAG, ENCHANTED_TEXTFIELD_TAG } from '../tags';
 
 @localized()
 export class EnchantedHeader extends EnchantedAcBaseElement {

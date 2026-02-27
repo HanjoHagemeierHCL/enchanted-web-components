@@ -14,7 +14,7 @@
  * ======================================================================== */
 // External imports
 import { nothing } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { property, state } from 'lit/decorators.js';
 import { debounce } from 'lodash';
 import { v4 as uuid } from 'uuid';
@@ -34,10 +34,8 @@ import { EnchantedInputFieldType, OptionData } from '../../types/enchanted-selec
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/caret--down';
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
 import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_BUTTON_TAG, ENCHANTED_LIST_ITEM_TAG, ENCHANTED_LIST_TAG } from '../tags';
 
-const ENCHANTED_LIST_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-list`);
-const ENCHANTED_LIST_ITEM_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-list-item`);
-const ENCHANTED_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-button`);
 const ENCHANTED_LIST_ITEM_SELECTOR = `${COMPONENT_PREFIX}enchanted-list-item`;
 
 /**

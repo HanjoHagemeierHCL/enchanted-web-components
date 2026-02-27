@@ -13,7 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 // External imports
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { property } from 'lit/decorators.js';
 import { localized } from '@lit/localize';
 
@@ -24,8 +24,7 @@ import './enchanted-list-item';
 // Helper imports
 import { LIST_ITEM_PARTS, MENU_ITEM_PARTS } from '../../types/cssClassEnums';
 import { COMPONENT_PREFIX } from '../constants';
-
-const ENCHANTED_LIST_ITEM_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-list-item`);
+import { ENCHANTED_LIST_ITEM_TAG } from '../tags';
 
 @localized()
 export class EnchantedMenuItem extends EnchantedAcBaseElement {

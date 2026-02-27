@@ -14,7 +14,7 @@
  * ======================================================================== */
 // External imports
 import { nothing } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { property, state } from 'lit/decorators.js';
 import { debounce } from 'lodash';
 import { v4 as uuid } from 'uuid';
@@ -38,12 +38,8 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/close';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/close--filled';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/checkmark';
 import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_BUTTON_TAG, ENCHANTED_CHIP_TAG, ENCHANTED_ICON_BUTTON_TAG, ENCHANTED_LIST_ITEM_TAG, ENCHANTED_LIST_TAG } from '../tags';
 
-const ENCHANTED_LIST_ITEM_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-list-item`);
-const ENCHANTED_CHIP_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-chip`);
-const ENCHANTED_ICON_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-icon-button`);
-const ENCHANTED_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-button`);
-const ENCHANTED_LIST_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-list`);
 const ENCHANTED_LIST_ITEM_SELECTOR = `${COMPONENT_PREFIX}enchanted-list-item`;
 
 @localized()

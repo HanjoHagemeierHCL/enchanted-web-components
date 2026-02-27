@@ -14,7 +14,7 @@
  * ======================================================================== */
 // External imports
 import { nothing, TemplateResult } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { property, state } from 'lit/decorators.js';
 
 // Component imports
@@ -52,13 +52,8 @@ import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
 import { EnchantedButton } from './enchanted-button';
 import { EnchantedIconButton } from './enchanted-icon-button';
 import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_BUTTON_TAG, ENCHANTED_CIRCULAR_PROGRESS_TAG, ENCHANTED_ICON_BUTTON_TAG, ENCHANTED_ITEM_TYPE_AVATAR_TAG, ENCHANTED_SELECT_TAG, ENCHANTED_TOOLTIP_TAG } from '../tags';
 
-const ENCHANTED_ITEM_TYPE_AVATAR_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-item-type-avatar`);
-const ENCHANTED_TOOLTIP_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-tooltip`);
-const ENCHANTED_ICON_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-icon-button`);
-const ENCHANTED_SELECT_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-select`);
-const ENCHANTED_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-button`);
-const ENCHANTED_CIRCULAR_PROGRESS_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-circular-progress`);
 const ENCHANTED_PREVIEW_FOCUSABLE_SELECTOR = `${COMPONENT_PREFIX}enchanted-icon-button:not([disabled]), `
   + `${COMPONENT_PREFIX}enchanted-button:not([disabled]), `
   + `${COMPONENT_PREFIX}enchanted-select:not([disabled])`;

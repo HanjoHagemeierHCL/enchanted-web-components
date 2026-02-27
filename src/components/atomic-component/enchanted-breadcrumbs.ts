@@ -13,7 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 // External imports
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { property, state } from 'lit/decorators.js';
 
 // Component imports
@@ -28,9 +28,7 @@ import { isLTR } from '../localization';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--right';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--left';
 import { COMPONENT_PREFIX } from '../constants';
-
-const ENCHANTED_BREADCRUMBS_ITEM_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-breadcrumbs-item`);
-const ENCHANTED_SVG_ICON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-svg-icon`);
+import { ENCHANTED_BREADCRUMBS_ITEM_TAG, ENCHANTED_SVG_ICON_TAG } from '../tags';
 
 /**
  * Breadcrumb component.

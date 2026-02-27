@@ -16,7 +16,7 @@
 import { property } from 'lit/decorators.js';
 import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 import { nothing, TemplateResult } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 
 // Component imports
 import './enchanted-avatar';
@@ -25,8 +25,7 @@ import './enchanted-avatar';
 import { AVATAR_TYPE, AVATAR_VARIANT, CHIP_PARTS } from '../../types/cssClassEnums';
 import { getCurrentDirection } from '../localization';
 import { COMPONENT_PREFIX, LOCALE_DIRECTIONS } from '../constants';
-
-const ENCHANTED_AVATAR_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-avatar`);
+import { ENCHANTED_AVATAR_TAG } from '../tags';
 
 export class EnchantedChip extends EnchantedAcBaseElement {
   @property({ type: String }) name = '';

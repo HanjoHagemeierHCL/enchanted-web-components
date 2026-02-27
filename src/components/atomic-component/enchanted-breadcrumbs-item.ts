@@ -14,7 +14,7 @@
  * ======================================================================== */
 // External imports
 import { TemplateResult } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { property } from 'lit/decorators.js';
 
 // Component imports
@@ -29,8 +29,7 @@ import { BREADCRUMBS_ICON_TYPE } from '../../types/enchanted-breadcrumbs';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/home';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/information';
 import { COMPONENT_PREFIX } from '../constants';
-
-const ENCHANTED_SVG_ICON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-svg-icon`);
+import { ENCHANTED_SVG_ICON_TAG } from '../tags';
 
 export interface PathType {
   title?: string,

@@ -13,7 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 // External imports
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { property } from 'lit/decorators.js';
 
 // Component imports
@@ -29,8 +29,7 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/information';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/warning--alt';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/warning';
 import { COMPONENT_PREFIX } from '../constants';
-
-const ENCHANTED_CIRCULAR_PROGRESS_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-circular-progress`);
+import { ENCHANTED_CIRCULAR_PROGRESS_TAG } from '../tags';
 
 export class EnchantedSnackbar extends EnchantedAcBaseElement {
 

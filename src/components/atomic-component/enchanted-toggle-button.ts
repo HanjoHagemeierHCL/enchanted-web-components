@@ -16,7 +16,7 @@
 // External imports
 import { property } from 'lit/decorators.js';
 import { nothing, TemplateResult } from 'lit';
-import { html, unsafeStatic } from 'lit/static-html.js';
+import { html } from 'lit/static-html.js';
 import { isLTR } from '../localization';
 
 // Component imports
@@ -28,9 +28,7 @@ import './enchanted-icon-button';
 import { ICON_BUTTON_SIZES, TOGGLE_BUTTON_PARTS } from '../../types/cssClassEnums';
 import { ICON_BUTTON_EXPORT_PARTS } from '../exportParts';
 import { COMPONENT_PREFIX } from '../constants';
-
-const ENCHANTED_BADGE_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-badge`);
-const ENCHANTED_ICON_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-icon-button`);
+import { ENCHANTED_BADGE_TAG, ENCHANTED_ICON_BUTTON_TAG } from '../tags';
 
 export class EnchantedToggleButton extends EnchantedAcBaseElement {
   @property({ type: Boolean })
