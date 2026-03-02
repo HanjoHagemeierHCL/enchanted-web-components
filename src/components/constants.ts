@@ -14,7 +14,15 @@
  * ======================================================================== */
 export const SHADOW_ROOT_MODE_KEY = 'enchanted.searchv2.useOpenAcShadowRoot';
 
-export const COMPONENT_PREFIX = ''; // process.env.COMPONENT_PREFIX ? `${process.env.COMPONENT_PREFIX}-` : '';
+// eslint-why - ...
+// eslint-disable-next-line no-console
+console.log(`Component prefix: ${import.meta.env.VITE_COMPONENT_PREFIX}`);
+
+export const COMPONENT_PREFIX = import.meta.env.VITE_COMPONENT_PREFIX ? `${import.meta.env.VITE_COMPONENT_PREFIX}-` : '';
+
+// eslint-why - ...
+// eslint-disable-next-line no-console
+console.log(`Component prefix: ${COMPONENT_PREFIX}`);
 
 export enum LOCALE_DIRECTIONS {
   LTR = 'ltr',
