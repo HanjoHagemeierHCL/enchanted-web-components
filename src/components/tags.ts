@@ -2,6 +2,7 @@ import { unsafeStatic } from 'lit/static-html.js';
 import { COMPONENT_PREFIX } from "./constants";
 
 
+export const ENCHANTED_DIALOG_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-dialog`);
 export const ENCHANTED_LIST_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-list`);
 export const ENCHANTED_LIST_ITEM_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-list-item`);
 export const ENCHANTED_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-button`);
@@ -16,7 +17,25 @@ export const ENCHANTED_MENU_ITEM_SELECTOR = `${COMPONENT_PREFIX}enchanted-menu-i
 export const ENCHANTED_AVATAR_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-avatar`);
 export const ENCHANTED_TEXTFIELD_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-textfield`);
 export const ENCHANTED_FAB_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-fab`);
+export const ENCHANTED_FAB_AI_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-fab-ai`);
 export const ENCHANTED_MENU_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-menu`);
 export const ENCHANTED_MENU_ITEM_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-menu-item`);
+export const ENCHANTED_BREADCRUMBS_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-breadcrumbs`);
 export const ENCHANTED_BREADCRUMBS_ITEM_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-breadcrumbs-item`);
 export const ENCHANTED_SVG_ICON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-svg-icon`);
+export const ENCHANTED_THEME_INSPECTOR_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-theme-inspector`);
+export const ENCHANTED_ACCORDION_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-accordion`);
+export const ENCHANTED_ACCORDION_SUMMARY_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-accordion-summary`);
+export const ENCHANTED_ACCORDION_ITEM_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-accordion-item`);
+export const ENCHANTED_SNACKBAR_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-snackbar`);
+export const ENCHANTED_ALERT_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-alert`);
+export const ENCHANTED_DATEPICKER_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-datepicker`);
+export const ENCHANTED_HEADER_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-header`);
+export const ENCHANTED_MULTIPLE_SELECT_CHIP_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-multiple-select-chip`);
+export const ENCHANTED_PANEL_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-panel`);
+export const ENCHANTED_POPOVER_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-popover`);
+export const ENCHANTED_PREVIEW_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-preview`);
+export const ENCHANTED_SWITCH_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-switch`);
+export const ENCHANTED_TABLE_PAGINATION_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-table-pagination`);
+export const ENCHANTED_TOGGLE_BUTTON_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-toggle-button`);
+export const ENCHANTED_DATA_GRID_GENERIC_TAG = unsafeStatic(`${COMPONENT_PREFIX}enchanted-data-grid-generic`);

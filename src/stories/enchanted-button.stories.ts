@@ -13,12 +13,14 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 import type { Meta, StoryObj } from '@storybook/web-components-vite';
-import { html, type TemplateResult } from 'lit';
+import { type TemplateResult } from 'lit';
+import { html } from 'lit/static-html.js';
 import '../components/atomic-component/enchanted-button';
 import { BUTTON_VARIANT, ICON_BUTTON_SIZES } from '../types/cssClassEnums';
 
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/search';
 import testImageUrl from '../_tests_/assets/test-avatar-image.jpg';
+import { ENCHANTED_BUTTON_TAG } from '../components/tags';
 
 /**
  * @interface EnchantedButtonProps
@@ -157,7 +159,7 @@ type Story = StoryObj<EnchantedButtonProps>;
 export const EnchantedButton: Story = {
   render: (args) => {
     return html`
-      <enchanted-button
+      <${ENCHANTED_BUTTON_TAG}
         .variant=${args.variant}
         .size=${args.size}
         ?disabled=${args.disabled}
@@ -170,7 +172,7 @@ export const EnchantedButton: Story = {
         .ariaLabel=${args.ariaLabel}
         .ariaHasPopup=${args.ariaHasPopup}
         .ariaExpanded=${args.ariaExpanded}
-      ></enchanted-button>
+      ></${ENCHANTED_BUTTON_TAG}>
     `;
   },
   name: 'Default',
@@ -191,7 +193,7 @@ export const AllStates: Story = {
               return sizes.map((size) => {
                 return html`
                   <div style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
-                    <enchanted-button .variant=${variant} .size=${size} .buttontext=${'Button'} .icon=${html`<icon-search size='16'></icon-search>`}></enchanted-button>
+                    <${ENCHANTED_BUTTON_TAG} .variant=${variant} .size=${size} .buttontext=${'Button'} .icon=${html`<icon-search size='16'></icon-search>`}></${ENCHANTED_BUTTON_TAG}>
                     <span style="font-size: 11px; color: #666;">${variant} / ${size}</span>
                   </div>
                 `;
@@ -206,13 +208,13 @@ export const AllStates: Story = {
           <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
             ${variants.map((variant) => {
               return html`
-                <enchanted-button 
+                <${ENCHANTED_BUTTON_TAG}
                   .variant=${variant}
                   .size=${ICON_BUTTON_SIZES.MEDIUM}
                   .buttontext=${'Button'}
                   .icon=${html`<icon-search size='16'></icon-search>`}
                   ?endicon=${true}>
-                </enchanted-button>
+                </${ENCHANTED_BUTTON_TAG}>
               `;
             })}
           </div>
@@ -224,7 +226,7 @@ export const AllStates: Story = {
           <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
             ${variants.map((variant) => {
               return html`
-                <enchanted-button .variant=${variant} .size=${ICON_BUTTON_SIZES.MEDIUM} .buttontext=${'Avatar'} .imgurl=${testImageUrl}></enchanted-button>
+                <${ENCHANTED_BUTTON_TAG} .variant=${variant} .size=${ICON_BUTTON_SIZES.MEDIUM} .buttontext=${'Avatar'} .imgurl=${testImageUrl}></${ENCHANTED_BUTTON_TAG}>
               `;
             })}
           </div>
@@ -236,7 +238,7 @@ export const AllStates: Story = {
           <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
             ${variants.map((variant) => {
               return html`
-                <enchanted-button .variant=${variant} .size=${ICON_BUTTON_SIZES.MEDIUM} .icon=${html`<icon-search size='16'></icon-search>`} .ariaLabel=${'Search'}></enchanted-button>
+                <${ENCHANTED_BUTTON_TAG} .variant=${variant} .size=${ICON_BUTTON_SIZES.MEDIUM} .icon=${html`<icon-search size='16'></icon-search>`} .ariaLabel=${'Search'}></${ENCHANTED_BUTTON_TAG}>
               `;
             })}
           </div>
@@ -248,13 +250,13 @@ export const AllStates: Story = {
           <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
             ${variants.map((variant) => {
               return html`
-                <enchanted-button
+                <${ENCHANTED_BUTTON_TAG}
                   .variant=${variant}
                   .size=${ICON_BUTTON_SIZES.MEDIUM}
                   .icon=${html`<icon-search size='16'></icon-search>`}
                   ?withPadding=${true}
                   .ariaLabel=${'Search'}>
-                </enchanted-button>
+                </${ENCHANTED_BUTTON_TAG}>
               `;
             })}
           </div>
@@ -266,13 +268,13 @@ export const AllStates: Story = {
           <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
             ${variants.map((variant) => {
               return html`
-                <enchanted-button
+                <${ENCHANTED_BUTTON_TAG}
                   .variant=${variant}
                   .size=${ICON_BUTTON_SIZES.MEDIUM}
                   .buttontext=${'Button'}
                   .icon=${html`<icon-search size='16'></icon-search>`}
                   ?inverseColor=${true}>
-                </enchanted-button>
+                </${ENCHANTED_BUTTON_TAG}>
               `;
             })}
           </div>
@@ -284,13 +286,13 @@ export const AllStates: Story = {
           <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
             ${variants.map((variant) => {
               return html`
-                <enchanted-button
+                <${ENCHANTED_BUTTON_TAG}
                   .variant=${variant}
                   .size=${ICON_BUTTON_SIZES.MEDIUM}
                   .buttontext=${'Button'}
                   .icon=${html`<icon-search size='16'></icon-search>`}
                   ?disabled=${true}>
-                </enchanted-button>
+                </${ENCHANTED_BUTTON_TAG}>
               `;
             })}
           </div>
@@ -302,7 +304,7 @@ export const AllStates: Story = {
           <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
             ${variants.map((variant) => {
               return html`
-                <enchanted-button .variant=${variant} .size=${ICON_BUTTON_SIZES.MEDIUM} .buttontext=${'Button'}></enchanted-button>
+                <${ENCHANTED_BUTTON_TAG} .variant=${variant} .size=${ICON_BUTTON_SIZES.MEDIUM} .buttontext=${'Button'}></${ENCHANTED_BUTTON_TAG}>
               `;
             })}
           </div>
@@ -312,7 +314,7 @@ export const AllStates: Story = {
         <div>
           <h3 style="margin: 0 0 16px 0;">With ARIA Attributes</h3>
           <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
-            <enchanted-button
+            <${ENCHANTED_BUTTON_TAG}
               .variant=${BUTTON_VARIANT.BUTTON_CONTAINED_VAR}
               .size=${ICON_BUTTON_SIZES.MEDIUM}
               .buttontext=${'Menu'}
@@ -320,14 +322,14 @@ export const AllStates: Story = {
               .ariaLabel=${'Open menu'}
               .ariaHasPopup=${'menu'}
               .ariaExpanded=${'false'}
-            ></enchanted-button>
-            <enchanted-button
+            ></${ENCHANTED_BUTTON_TAG}>
+            <${ENCHANTED_BUTTON_TAG}
               .variant=${BUTTON_VARIANT.BUTTON_OUTLINED_VAR}
               .size=${ICON_BUTTON_SIZES.MEDIUM}
               .buttontext=${'Expand'}
               .ariaLabel=${'Expand section'}
               .ariaExpanded=${'true'}
-            ></enchanted-button>
+            ></${ENCHANTED_BUTTON_TAG}>
           </div>
         </div>
       </div>
