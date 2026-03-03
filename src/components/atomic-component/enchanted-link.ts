@@ -21,7 +21,7 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 
 // Helper imports
 import { PAGINATION_PARTS } from '../../types/cssClassEnums';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_LINK_TAG_NAME } from '../tags';
 
 export class EnchantedAnchorTag extends EnchantedAcBaseElement {
   @property({ type: String }) url = '';
@@ -87,4 +87,4 @@ export class EnchantedAnchorTag extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-link`, EnchantedAnchorTag);
+customElements.define(ENCHANTED_LINK_TAG_NAME, EnchantedAnchorTag);

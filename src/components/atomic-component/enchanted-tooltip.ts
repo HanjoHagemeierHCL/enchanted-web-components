@@ -25,7 +25,7 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 import { TOOLTIP_PARTS, TOOLTIP_PLACEMENT, TOOLTIP_TYPE, TOOLTIP_VARIANT } from '../../types/cssClassEnums';
 import { ViewportBox } from '../../types/enchanted-tooltip';
 import { getAncestorWithTransform, getTransformDetails, runPlacement } from '../../utils/tooltipUtils';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_TOOLTIP_TAG_NAME } from '../tags';
 
 export class EnchantedTooltip extends EnchantedAcBaseElement {
   @property({ type: Boolean, reflect: true })
@@ -578,4 +578,4 @@ export class EnchantedTooltip extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-tooltip`, EnchantedTooltip);
+customElements.define(ENCHANTED_TOOLTIP_TAG_NAME, EnchantedTooltip);

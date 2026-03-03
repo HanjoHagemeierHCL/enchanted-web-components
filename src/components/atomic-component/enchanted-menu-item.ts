@@ -23,8 +23,7 @@ import './enchanted-list-item';
 
 // Helper imports
 import { LIST_ITEM_PARTS, MENU_ITEM_PARTS } from '../../types/cssClassEnums';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_LIST_ITEM_TAG } from '../tags';
+import { ENCHANTED_LIST_ITEM_TAG, ENCHANTED_MENU_ITEM_TAG_NAME } from '../tags';
 
 @localized()
 export class EnchantedMenuItem extends EnchantedAcBaseElement {
@@ -86,4 +85,4 @@ export class EnchantedMenuItem extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-menu-item`, EnchantedMenuItem);
+customElements.define(ENCHANTED_MENU_ITEM_TAG_NAME, EnchantedMenuItem);

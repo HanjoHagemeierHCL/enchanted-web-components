@@ -18,9 +18,10 @@ import { property, state } from "lit/decorators.js";
 
 //Helper imports
 import { getCurrentDirection } from "../localization";
-import { COMPONENT_PREFIX, LOCALE_DIRECTIONS } from "../constants";
+import { LOCALE_DIRECTIONS } from "../constants";
 import { ACCORDION_SUMMARY_PARTS } from "../../types/cssClassEnums";
 import { EnchantedAcBaseElement } from "./enchanted-ac-base-element";
+import { ENCHANTED_ACCORDION_SUMMARY_TAG_NAME } from "../tags";
 
 export class EnchantedAccordionSummary extends EnchantedAcBaseElement {
   @property({ type: String }) label = "";
@@ -72,4 +73,4 @@ export class EnchantedAccordionSummary extends EnchantedAcBaseElement {
    }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-accordion-summary`, EnchantedAccordionSummary);
+customElements.define(ENCHANTED_ACCORDION_SUMMARY_TAG_NAME, EnchantedAccordionSummary);

@@ -25,11 +25,8 @@ import './enchanted-button';
 import { ARIA_ROLES, ICON_BUTTON_SIZES } from '../../types/cssClassEnums';
 import { ICON_BUTTON_EXPORT_PARTS } from '../exportParts';
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
-import { COMPONENT_PREFIX } from '../constants';
 import { EnchantedButton } from './enchanted-button';
-import { ENCHANTED_BUTTON_TAG } from '../tags';
-
-const ENCHANTED_BUTTON_SELECTOR = `${COMPONENT_PREFIX}enchanted-button`;
+import { ENCHANTED_BUTTON_TAG, ENCHANTED_BUTTON_TAG_NAME, ENCHANTED_ICON_BUTTON_TAG_NAME } from '../tags';
 
 export class EnchantedIconButton extends EnchantedAcBaseElement {
   static override shadowRootOptions = {
@@ -66,7 +63,7 @@ export class EnchantedIconButton extends EnchantedAcBaseElement {
   ariaLabel: string = 'Icon button'; // Provide a default accessible name
 
   public _focusButton() {
-    const button: EnchantedButton | null = this.renderRoot.querySelector(ENCHANTED_BUTTON_SELECTOR);
+    const button: EnchantedButton | null = this.renderRoot.querySelector(ENCHANTED_BUTTON_TAG_NAME);
     button?._focusButton();
   }
 
@@ -100,4 +97,4 @@ export class EnchantedIconButton extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-icon-button`, EnchantedIconButton);
+customElements.define(ENCHANTED_ICON_BUTTON_TAG_NAME, EnchantedIconButton);

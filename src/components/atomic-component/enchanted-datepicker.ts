@@ -41,7 +41,7 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/help';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/close';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/circle--solid';
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_DATEPICKER_TAG_NAME } from '../tags';
 
 export class EnchantedDatePicker extends EnchantedAcBaseElement {
   @property({ type: String }) name = 'datepicker'; // Name of the datepicker, can be used for form submission
@@ -1015,4 +1015,4 @@ export class EnchantedDatePicker extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-datepicker`, EnchantedDatePicker);
+customElements.define(ENCHANTED_DATEPICKER_TAG_NAME, EnchantedDatePicker);

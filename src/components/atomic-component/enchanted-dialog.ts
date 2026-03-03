@@ -31,7 +31,7 @@ import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
 
 // Icon imports
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/close';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_DIALOG_TAG_NAME } from '../tags';
 
 @localized()
 export class EnchantedDialog extends EnchantedAcBaseElement {
@@ -329,4 +329,4 @@ export class EnchantedDialog extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-dialog`, EnchantedDialog);
+customElements.define(ENCHANTED_DIALOG_TAG_NAME, EnchantedDialog);

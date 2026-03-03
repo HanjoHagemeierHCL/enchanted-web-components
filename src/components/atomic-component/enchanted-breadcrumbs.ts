@@ -27,8 +27,7 @@ import { isLTR } from '../localization';
 // Icon imports
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--right';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--left';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_BREADCRUMBS_ITEM_TAG, ENCHANTED_SVG_ICON_TAG } from '../tags';
+import { ENCHANTED_BREADCRUMBS_ITEM_TAG, ENCHANTED_BREADCRUMBS_TAG_NAME, ENCHANTED_SVG_ICON_TAG } from '../tags';
 
 /**
  * Breadcrumb component.
@@ -105,4 +104,4 @@ export class EnchantedBreadcrumbs extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-breadcrumbs`, EnchantedBreadcrumbs);
+customElements.define(ENCHANTED_BREADCRUMBS_TAG_NAME, EnchantedBreadcrumbs);

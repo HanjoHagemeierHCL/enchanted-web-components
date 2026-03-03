@@ -23,7 +23,7 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 // Helper imports
 import  * as theme from '../../utils/themeUtils';
 import { ThemeType } from '../../utils/themeUtils';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_THEME_INSPECTOR_TAG_NAME } from '../tags';
 
 const debug = createDebug('enchanted-web-components:components:ac:enchanted-theme-inspector.ts');
 
@@ -252,4 +252,4 @@ export class EnchantedThemeInspector extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-theme-inspector`, EnchantedThemeInspector);
+customElements.define(ENCHANTED_THEME_INSPECTOR_TAG_NAME, EnchantedThemeInspector);

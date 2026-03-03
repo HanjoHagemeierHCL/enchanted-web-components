@@ -51,12 +51,15 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/arrow--right'
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
 import { EnchantedButton } from './enchanted-button';
 import { EnchantedIconButton } from './enchanted-icon-button';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_BUTTON_TAG, ENCHANTED_CIRCULAR_PROGRESS_TAG, ENCHANTED_ICON_BUTTON_TAG, ENCHANTED_ITEM_TYPE_AVATAR_TAG, ENCHANTED_SELECT_TAG, ENCHANTED_TOOLTIP_TAG } from '../tags';
+import {
+  ENCHANTED_BUTTON_TAG, ENCHANTED_BUTTON_TAG_NAME, ENCHANTED_CIRCULAR_PROGRESS_TAG, ENCHANTED_ICON_BUTTON_TAG,
+  ENCHANTED_ICON_BUTTON_TAG_NAME, ENCHANTED_ITEM_TYPE_AVATAR_TAG, ENCHANTED_PREVIEW_TAG_NAME, ENCHANTED_SELECT_TAG,
+  ENCHANTED_SELECT_TAG_NAME, ENCHANTED_TOOLTIP_TAG
+} from '../tags';
 
-const ENCHANTED_PREVIEW_FOCUSABLE_SELECTOR = `${COMPONENT_PREFIX}enchanted-icon-button:not([disabled]), `
-  + `${COMPONENT_PREFIX}enchanted-button:not([disabled]), `
-  + `${COMPONENT_PREFIX}enchanted-select:not([disabled])`;
+const ENCHANTED_PREVIEW_FOCUSABLE_SELECTOR = `${ENCHANTED_ICON_BUTTON_TAG_NAME}:not([disabled]), `
+  + `${ENCHANTED_BUTTON_TAG_NAME}:not([disabled]), `
+  + `${ENCHANTED_SELECT_TAG_NAME}:not([disabled])`;
 
 export interface AssetRendition {
   id: string;
@@ -961,4 +964,4 @@ export class EnchantedPreview extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-preview`, EnchantedPreview);
+customElements.define(ENCHANTED_PREVIEW_TAG_NAME, EnchantedPreview);

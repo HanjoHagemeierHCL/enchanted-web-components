@@ -37,10 +37,10 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/caret--up';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/close';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/close--filled';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/checkmark';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_BUTTON_TAG, ENCHANTED_CHIP_TAG, ENCHANTED_ICON_BUTTON_TAG, ENCHANTED_LIST_ITEM_TAG, ENCHANTED_LIST_TAG } from '../tags';
-
-const ENCHANTED_LIST_ITEM_SELECTOR = `${COMPONENT_PREFIX}enchanted-list-item`;
+import {
+  ENCHANTED_BUTTON_TAG, ENCHANTED_CHIP_TAG, ENCHANTED_ICON_BUTTON_TAG, ENCHANTED_LIST_ITEM_TAG,
+  ENCHANTED_LIST_ITEM_TAG_NAME, ENCHANTED_LIST_TAG, ENCHANTED_MULTIPLE_SELECT_CHIP_TAG_NAME
+} from '../tags';
 
 @localized()
 export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
@@ -214,7 +214,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
         } else {
           this.toggleDropDown = !this.toggleDropDown;
           if (this.toggleDropDown) {
-            this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_SELECTOR));
+            this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_TAG_NAME));
             if (this.listItems.length > 0) {
               this.currentFocusedItem = this.listItems[0];
               this.currentFocusedItem.focus();
@@ -229,7 +229,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
       this.requestUpdate();
     } else if (event.key === KeyboardInputKeys.ARROW_DOWN && this.toggleDropDown) {
       event.preventDefault();
-      this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_SELECTOR));
+      this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_TAG_NAME));
       if (this.listItems.length > 0) {
         this.currentFocusedItem = this.listItems[0];
         this.currentFocusedItem.focus();
@@ -265,7 +265,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
     if (this.disabled) return;
     this.toggleDropDown = !this.toggleDropDown;
     if (await this.updateComplete && this.toggleDropDown) {
-      this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_SELECTOR));
+      this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_TAG_NAME));
       if (this.listItems.length > 0) {
         this.currentFocusedItem = this.listItems[0];
         this.currentFocusedItem.focus();
@@ -298,7 +298,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
     switch (event.key) {
       case KeyboardInputKeys.ARROW_DOWN: {
         event.preventDefault();
-        this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_SELECTOR));
+        this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_TAG_NAME));
         const currentIndex = this.currentFocusedItem
           ? this.listItems.indexOf(this.currentFocusedItem)
           : -1;
@@ -324,7 +324,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
       case KeyboardInputKeys.ENTER: {
         event.preventDefault();
         if (await this.updateComplete) {
-          this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_SELECTOR));
+          this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_TAG_NAME));
         }
         if (this.currentFocusedItem) {
           this.currentFocusedItem.click();
@@ -506,7 +506,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
 				@mouseleave=${this.handleOnMouseOut} 
         @click=${(event: Event) => {
           // Close other open enchanted-multiple-select-chip dropdowns when this one is clicked.
-          document.querySelectorAll(`${COMPONENT_PREFIX}enchanted-multiple-select-chip`).forEach((el) => {
+          document.querySelectorAll(ENCHANTED_MULTIPLE_SELECT_CHIP_TAG_NAME).forEach((el) => {
             if (el !== this && (el as EnchantedMultipleSelectChip).toggleDropDown) {
               (el as EnchantedMultipleSelectChip).toggleDropDown = false;
             }
@@ -595,7 +595,7 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
           <${ENCHANTED_BUTTON_TAG}
             @click=${(event: Event) => {
               // Close other open enchanted-multiple-select-chip dropdowns when this one is clicked.
-              document.querySelectorAll(`${COMPONENT_PREFIX}enchanted-multiple-select-chip`).forEach((el) => {
+              document.querySelectorAll(ENCHANTED_MULTIPLE_SELECT_CHIP_TAG_NAME).forEach((el) => {
                 if (el !== this && (el as EnchantedMultipleSelectChip).toggleDropDown) {
                   (el as EnchantedMultipleSelectChip).toggleDropDown = false;
                 }
@@ -666,4 +666,4 @@ export class EnchantedMultipleSelectChip extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-multiple-select-chip`, EnchantedMultipleSelectChip);
+customElements.define(ENCHANTED_MULTIPLE_SELECT_CHIP_TAG_NAME, EnchantedMultipleSelectChip);

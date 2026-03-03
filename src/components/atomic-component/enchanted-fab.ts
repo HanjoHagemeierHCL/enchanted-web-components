@@ -19,11 +19,12 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 
 // Helper imports
 import { getCurrentDirection } from "../localization";
-import { COMPONENT_PREFIX, LOCALE_DIRECTIONS } from "../constants";
+import { LOCALE_DIRECTIONS } from "../constants";
 import { FAB_PARTS, EnchantedFabType } from '../../types/cssClassEnums';
 
 // Component imports
 import  "./enchanted-badge";
+import { ENCHANTED_FAB_TAG_NAME } from "../tags";
 
 export class EnchantedFab extends EnchantedAcBaseElement {
   @property({ reflect: true }) type: EnchantedFabType = EnchantedFabType.CONTAINED;
@@ -63,4 +64,4 @@ export class EnchantedFab extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-fab`, EnchantedFab);
+customElements.define(ENCHANTED_FAB_TAG_NAME, EnchantedFab);

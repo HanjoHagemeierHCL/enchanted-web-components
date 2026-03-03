@@ -28,8 +28,7 @@ import './enchanted-list';
 import { BUTTON_PARTS, LIST_PARTS, MENU_PARTS } from '../../types/cssClassEnums';
 import { isLTR } from '../localization';
 import { EnchantedMenuPlacement, EnchantedMenuSize } from '../../types/enchanted-menu';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_LIST_TAG, ENCHANTED_MENU_ITEM_SELECTOR } from '../tags';
+import { ENCHANTED_LIST_TAG, ENCHANTED_MENU_ITEM_SELECTOR, ENCHANTED_MENU_TAG_NAME } from '../tags';
 
 @localized()
 export class EnchantedMenu extends EnchantedAcBaseElement {
@@ -203,4 +202,4 @@ export class EnchantedMenu extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-menu`, EnchantedMenu);
+customElements.define(ENCHANTED_MENU_TAG_NAME, EnchantedMenu);

@@ -21,7 +21,7 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 
 // Icon imports
 import { LIST_ITEM_PARTS } from '../../types/cssClassEnums';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_LIST_ITEM_TAG_NAME } from '../tags';
 
 /**
  * List item component.
@@ -57,4 +57,4 @@ export class EnchantedListItem extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-list-item`, EnchantedListItem);
+customElements.define(ENCHANTED_LIST_ITEM_TAG_NAME, EnchantedListItem);

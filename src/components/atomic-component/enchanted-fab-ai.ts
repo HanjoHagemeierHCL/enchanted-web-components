@@ -18,8 +18,7 @@ import { property } from "lit/decorators.js";
 import { EnchantedAcBaseElement } from "./enchanted-ac-base-element";
 import { FAB_PARTS } from "../../types/cssClassEnums";
 import "./enchanted-fab";
-import { COMPONENT_PREFIX } from "../constants";
-import { ENCHANTED_FAB_TAG } from "../tags";
+import { ENCHANTED_FAB_AI_TAG_NAME, ENCHANTED_FAB_TAG } from "../tags";
 
 /**
  * AI-themed floating action button component using composition.
@@ -61,4 +60,4 @@ export class EnchantedFabAi extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-fab-ai`, EnchantedFabAi);
+customElements.define(ENCHANTED_FAB_AI_TAG_NAME, EnchantedFabAi);

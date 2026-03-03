@@ -28,8 +28,7 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/checkmark--ou
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/information';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/warning--alt';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/warning';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_CIRCULAR_PROGRESS_TAG } from '../tags';
+import { ENCHANTED_CIRCULAR_PROGRESS_TAG, ENCHANTED_SNACKBAR_TAG_NAME } from '../tags';
 
 export class EnchantedSnackbar extends EnchantedAcBaseElement {
 
@@ -79,4 +78,4 @@ export class EnchantedSnackbar extends EnchantedAcBaseElement {
     }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-snackbar`, EnchantedSnackbar);
+customElements.define(ENCHANTED_SNACKBAR_TAG_NAME, EnchantedSnackbar);

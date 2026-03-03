@@ -24,8 +24,8 @@ import './enchanted-avatar';
 // Helper imports
 import { AVATAR_TYPE, AVATAR_VARIANT, CHIP_PARTS } from '../../types/cssClassEnums';
 import { getCurrentDirection } from '../localization';
-import { COMPONENT_PREFIX, LOCALE_DIRECTIONS } from '../constants';
-import { ENCHANTED_AVATAR_TAG } from '../tags';
+import { LOCALE_DIRECTIONS } from '../constants';
+import { ENCHANTED_AVATAR_TAG, ENCHANTED_CHIP_TAG_NAME } from '../tags';
 
 export class EnchantedChip extends EnchantedAcBaseElement {
   @property({ type: String }) name = '';
@@ -64,4 +64,4 @@ export class EnchantedChip extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-chip`, EnchantedChip);
+customElements.define(ENCHANTED_CHIP_TAG_NAME, EnchantedChip);

@@ -28,8 +28,8 @@ import { BREADCRUMBS_ICON_TYPE } from '../../types/enchanted-breadcrumbs';
 // Icon imports
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/home';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/information';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_SVG_ICON_TAG } from '../tags';
+
+import { ENCHANTED_BREADCRUMBS_ITEM_TAG_NAME, ENCHANTED_SVG_ICON_TAG } from '../tags';
 
 export interface PathType {
   title?: string,
@@ -113,4 +113,4 @@ export class EnchantedBreadcrumbsItem extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-breadcrumbs-item`, EnchantedBreadcrumbsItem);
+customElements.define(ENCHANTED_BREADCRUMBS_ITEM_TAG_NAME, EnchantedBreadcrumbsItem);

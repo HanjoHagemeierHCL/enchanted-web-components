@@ -52,12 +52,12 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/edit';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/overflow-menu--horizontal';
 
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_CIRCULAR_PROGRESS_TAG, ENCHANTED_ICON_BUTTON_TAG, ENCHANTED_ITEM_TYPE_AVATAR_TAG, ENCHANTED_MENU_ITEM_TAG, ENCHANTED_MENU_TAG, ENCHANTED_TOOLTIP_TAG } from '../tags';
+import {
+  ENCHANTED_CIRCULAR_PROGRESS_TAG, ENCHANTED_DATA_GRID_TAG_NAME, ENCHANTED_ICON_BUTTON_TAG,
+  ENCHANTED_ITEM_TYPE_AVATAR_TAG, ENCHANTED_LIST_ITEM_TAG_NAME, ENCHANTED_MENU_ITEM_TAG, ENCHANTED_MENU_TAG, ENCHANTED_TOOLTIP_TAG
+} from '../tags';
 
 const debug = createDebug('enchanted-web-components:components:ac:enchanted-data-grid.ts');
-
-const ENCHANTED_LIST_ITEM_SELECTOR = `${COMPONENT_PREFIX}enchanted-list-item`;
 
 export class EnchantedDataGrid extends EnchantedAcBaseElement {
 
@@ -497,7 +497,7 @@ export class EnchantedDataGrid extends EnchantedAcBaseElement {
 	  evt.preventDefault();
 	  const menuItem = evt.target as HTMLElement;
 	  if (evt.key === KeyboardInputKeys.ENTER) {
-	    const listMenu = (menuItem as LitElement)?.renderRoot?.querySelector(ENCHANTED_LIST_ITEM_SELECTOR) as HTMLElement;
+	    const listMenu = (menuItem as LitElement)?.renderRoot?.querySelector(ENCHANTED_LIST_ITEM_TAG_NAME) as HTMLElement;
 	    listMenu.click();
 	  }
 	  if (evt.key === KeyboardInputKeys.ARROW_DOWN || (evt.key === KeyboardInputKeys.TAB && !evt.shiftKey)) {
@@ -1084,4 +1084,4 @@ export class EnchantedDataGrid extends EnchantedAcBaseElement {
 	}
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-data-grid`, EnchantedDataGrid);
+customElements.define(`${ENCHANTED_DATA_GRID_TAG_NAME}`, EnchantedDataGrid);

@@ -27,8 +27,7 @@ import './enchanted-icon-button';
 // Helper imports
 import { ICON_BUTTON_SIZES, TOGGLE_BUTTON_PARTS } from '../../types/cssClassEnums';
 import { ICON_BUTTON_EXPORT_PARTS } from '../exportParts';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_BADGE_TAG, ENCHANTED_ICON_BUTTON_TAG } from '../tags';
+import { ENCHANTED_BADGE_TAG, ENCHANTED_ICON_BUTTON_TAG, ENCHANTED_TOGGLE_BUTTON_TAG_NAME } from '../tags';
 
 export class EnchantedToggleButton extends EnchantedAcBaseElement {
   @property({ type: Boolean })
@@ -191,4 +190,4 @@ export class EnchantedToggleButton extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-toggle-button`, EnchantedToggleButton);
+customElements.define(ENCHANTED_TOGGLE_BUTTON_TAG_NAME, EnchantedToggleButton);

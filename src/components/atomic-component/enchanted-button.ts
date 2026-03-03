@@ -22,8 +22,9 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 // Helper imports
 import { BUTTON_PARTS, BUTTON_VARIANT, ICON_BUTTON_SIZES, ARIA_ROLES } from '../../types/cssClassEnums';
 import { getCurrentDirection } from '../localization';
-import { COMPONENT_PREFIX, LOCALE_DIRECTIONS } from '../constants';
+import { LOCALE_DIRECTIONS } from '../constants';
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
+import { ENCHANTED_BUTTON_TAG_NAME } from '../tags';
 
 export class EnchantedButton extends EnchantedAcBaseElement {
   static override shadowRootOptions = {
@@ -221,4 +222,4 @@ export class EnchantedButton extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-button`, EnchantedButton);
+customElements.define(ENCHANTED_BUTTON_TAG_NAME, EnchantedButton);

@@ -17,10 +17,11 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/close';
 
 //helper import
 import { EnchantedAcBaseElement } from "./enchanted-ac-base-element";
-import { COMPONENT_PREFIX, LOCALE_DIRECTIONS } from '../constants.js';
+import { LOCALE_DIRECTIONS } from '../constants.js';
 import { getCurrentDirection } from '../localization.js';
 import  { EnchantedPopoverArrowPosition } from '../../types/enchanted-popover.js';
 import { POPOVER_PARTS } from "../../types/cssClassEnums";
+import { ENCHANTED_POPOVER_TAG_NAME } from '../tags';
 
 export class EnchantedPopover extends EnchantedAcBaseElement {
   
@@ -100,4 +101,4 @@ export class EnchantedPopover extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-popover`, EnchantedPopover);
+customElements.define(ENCHANTED_POPOVER_TAG_NAME, EnchantedPopover);

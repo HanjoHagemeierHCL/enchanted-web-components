@@ -21,7 +21,7 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 
 // Helper imports
 import { LIST_PARTS } from '../../types/cssClassEnums';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_LIST_TAG_NAME } from '../tags';
 
 /**
  * List component.
@@ -44,4 +44,4 @@ export class EnchantedList extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-list`, EnchantedList);
+customElements.define(ENCHANTED_LIST_TAG_NAME, EnchantedList);

@@ -19,7 +19,7 @@ import { css, html } from 'lit';
 // Component imports
 import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 import { CIRCULAR_PROGRESS_PARTS } from '../../types/cssClassEnums';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_CIRCULAR_PROGRESS_TAG_NAME } from '../tags';
 
 /**
  * EnchantedCircularProgress component - Indeterminate variant
@@ -202,4 +202,4 @@ export class EnchantedCircularProgress extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-circular-progress`, EnchantedCircularProgress);
+customElements.define(ENCHANTED_CIRCULAR_PROGRESS_TAG_NAME, EnchantedCircularProgress);

@@ -23,7 +23,7 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 // Helper imports
 import { SWITCH_PARTS } from '../../types/cssClassEnums';
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_SWITCH_TAG_NAME } from '../tags';
 
 export class EnchantedSwitch extends EnchantedAcBaseElement {
 
@@ -102,4 +102,4 @@ export class EnchantedSwitch extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-switch`, EnchantedSwitch);
+customElements.define(ENCHANTED_SWITCH_TAG_NAME, EnchantedSwitch);

@@ -36,8 +36,8 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/page--last';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--left';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--right';
 
-import { COMPONENT_PREFIX, LOCALE_DIRECTIONS } from '../constants';
-import { ENCHANTED_BUTTON_TAG, ENCHANTED_SELECT_TAG } from '../tags';
+import { LOCALE_DIRECTIONS } from '../constants';
+import { ENCHANTED_BUTTON_TAG, ENCHANTED_SELECT_TAG, ENCHANTED_TABLE_PAGINATION_TAG_NAME } from '../tags';
 
 export class EnchantedTablePagination extends EnchantedAcBaseElement {
   @property({ type: Boolean })
@@ -332,4 +332,4 @@ export class EnchantedTablePagination extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-table-pagination`, EnchantedTablePagination);
+customElements.define(ENCHANTED_TABLE_PAGINATION_TAG_NAME, EnchantedTablePagination);

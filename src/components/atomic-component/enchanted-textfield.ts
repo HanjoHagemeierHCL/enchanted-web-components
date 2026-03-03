@@ -24,11 +24,12 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 
 // Helper imports
 import { getCurrentDirection } from '../localization';
-import { COMPONENT_PREFIX, LOCALE_DIRECTIONS } from '../constants';
+import { LOCALE_DIRECTIONS } from '../constants';
 import { EnchantedInputFieldType } from '../../types/enchanted-select';
 import { INPUT_TEXTFIELD_PARTS } from '../../types/cssClassEnums';
 import { AutoCompleteTextfieldEnum } from '../../types/enchanted-textfield';
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
+import { ENCHANTED_TEXTFIELD_TAG_NAME } from '../tags';
 
 const debug = createDebug('enchanted-web-components:components:ac:enchanted-textfield.ts');
 
@@ -275,4 +276,4 @@ export class EnchantedInputTextfield extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-textfield`, EnchantedInputTextfield);
+customElements.define(ENCHANTED_TEXTFIELD_TAG_NAME, EnchantedInputTextfield);

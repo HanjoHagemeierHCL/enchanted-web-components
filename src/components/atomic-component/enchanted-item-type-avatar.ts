@@ -78,8 +78,7 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/user--profile
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/user-profile--alt';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/video';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/XLS';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_AVATAR_TAG } from '../tags';
+import { ENCHANTED_AVATAR_TAG, ENCHANTED_ITEM_TYPE_AVATAR_TAG_NAME } from '../tags';
 
 export class EnchantedItemTypeAvatar extends EnchantedAcBaseElement {
  
@@ -227,4 +226,4 @@ export class EnchantedItemTypeAvatar extends EnchantedAcBaseElement {
    }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-item-type-avatar`, EnchantedItemTypeAvatar);
+customElements.define(ENCHANTED_ITEM_TYPE_AVATAR_TAG_NAME, EnchantedItemTypeAvatar);

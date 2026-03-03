@@ -33,10 +33,7 @@ import { EnchantedInputFieldType, OptionData } from '../../types/enchanted-selec
 // Icon imports
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/caret--down';
 import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_BUTTON_TAG, ENCHANTED_LIST_ITEM_TAG, ENCHANTED_LIST_TAG } from '../tags';
-
-const ENCHANTED_LIST_ITEM_SELECTOR = `${COMPONENT_PREFIX}enchanted-list-item`;
+import { ENCHANTED_BUTTON_TAG, ENCHANTED_LIST_ITEM_TAG, ENCHANTED_LIST_ITEM_TAG_NAME, ENCHANTED_LIST_TAG, ENCHANTED_SELECT_TAG_NAME } from '../tags';
 
 /**
  * Select component.
@@ -175,7 +172,7 @@ export class EnchantedInputSelect extends EnchantedAcBaseElement {
     event.stopPropagation();
     this.toggleDropDown = !this.toggleDropDown;
     if (await this.updateComplete && this.toggleDropDown) {
-      this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_SELECTOR));
+      this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_TAG_NAME));
     }
   }
 
@@ -244,7 +241,7 @@ export class EnchantedInputSelect extends EnchantedAcBaseElement {
       case 'Enter':
         event.preventDefault(); 
         if (await this.updateComplete) {
-          this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_SELECTOR));
+          this.listItems = Array.from(this.renderRoot.querySelectorAll(ENCHANTED_LIST_ITEM_TAG_NAME));
         }
         if (this.currentFocusedItem) {
           this.currentFocusedItem.click();
@@ -359,4 +356,4 @@ export class EnchantedInputSelect extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-select`, EnchantedInputSelect);
+customElements.define(ENCHANTED_SELECT_TAG_NAME, EnchantedInputSelect);

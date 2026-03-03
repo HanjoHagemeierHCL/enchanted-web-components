@@ -22,13 +22,13 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 
 // Helper imports
 import { ALERT, ALERT_SEVERITY, ALERT_VARIANTS } from '../../types/cssClassEnums';
-import { COMPONENT_PREFIX } from '../constants';
 
 // Icon imports
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/checkmark--outline';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/information';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/warning--alt';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/warning';
+import { ENCHANTED_ALERT_TAG_NAME } from '../tags';
 
 /**
  * Alert component.
@@ -124,4 +124,4 @@ export class EnchantedAlert extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-alert`, EnchantedAlert);
+customElements.define(ENCHANTED_ALERT_TAG_NAME, EnchantedAlert);

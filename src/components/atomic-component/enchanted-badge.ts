@@ -21,8 +21,9 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 
 // Helper imports
 import { getCurrentDirection } from "../localization";
-import { COMPONENT_PREFIX, LOCALE_DIRECTIONS } from "../constants";
+import { LOCALE_DIRECTIONS } from "../constants";
 import { EnchantedBadgeColor, EnchantedBadgeBorder, EnchantedBadgeType, EnchantedBadgeParts } from '../../types/cssClassEnums';
+import { ENCHANTED_BADGE_TAG_NAME } from '../tags';
  
 export class EnchantedBadge extends EnchantedAcBaseElement {
 
@@ -55,4 +56,4 @@ export class EnchantedBadge extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-badge`, EnchantedBadge);
+customElements.define(ENCHANTED_BADGE_TAG_NAME, EnchantedBadge);

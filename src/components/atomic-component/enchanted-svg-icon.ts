@@ -46,7 +46,7 @@ import { property } from 'lit/decorators.js';
 
 // Component imports
 import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_SVG_ICON_TAG_NAME } from '../tags';
 
 export class EnchantedSvgIcon extends EnchantedAcBaseElement {
 
@@ -80,4 +80,4 @@ export class EnchantedSvgIcon extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-svg-icon`, EnchantedSvgIcon);
+customElements.define(ENCHANTED_SVG_ICON_TAG_NAME, EnchantedSvgIcon);

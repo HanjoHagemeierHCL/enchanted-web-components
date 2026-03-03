@@ -25,8 +25,7 @@ import { BUTTON_PARTS, BUTTON_VARIANT, PANEL_PARTS, PANEL_POSITION } from '../..
 
 // Icon imports
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/close';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_BUTTON_TAG } from '../tags';
+import { ENCHANTED_BUTTON_TAG, ENCHANTED_PANEL_TAG_NAME } from '../tags';
 
 export class EnchantedPanel extends EnchantedAcBaseElement {
 
@@ -86,4 +85,4 @@ export class EnchantedPanel extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-panel`, EnchantedPanel);
+customElements.define(ENCHANTED_PANEL_TAG_NAME, EnchantedPanel);

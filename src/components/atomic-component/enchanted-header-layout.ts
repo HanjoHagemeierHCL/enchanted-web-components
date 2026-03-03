@@ -17,7 +17,7 @@ import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 import { HEADER_LAYOUT_PARTS } from '../../types/cssClassEnums';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_HEADER_LAYOUT_TAG_NAME } from '../tags';
  
 /**
  * Search Header template.
@@ -47,5 +47,5 @@ export class EnchantedHeaderLayout extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-header-layout`, EnchantedHeaderLayout);
+customElements.define(ENCHANTED_HEADER_LAYOUT_TAG_NAME, EnchantedHeaderLayout);
   

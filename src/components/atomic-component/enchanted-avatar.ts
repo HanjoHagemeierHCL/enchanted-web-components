@@ -21,7 +21,7 @@ import { EnchantedAcBaseElement } from './enchanted-ac-base-element';
 
 // Helper imports
 import { AVATAR_PARTS, AVATAR_VARIANT, AVATAR_TYPE, AVATAR_COLOR } from '../../types/cssClassEnums';
-import { COMPONENT_PREFIX } from '../constants';
+import { ENCHANTED_AVATAR_TAG_NAME } from '../tags';
 
 export class EnchantedAvatar extends EnchantedAcBaseElement {
   @property()
@@ -112,4 +112,4 @@ export class EnchantedAvatar extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-avatar`, EnchantedAvatar);
+customElements.define(ENCHANTED_AVATAR_TAG_NAME, EnchantedAvatar);

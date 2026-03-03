@@ -47,13 +47,13 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/arrow--up';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/arrow--down';
 import '@hcl-software/enchanted-icons-web-component/dist/apps/es/items--search--empty';
 import '@hcl-software/enchanted-icons-web-component/dist/apps/es/items--search--initial';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_CIRCULAR_PROGRESS_TAG, ENCHANTED_ICON_BUTTON_TAG, ENCHANTED_ITEM_TYPE_AVATAR_TAG, ENCHANTED_MENU_ITEM_TAG, ENCHANTED_MENU_TAG, ENCHANTED_TOOLTIP_TAG } from '../tags';
+import { 
+  ENCHANTED_CIRCULAR_PROGRESS_TAG, ENCHANTED_DATA_GRID_GENERIC_TAG_NAME, ENCHANTED_ICON_BUTTON_TAG,
+  ENCHANTED_ICON_BUTTON_TAG_NAME, ENCHANTED_ITEM_TYPE_AVATAR_TAG, ENCHANTED_MENU_ITEM_TAG,
+  ENCHANTED_MENU_TAG, ENCHANTED_MENU_TAG_NAME, ENCHANTED_TOOLTIP_TAG
+} from '../tags';
 
 const debug = createDebug('enchanted-web-components:components:ac:enchanted-data-grid-generic.ts');
-
-const ENCHANTED_ICON_BUTTON_SELECTOR = `${COMPONENT_PREFIX}enchanted-icon-button`;
-const ENCHANTED_MENU_SELECTOR = `${COMPONENT_PREFIX}enchanted-menu`;
 
 export class EnchantedDataGridGeneric extends EnchantedAcBaseElement {
   @property()
@@ -360,7 +360,7 @@ export class EnchantedDataGridGeneric extends EnchantedAcBaseElement {
 
     if (isMenu) {
       const moreMenuIcon = evt.target as HTMLElement;
-      const isOpen = (this.renderRoot.querySelector(ENCHANTED_MENU_SELECTOR) as EnchantedMenu)?.openMenu;
+      const isOpen = (this.renderRoot.querySelector(ENCHANTED_MENU_TAG_NAME) as EnchantedMenu)?.openMenu;
 
       const closeMenu = (targetIndex: number) => {
         if (isOpen) {
@@ -605,7 +605,7 @@ export class EnchantedDataGridGeneric extends EnchantedAcBaseElement {
       const firstActionButtonDiv = rowElement?.querySelector(`[part~="${DATA_GRID_PARTS.TABLE_ACTION_ICON_BUTTON}"]`) as HTMLDivElement;
      
       if (firstActionButtonDiv) {
-        const firstActionButton = firstActionButtonDiv.querySelector(ENCHANTED_ICON_BUTTON_SELECTOR) as EnchantedIconButton;
+        const firstActionButton = firstActionButtonDiv.querySelector(ENCHANTED_ICON_BUTTON_TAG_NAME) as EnchantedIconButton;
         if (firstActionButton) {
           evt.preventDefault();
           this.currentHoverRow = index;
@@ -704,7 +704,7 @@ export class EnchantedDataGridGeneric extends EnchantedAcBaseElement {
     this.currentHoverField = '';
     const row = event.target as HTMLElement;
     row.setAttribute('autofocus', 'true');
-    const actionButtons = row.querySelectorAll(ENCHANTED_ICON_BUTTON_SELECTOR);
+    const actionButtons = row.querySelectorAll(ENCHANTED_ICON_BUTTON_TAG_NAME);
     this.focusedRowActionButtons = Array.from(actionButtons) as EnchantedIconButton[];
   }
 
@@ -1263,4 +1263,4 @@ export class EnchantedDataGridGeneric extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-data-grid-generic`, EnchantedDataGridGeneric);
+customElements.define(ENCHANTED_DATA_GRID_GENERIC_TAG_NAME, EnchantedDataGridGeneric);

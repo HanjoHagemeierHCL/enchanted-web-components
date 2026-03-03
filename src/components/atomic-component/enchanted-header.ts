@@ -31,8 +31,7 @@ import { BUTTON_PARTS, HEADER_VARIANT, HEADER_PARTS, EnchantedBadgeParts } from 
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--left';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/filter';
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/search';
-import { COMPONENT_PREFIX } from '../constants';
-import { ENCHANTED_BADGE_TAG, ENCHANTED_BUTTON_TAG, ENCHANTED_TEXTFIELD_TAG } from '../tags';
+import { ENCHANTED_BADGE_TAG, ENCHANTED_BUTTON_TAG, ENCHANTED_HEADER_TAG_NAME, ENCHANTED_TEXTFIELD_TAG } from '../tags';
 
 @localized()
 export class EnchantedHeader extends EnchantedAcBaseElement {
@@ -134,4 +133,4 @@ export class EnchantedHeader extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-header`, EnchantedHeader);
+customElements.define(ENCHANTED_HEADER_TAG_NAME, EnchantedHeader);

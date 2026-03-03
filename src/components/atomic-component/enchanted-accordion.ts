@@ -23,12 +23,13 @@ import { EnchantedAcBaseElement } from "./enchanted-ac-base-element";
 
 // Helper imports
 import { getCurrentDirection } from "../localization";
-import { COMPONENT_PREFIX, LOCALE_DIRECTIONS } from "../constants";
+import { LOCALE_DIRECTIONS } from "../constants";
 import { ACCORDION_PARTS } from "../../types/cssClassEnums";
 
 //Icon import
 import "@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--down";
 import { KeyboardInputKeys } from "../../utils/keyboardEventKeys";
+import { ENCHANTED_ACCORDION_TAG_NAME } from "../tags";
 
 export class EnchantedAccordion extends EnchantedAcBaseElement {
   @property({ type: Boolean, reflect: true }) showCheckbox = false;
@@ -145,4 +146,4 @@ export class EnchantedAccordion extends EnchantedAcBaseElement {
   }
 }
 
-customElements.define(`${COMPONENT_PREFIX}enchanted-accordion`, EnchantedAccordion);
+customElements.define(ENCHANTED_ACCORDION_TAG_NAME, EnchantedAccordion);
