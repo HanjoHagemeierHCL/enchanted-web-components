@@ -37,7 +37,7 @@
  * @returns {TemplateResult} The template result containing the SVG icon wrapped in a div.
  * 
  * @example
- * <${COMPONENT_PREFIX}enchanted-svg-icon icon="${myIcon}" color="red" size="24px" useCurrentColor></${COMPONENT_PREFIX}enchanted-svg-icon>
+ * <enchanted-svg-icon icon="${myIcon}" color="red" size="24px" useCurrentColor></enchanted-svg-icon>
  */
 
 // External imports

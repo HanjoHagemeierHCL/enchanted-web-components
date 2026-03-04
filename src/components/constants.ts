@@ -12,14 +12,7 @@
  * See the License for the specific language governing permissions and      *
  * limitations under the License.                                           *
  * ======================================================================== */
-import createDebug from 'debug';
-
-const debug = createDebug('enchanted-web-components:components:constants.ts');
-
 export const SHADOW_ROOT_MODE_KEY = 'enchanted.searchv2.useOpenAcShadowRoot';
-
-export const COMPONENT_PREFIX = import.meta.env.VITE_COMPONENT_PREFIX ? import.meta.env.VITE_COMPONENT_PREFIX : '';
-debug("Component prefix is '%s'", COMPONENT_PREFIX);
 
 export enum LOCALE_DIRECTIONS {
   LTR = 'ltr',

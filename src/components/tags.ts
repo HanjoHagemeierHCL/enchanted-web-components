@@ -1,5 +1,16 @@
 import { unsafeStatic } from 'lit/static-html.js';
-import { COMPONENT_PREFIX } from "./constants";
+import createDebug from 'debug';
+
+const debug = createDebug('enchanted-web-components:components:tags.ts');
+
+export let COMPONENT_PREFIX = '';
+try {
+  COMPONENT_PREFIX = import.meta.env.VITE_COMPONENT_PREFIX ? import.meta.env.VITE_COMPONENT_PREFIX : '';
+} catch (error) {
+  debug('Error accessing environment variable for component prefix:', error);
+  COMPONENT_PREFIX = '';
+}
+debug("Component prefix is '%s'", COMPONENT_PREFIX);
 
 export const ENCHANTED_ACCORDION_TAG_NAME = `${COMPONENT_PREFIX}enchanted-accordion`;
 export const ENCHANTED_ACCORDION_ITEM_TAG_NAME = `${COMPONENT_PREFIX}enchanted-accordion-item`;
