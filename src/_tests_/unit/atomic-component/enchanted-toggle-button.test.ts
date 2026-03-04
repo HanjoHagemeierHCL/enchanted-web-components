@@ -45,7 +45,7 @@ describe(`${ENCHANTED_TOGGLE_BUTTON_TAG_NAME} component testing`, () => {
     component.remove();
   });
 
-  it(`${ENCHANTED_TOGGLE_BUTTON_TAG_NAME} - removes component from document body and validates removal`, async () => {
+  it('should remove component from document body and validate removal', async () => {
     let component = document.createElement(ENCHANTED_TOGGLE_BUTTON_TAG_NAME);
     document.body.appendChild(component);
     document.body.removeChild(component);
@@ -53,13 +53,13 @@ describe(`${ENCHANTED_TOGGLE_BUTTON_TAG_NAME} component testing`, () => {
     component.remove();
   });
 
-  it(`${ENCHANTED_TOGGLE_BUTTON_TAG_NAME} - should validate null for non-existent attributes`, async () => {
+  it('should validate null for non-existent attributes', async () => {
     let component = document.createElement(ENCHANTED_TOGGLE_BUTTON_TAG_NAME);
     await expect(component.getAttribute('nonExistentAttribute')).toBeNull();
     component.remove();
   });
 
-  it('EnchantedToggleButton - validate default value of attributes', async () => {
+  it('should validate default value of attributes', async () => {
     let component = document.createElement(ENCHANTED_TOGGLE_BUTTON_TAG_NAME);
     document.body.appendChild(component);
     await expect(component).toHaveElementProperty('disabled', false);

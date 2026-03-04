@@ -231,7 +231,7 @@ describe(`${ENCHANTED_DIALOG_TAG_NAME} component testing`, () => {
   });
 
   describe('Accessibility - Dialog Focus and Announcement Flow', () => {
-    it('EnchantedDialog - should have aria-modal when opened', async () => {
+    it('should have aria-modal when opened', async () => {
       render(
         html`
           <${ENCHANTED_DIALOG_TAG} dialogTitle="Select an item" open .localization=${localization}>

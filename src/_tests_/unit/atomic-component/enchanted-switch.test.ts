@@ -156,7 +156,7 @@ describe(`${ENCHANTED_SWITCH_TAG_NAME} component testing`, () => {
     let spanElement = await component.$('>>>span[data-testid="enchanted-switch-span"]').getElement();
     await expect(spanElement).toHaveAttribute('part', 'switch-slider-checked-disabled');
   });
-  it('EnchantedSwitch - should return the same part value for an unknown part in partAttributeDecider', async () => {
+  it('should return the same part value for an unknown part in partAttributeDecider', async () => {
     let component = document.createElement(ENCHANTED_SWITCH_TAG_NAME);
     document.body.appendChild(component);
   
