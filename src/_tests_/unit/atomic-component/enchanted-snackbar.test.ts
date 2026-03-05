@@ -24,7 +24,7 @@ import '../../../components/atomic-component/enchanted-snackbar';
 // Helper imports
 import { BUTTON_PARTS, BUTTON_VARIANT, SNACKBAR_TYPE } from '../../../types/cssClassEnums';
 import { initSessionStorage } from '../../utils';
-import { ENCHANTED_BUTTON_TAG, ENCHANTED_BUTTON_TAG_NAME, ENCHANTED_SNACKBAR_TAG, ENCHANTED_SNACKBAR_TAG_NAME } from '../../../components/tags';
+import { COMPONENT_PREFIX, ENCHANTED_BUTTON_TAG, ENCHANTED_BUTTON_TAG_NAME, ENCHANTED_SNACKBAR_TAG, ENCHANTED_SNACKBAR_TAG_NAME } from '../../../components/tags';
 
 describe(`${ENCHANTED_SNACKBAR_TAG_NAME} component testing`, () => {
   before(async () => {
@@ -68,7 +68,7 @@ describe(`${ENCHANTED_SNACKBAR_TAG_NAME} component testing`, () => {
     await expect(component).toBeDisplayed();
     let messageElement = await component.$('>>>span[data-testid="enchanted-snackbar-message"]').getElement();
     await expect(messageElement).toBeExisting();
-    let svgInfoIcon = await component.shadow$('icon-information').getElement();
+    let svgInfoIcon = await component.shadow$(`${COMPONENT_PREFIX}icon-information`).getElement();
     await expect(svgInfoIcon).toBeExisting();
   });
 

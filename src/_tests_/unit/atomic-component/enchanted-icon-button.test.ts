@@ -140,7 +140,7 @@ describe(`${ENCHANTED_ICON_BUTTON_TAG_NAME} component testing`, () => {
     // Wait for the component to be fully rendered
     await iconButton.updateComplete;
     
-    const enchantedButton = iconButton.shadowRoot?.querySelector('enchanted-button');
+    const enchantedButton = iconButton.shadowRoot?.querySelector(ENCHANTED_BUTTON_TAG_NAME);
     if (enchantedButton) {
       await (enchantedButton as unknown as EnchantedIconButton).updateComplete;
     }

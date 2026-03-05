@@ -28,7 +28,10 @@ import { EnchantedDialog } from '../../../components/atomic-component/enchanted-
 import { initSessionStorage } from '../../utils';
 import { DialogSizes } from '../../../types/enchanted-dialog';
 import { DIALOG_PARTS } from '../../../types/cssClassEnums';
-import { ENCHANTED_DIALOG_TAG, ENCHANTED_DIALOG_TAG_NAME } from '../../../components/tags';
+import {
+  ENCHANTED_CIRCULAR_PROGRESS_TAG, ENCHANTED_CIRCULAR_PROGRESS_TAG_NAME, ENCHANTED_DIALOG_TAG, ENCHANTED_DIALOG_TAG_NAME,
+  ENCHANTED_HEADER_TAG, ENCHANTED_HEADER_TAG_NAME, ENCHANTED_SVG_ICON_TAG_NAME, ENCHANTED_TEXTFIELD_TAG, ENCHANTED_TEXTFIELD_TAG_NAME
+} from '../../../components/tags';
 
 const localization: Map<string, string> = new Map<string, string>();
 localization.set('generic.label', 'Label');
@@ -70,7 +73,7 @@ describe(`${ENCHANTED_DIALOG_TAG_NAME} component testing`, () => {
     );
     let component = await $(ENCHANTED_DIALOG_TAG_NAME).getElement();
     expect(component).not.toHaveText(localization.get('generic.label'));
-    let svgIcon = await component.$('>>>enchanted-svg-icon').getElement();
+    let svgIcon = await component.$(`>>>${ENCHANTED_SVG_ICON_TAG_NAME}`).getElement();
     expect(svgIcon).not.toBeDisplayed();
   });
 
@@ -84,7 +87,7 @@ describe(`${ENCHANTED_DIALOG_TAG_NAME} component testing`, () => {
     let component = await $(ENCHANTED_DIALOG_TAG_NAME).getElement();
     await expect(component).toBeDisplayed();
     expect(component).toHaveText(localization.get('generic.label'));
-    let svgIcon = await component.$('>>>enchanted-svg-icon').getElement();
+    let svgIcon = await component.$(`>>>${ENCHANTED_SVG_ICON_TAG_NAME}`).getElement();
     await browser.pause(100);
     expect(svgIcon).toBeDisplayed();
   });
@@ -93,7 +96,7 @@ describe(`${ENCHANTED_DIALOG_TAG_NAME} component testing`, () => {
     render(
       html`
         <${ENCHANTED_DIALOG_TAG} title="Test Title" open .localization=${localization}>
-          <enchanted-circular-progress slot="content"></enchanted-circular-progress>
+          <${ENCHANTED_CIRCULAR_PROGRESS_TAG} slot="content"></${ENCHANTED_CIRCULAR_PROGRESS_TAG}>
         </${ENCHANTED_DIALOG_TAG}>
       `,
       document.body
@@ -101,9 +104,9 @@ describe(`${ENCHANTED_DIALOG_TAG_NAME} component testing`, () => {
     let component = await $(ENCHANTED_DIALOG_TAG_NAME).getElement();
     await expect(component).toBeDisplayed();
     expect(component).toHaveText('Test Title');
-    let svgIcon = await component.$('>>>enchanted-svg-icon').getElement();
+    let svgIcon = await component.$(`>>>${ENCHANTED_SVG_ICON_TAG_NAME}`).getElement();
     expect(svgIcon).toBeDisplayed();
-    let circularProgress = await component.$('>>>enchanted-circular-progress').getElement();
+    let circularProgress = await component.$(`>>>${ENCHANTED_CIRCULAR_PROGRESS_TAG_NAME}`).getElement();
     expect(circularProgress).toBeDisplayed();
   });
 
@@ -111,19 +114,19 @@ describe(`${ENCHANTED_DIALOG_TAG_NAME} component testing`, () => {
     render(
       html`
         <${ENCHANTED_DIALOG_TAG} open overrideTitle .localization=${localization}>
-          <enchanted-header variant="header-authoring-modal" />
-          <enchanted-circular-progress slot="content"></enchanted-circular-progress>
+          <${ENCHANTED_HEADER_TAG} variant="header-authoring-modal" />
+          <${ENCHANTED_CIRCULAR_PROGRESS_TAG} slot="content"></${ENCHANTED_CIRCULAR_PROGRESS_TAG}>
         </${ENCHANTED_DIALOG_TAG}>
       `,
       document.body
     );
     let component = await $(ENCHANTED_DIALOG_TAG_NAME).getElement();
     await expect(component).toBeDisplayed();
-    let svgIcon = await component.$('>>>enchanted-svg-icon').getElement();
+    let svgIcon = await component.$(`>>>${ENCHANTED_SVG_ICON_TAG_NAME}`).getElement();
     expect(svgIcon).not.toBeDisplayed();
-    let circularProgress = await component.$('>>>enchanted-circular-progress').getElement();
+    let circularProgress = await component.$(`>>>${ENCHANTED_CIRCULAR_PROGRESS_TAG_NAME}`).getElement();
     expect(circularProgress).toBeDisplayed();
-    let headerAuthoring = await component.$('>>>enchanted-header').getElement();
+    let headerAuthoring = await component.$(`>>>${ENCHANTED_HEADER_TAG_NAME}`).getElement();
     expect(headerAuthoring).toBeDisplayed();
   });
 
@@ -342,7 +345,7 @@ describe(`${ENCHANTED_DIALOG_TAG_NAME} component testing`, () => {
         html`
           <${ENCHANTED_DIALOG_TAG} dialogTitle="Test Dialog" open .localization=${localization}>
             <div slot="content">
-              <enchanted-textfield></enchanted-textfield>
+              <${ENCHANTED_TEXTFIELD_TAG}></${ENCHANTED_TEXTFIELD_TAG}>
             </div>
           </${ENCHANTED_DIALOG_TAG}>
         `,
@@ -350,7 +353,7 @@ describe(`${ENCHANTED_DIALOG_TAG_NAME} component testing`, () => {
       );
       await browser.pause(150);
       const component = await document.querySelector(ENCHANTED_DIALOG_TAG_NAME) as EnchantedDialog;
-      const inputField = component?.querySelector('enchanted-textfield') as HTMLElement | null;
+      const inputField = component?.querySelector(ENCHANTED_TEXTFIELD_TAG_NAME) as HTMLElement | null;
       const shadowInput = inputField?.shadowRoot?.querySelector('input') as HTMLElement;
 
       // Shadow DOM input should receive focus (recursive search through nested components)

@@ -36,7 +36,7 @@ describe(`${ENCHANTED_LINK_TAG_NAME} component testing`, () => {
   });
 
   it('should render without crashing', async () => {
-    let component = document.createElement('enchanted-link');
+    let component = document.createElement(ENCHANTED_LINK_TAG_NAME);
     document.body.appendChild(component);
     await expect(document.body.contains(component)).toBeTruthy();
     component.remove();

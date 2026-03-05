@@ -32,11 +32,11 @@ import { KeyboardInputKeys } from '../../utils/keyboardEventKeys';
 
 // Icon imports
 import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/close';
-import { generateIconTagName, ENCHANTED_DIALOG_TAG_NAME } from '../tags';
+import { generateIconTagName, ENCHANTED_DIALOG_TAG_NAME, ENCHANTED_TEXTFIELD_TAG_NAME, ENCHANTED_BUTTON_TAG_NAME, ENCHANTED_ICON_BUTTON_TAG_NAME } from '../tags';
 
 @localized()
 export class EnchantedDialog extends EnchantedAcBaseElement {
-  private static readonly FOCUSABLE_SELECTOR = 'enchanted-textfield, enchanted-button, enchanted-icon-button, button, input, [tabindex]:not([tabindex="-1"])';
+  private static readonly FOCUSABLE_SELECTOR = `${ENCHANTED_TEXTFIELD_TAG_NAME}, ${ENCHANTED_BUTTON_TAG_NAME}, ${ENCHANTED_ICON_BUTTON_TAG_NAME}, button, input, [tabindex]:not([tabindex="-1"])`;
   private static readonly MAX_FOCUS_DEPTH = 10;
 
   @property({ type: Boolean, reflect: true })
