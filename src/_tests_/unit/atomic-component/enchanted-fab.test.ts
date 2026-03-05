@@ -22,7 +22,7 @@ import { EnchantedFabType, FAB_PARTS } from '../../../types/cssClassEnums';
 
 // Component import
 import "../../../components/atomic-component/enchanted-fab";
-import { generateIconTagName, ENCHANTED_BADGE_TAG, ENCHANTED_BADGE_TAG_NAME, ENCHANTED_FAB_TAG, ENCHANTED_FAB_TAG_NAME } from '../../../components/tags';
+import { generateIconTagName, ENCHANTED_BADGE_TAG, ENCHANTED_BADGE_TAG_NAME, ENCHANTED_FAB_TAG, ENCHANTED_FAB_TAG_NAME, COMPONENT_PREFIX } from '../../../components/tags';
 
 afterEach(() => {
   document.body.innerHTML = "";
@@ -146,7 +146,7 @@ describe(`${ENCHANTED_FAB_TAG_NAME} - component test`, () => {
     const fab = await $(ENCHANTED_FAB_TAG_NAME);
     const iconSpan = await fab.shadow$(`span[part='${FAB_PARTS.ICON}']`);
     await expect(iconSpan).toBeExisting();
-    const svg = await iconSpan.$(`${generateIconTagName('icon-ai-sparkle')}`);
+    const svg = await iconSpan.$(`${COMPONENT_PREFIX}icon-ai-sparkle`);
     await expect(svg).toBeExisting();
   });
 
