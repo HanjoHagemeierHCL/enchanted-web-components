@@ -5,12 +5,20 @@
 ### Added
 
 ### Fixed
-- Fixed `enchanted-fab` label font styles and padding.
-- Fixed `enchanted-fab-ai` label color styles.
 
 ### Changed
 
 ### Breaking changes
+
+## 5.1.1
+
+### Fixed
+- Fixed `enchanted-fab` label font styles and padding.
+- Fixed `enchanted-fab-ai` label color styles.
+
+### Changed
+- Adding chromatic PR worklfow snapshot tests
+- Removing unused snapshot tests
 
 ## 5.1.0
 
@@ -24,8 +32,6 @@
 ### Changed
 - Updated `enchanted-fab` component to support optional icon - icon property can now be undefined, allowing extended FAB with label only.
 - Removing unused CSS badge parts
-- Adding chromatic PR worklfow snapshot tests
-- Removing unused snapshot tests
 
 ### Breaking changes
 
